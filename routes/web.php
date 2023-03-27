@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\SchoolController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,18 +16,57 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+// *Rota para "bem-vindo"
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
+
+// *Rota para "painel"
+Route::get('/painel', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware('auth')->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
 
-require __DIR__.'/auth.php';
+// *Rota para "perfil"
+Route::middleware('auth')
+    ->controller(ProfileController::class)
+    ->name('profile.')
+    ->group(function () {
+        Route::get('/perfil', 'edit')->name('edit');
+        Route::patch('/perfil', 'update')->name('update');
+        Route::delete('/perfil', 'destroy')->name('destroy');
+    });
+
+
+// *Rota para "alunos"
+Route::resource('alunos', StudentController::class)
+    ->names([
+        'index'   => 'student.index',
+        'store'   => 'student.store',
+        'create'  => 'student.create',
+        'show'    => 'student.show',
+        'update'  => 'student.update',
+        'destroy' => 'student.destroy',
+        'edit'    => 'student.edit'
+    ]);
+
+
+// *Rotas para "escola"
+Route::resource('escolas', SchoolController::class)
+    ->names([
+        'index'   => 'school.index',
+        'store'   => 'school.store',
+        'create'  => 'school.create',
+        'show'    => 'school.show',
+        'update'  => 'school.update',
+        'destroy' => 'school.destroy',
+        'edit'    => 'school.edit'
+    ]);
+
+
+
+
+
+require __DIR__ . '/auth.php';
