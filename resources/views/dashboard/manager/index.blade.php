@@ -1,72 +1,249 @@
 <x-dashboard-layout>
+
+
+    <!-- browser page title -->
+    <x-slot:title>
+        Página Inicial
+    </x-slot>
+    <!-- ./browser page title -->
+
+
     <div class="content-wrapper">
+
+
         <!-- Content Header (Page header) -->
         <div class="content-header">
+
             <div class="container-fluid">
+
                 <div class="row mb-2">
+
                     <div class="col-sm-6">
-                        <h1 class="m-0">Página Inicial</h1>
+
+                        <h1 class="m-0">
+                            Página Inicial
+                        </h1>
+
                     </div>
                     <!-- /.col -->
+
+
                     <div class="col-sm-6">
+
                         <ol class="breadcrumb float-sm-right">
+
                             <li class="breadcrumb-item">
-                                <a href="#">Home</a>
+                                <a href="#">
+                                    Home
+                                </a>
                             </li>
-                            <li class="breadcrumb-item active">Starter Page
+
+                            <li class="breadcrumb-item active">
+                                Starter Page
                             </li>
+
                         </ol>
+
                     </div>
                     <!-- /.col -->
+                    
                 </div>
                 <!-- /.row -->
+
             </div>
             <!-- /.container-fluid -->
+
         </div>
         <!-- /.content-header -->
 
+
         <!-- Main content -->
         <div class="content">
+            
             <div class="container-fluid">
+                
+                
+                <!-- Info boxes -->
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card card-yellow card-outline">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
+                    
 
+                    <!-- Box 1 -->
+                    <div class="col-lg-3 col-6">
+                        
+                        <div class="small-box bg-info">
+
+                            <div class="inner">
+
+                                <h3>
+                                    150
+                                </h3>
+                                <p>
+                                    Alunos
+                                </p>
+
+                            </div>
+                        
+                            <div class="icon">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+
+                            <a href="#" class="small-box-footer">
+                                Mais informações
+                                <i class="fa-solid fa-circle-right"></i>
+                            </a>
+                        
+                        </div>
+
+                    </div>
+                    <!-- ./Box 1 -->
+
+                    
+                    <!-- Box 2 -->
+                    <div class="col-lg-3 col-6">
+                    
+                        <div class="small-box bg-success">
+
+                            <div class="inner">
+
+                                <h3>
+                                    4
+                                </h3>
+                                <p>
+                                    Turmas
+                                </p>
+
+                            </div>
+
+                            <div class="icon">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+
+                            <a href="#" class="small-box-footer">
+                                Mais informações
+                                <i class="fa-solid fa-circle-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+                    <!-- ./Box 2 -->
+
+
+                    <!-- Box 3 -->
+                    <div class="col-lg-3 col-6">
+                    
+                        <div class="small-box bg-maroon">
+
+                            <div class="inner">
+                                <h3>
+                                    10
+                                </h3>
+
+                                <p>
+                                    Professores
+                                </p>
+
+                            </div>
+
+                            <div class="icon">
+                                <i class="fa-solid fa-chalkboard-user"></i>
+                            </div>
+
+                            <a href="#" class="small-box-footer">
+                                Mais informações
+                                <i class="fa-solid fa-circle-right"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                    <!-- ./Box 3 -->
+
+
+                    <!-- Box 4 -->
+                    <div class="col-lg-3 col-6">
+                    
+                        <div class="small-box bg-danger">
+
+                            <div class="inner">
+                                
+                                <h3>
+                                    2023
+                                </h3>
+                                <p>
+                                    Ano Letivo
+                                </p>
+                    
+                            </div>
+
+                   
+                            <div class="icon">
+                                <i class="fa-solid fa-calendar"></i>
+                            </div>
+
+                            <a href="#" class="small-box-footer">
+                                Mais informações
+                                <i class="fa-solid fa-circle-right"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- ./Box 4 -->
+                    
+                </div>
+                
+
+                <!-- Card -->
+                <div class="row">
+                    
+                    <div class="col-lg-12">
+                        
+
+                        <!-- Card -->
+                        <div class="card card-yellow card-outline">
+                            
+                            <!-- Card body -->
+                            <div class="card-body">
+                                
+                                <h5 class="card-title">
+                                    Card title
+                                </h5>
+                                
                                 <p class="card-text">
                                     Some quick example text to build on the
                                     card title and make up the bulk of the
                                     card's content.
                                 </p>
-                                <a href="#" class="card-link">Card
-                                    link</a>
-                                <a href="#" class="card-link">Another
-                                    link</a>
+                                
+                                <a href="#" class="card-link">
+                                    Card link
+                                </a>
+                                
+                                <a href="#" class="card-link">
+                                    Another link
+                                </a>
+                                
                                 <br />
                                 <br />
                                 <br />
-                                <br />
-                                <br />
-                                <br />
-                                <br />
-                                <br />
-                                <br />
-                                <br />
-                                <br />
-                                <br />
-                                <br />
-                                <br />
+                                
                             </div>
+                            <!-- ./Card body -->
+                            
                         </div>
                         <!-- /.card -->
+
                     </div>
+
                 </div>
                 <!-- /.row -->
+
             </div>
             <!-- /.container-fluid -->
+
         </div>
         <!-- /.content -->
+
     </div>
     <!-- /.content-wrapper -->
+    
 </x-dashboard-layout>
