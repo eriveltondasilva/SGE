@@ -17,13 +17,14 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/dashboard';
+    public const HOME = '/painel';
 
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
      */
     public function boot(): void
     {
+        // verbos de ação traduzidos para o português
         Route::resourceVerbs([
             'create' => 'cadastrar',
             'edit' => 'editar',

@@ -17,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+// !Rota para teste
+Route::get('/teste', function () {
+    return view('dashboard.mainContent');
+});
+
+
 // *Rota para "bem-vindo"
 Route::get('/', function () {
     return view('welcome');
@@ -54,7 +60,7 @@ Route::resource('alunos', StudentController::class)
 
 
 // *Rotas para "escola"
-Route::resource('escolas', SchoolController::class)
+Route::resource('escola', SchoolController::class)
     ->names([
         'index'   => 'school.index',
         'store'   => 'school.store',
@@ -66,7 +72,10 @@ Route::resource('escolas', SchoolController::class)
     ]);
 
 
+// *Rota
 
 
 
+
+// auth.php
 require __DIR__ . '/auth.php';

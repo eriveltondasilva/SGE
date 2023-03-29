@@ -1,0 +1,83 @@
+dashboard.manager.blade.php
+dashboard.manager
+	|-- calendar.blade.php
+			|-- index.blade.php
+			|-- show.blade.php
+			|-- store.blade.php
+			|-- edit.blade.php
+	|-- schedule.blade.php
+			|-- index.blade.php
+			|-- show.blade.php
+			|-- store.blade.php
+			|-- edit.blade.php
+	|-- documents.blade.php
+			|-- index.blade.php
+			|-- show.blade.php
+			|-- store.blade.php
+			|-- edit.blade.php
+	|-- students
+			|-- index.blade.php
+			|-- show.blade.php
+			|-- store.blade.php
+			|-- edit.blade.php
+	|-- classes
+			|-- index.blade.php
+			|-- show.blade.php
+			|-- store.blade.php
+			|-- edit.blade.php
+	|-- teachers
+			|-- index.blade.php
+			|-- show.blade.php
+			|-- store.blade.php
+			|-- edit.blade.php
+
+-----------------------------------
+
+dashboard
+	|-- admin
+		|-- index.blade.php
+		|-- calendar
+		|-- schedule
+		|-- documents
+		|-- students
+		|-- classes
+		|-- teachers
+	|-- manager
+		|-- index.blade.php
+		|-- calendar
+		|-- schedule
+		|-- documents
+		|-- students
+		|-- classes
+		|-- teachers
+	|-- teachers
+		|-- index.blade.php
+		|-- calendar
+		|-- schedule
+		|-- documents
+		|-- students
+		|-- grades
+	|-- students
+		|-- index.blade.php
+		|-- calendar
+		|-- schedule
+		|-- documents
+		|-- grades
+		
+
+-----------------------------------
+
+dashboard
+	|-- admin
+		|-- index.blade.php
+		|-- students
+		|-- classes
+		|-- teachers
+		
+	|-- teachers
+		|-- index.blade.php
+		|-- students
+		|-- grades
+	|-- students
+		|-- index.blade.php
+		|-- grades
