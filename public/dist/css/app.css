@@ -1,0 +1,16 @@
+body .fa-sun {
+  display: none;
+}
+body.dark-mode .fa-moon {
+  display: none;
+}
+
+body.dark-mode .fa-sun {
+  display: inline;
+}
+
+.sidebar__line {
+  margin: 0.8rem auto;
+  width: 90%;
+  border-bottom: 1px solid #4f5962;
+}

@@ -20,12 +20,13 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- *Styles: ### -->
-    <link rel="stylesheet" href="dist/css/adminlte.css" />
-    <link rel="stylesheet" href="dist/css/app.css" />
+    <link rel="stylesheet" href="/dist/css/adminlte.css" />
+    <link rel="stylesheet" href="/dist/css/app.css" />
 
     <!-- *Scripts: jQuery_3.6.0 | Bootstrap_4.6.1 | AdminLTE_app -->
-    <script src="plugins/jquery/jquery.min.js" defer></script>
-    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-    <script src="dist/js/adminlte.js" defer></script>
-    <script src="dist/js/app.js" defer></script>
+    <script src="/dist/js/vendors/jquery/jquery.min.js" defer></script>
+    <script src="/dist/js/vendors/bootstrap/js/bootstrap.bundle.min.js" defer>
+    </script>
+    <script src="/dist/js/adminlte.js" defer></script>
+    <script src="/dist/js/app.js" defer></script>
 </head>
