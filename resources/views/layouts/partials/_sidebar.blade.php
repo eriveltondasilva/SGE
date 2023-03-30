@@ -21,7 +21,7 @@
     <div class="sidebar">
 
         <!-- Sidebar Menu -->
-        <nav class="mt-2">
+        <nav class="mt-3">
 
             <ul
             class="nav nav-pills nav-sidebar nav-collapse-hide-child flex-column"
@@ -33,11 +33,11 @@
                 <!-- Menu: painel -->
                 <li class="nav-item">
 
-                    <x-nav.link :href="route('dashboard')" :is_active="request()->routeIs('teste')">
+                    <x-nav.link :href="route('dashboard')" :is_active="request()->routeIs('dashboard')">
                         <x-slot:icon>
                             <i class="nav-icon fa-solid fa-house"></i>
                         </x-slot>
-                        Painel
+                        Página Inicial
                     </x-nav.link>
 
                 </li>

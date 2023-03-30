@@ -35,7 +35,7 @@ dashboard
 			|-- store.blade.php
 			|-- edit.blade.php
 	|-- manager
-		|-- index.blade.php
+		|-- index.blade.php #
 		|-- calendar
 			|-- index.blade.php
 			|-- show.blade.php
