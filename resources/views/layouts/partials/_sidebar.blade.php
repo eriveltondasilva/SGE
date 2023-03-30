@@ -50,7 +50,7 @@
                 <!-- Menu: calendário -->
                 <li class="nav-item">
 
-                    <x-nav.link :href="route('dashboard')" {{-- :is_active="request()->routeIs('teste')" --}}>
+                    <x-nav.link :href="route('teste')" :is_active="request()->routeIs('teste')">
                         <x-slot:icon>
                             <i class="nav-icon fa-solid fa-calendar-days"></i>
                         </x-slot>

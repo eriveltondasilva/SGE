@@ -19,12 +19,12 @@
                     <!-- card-outline -->
                     <div class="card card-yellow card-outline">
                     
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
                     
                     </div>
                     <!-- /.card-outline -->
@@ -40,4 +40,4 @@
     </main>
     <!-- /.content -->
 
-<x-dashboard-layout>
+</x-dashboard-layout>
