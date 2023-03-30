@@ -1,4 +1,4 @@
-<aside class="main-sidebar sidebar-expand sidebar-dark-warning elevation-4">
+<aside class="main-sidebar sidebar-expand sidebar-light-warning elevation-4 js-sidebar">
 
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
@@ -6,11 +6,11 @@
         <img
         alt="AdminLTE Logo"
         class="brand-image img-circle elevation-3"
-        src="dist/img/icons/school.jpg"
+        src="dist/img/icons/school.png"
         />
         
         <span class="brand-text font-weight-light">
-            {{ Auth::user()->school_id }}
+            Escola
         </span>
         
     </a>
@@ -60,7 +60,7 @@
                 <!-- Menu: painel -->
                 <li class="nav-item">
 
-                    <a href="#" class="nav-link">
+                    <a href="#" class="nav-link active">
                         <i class="nav-icon fa-solid fa-house"></i>
                         <p class="text-uppercase">
                             painel
@@ -71,7 +71,7 @@
                 <!-- ./Menu: painel -->
 
 
-                <div class="sidebar__line"></div>
+                <div class="sidebar__separator"></div>
 
 
                 <!-- Menu: calendário -->
@@ -116,7 +116,7 @@
                 <!-- ./Menu: documentos -->
 
 
-                <div class="sidebar__line"></div>
+                <div class="sidebar__separator"></div>
 
 
                 <!-- Menu: matrícula -->
@@ -272,11 +272,11 @@
                 <!-- ./Menu: professores -->
 
 
-                <div class="sidebar__line"></div>
+                <div class="sidebar__separator"></div>
 
 
                 <!-- Menu: redes sociais -->
-                <li class="nav-header text-uppercase mb-1">
+                {{-- <li class="nav-header text-uppercase mb-1">
                     redes sociais
                 </li>
 
@@ -305,7 +305,7 @@
 
                     </div>
 
-                </div>
+                </div> --}}
                 <!-- ./Menu: redes sociais -->
 
             </ul>

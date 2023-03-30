@@ -9,8 +9,8 @@ body.dark-mode .fa-sun {
   display: inline;
 }
 
-.sidebar__line {
+.sidebar__separator {
   margin: 0.8rem auto;
-  width: 90%;
-  border-bottom: 1px solid #4f5962;
+  width: 100%;
+  /* border-bottom: 1px solid #4f5962; */
 }

@@ -4,6 +4,7 @@
 // *Variáveis:
 const BODY = document.body;
 const NAVBAR = document.querySelector(".js-navbar");
+const SIDEBAR = document.querySelector(".js-sidebar");
 const MODE_DARK = document.querySelector(".js-dark-mode");
 
 // *Eventos:
@@ -15,17 +16,24 @@ MODE_DARK.addEventListener("click", () => {
 // *Funções:
 // Adicionar ou remove a classe "dark" do "body" para ativar ou desativar o modo dark
 function changeMode() {
-    const IS_LIGHT = NAVBAR.classList.contains("navbar-light");
+    const NAVBAR_IS_LIGHT = NAVBAR.classList.contains("navbar-light");
+    const SIDEBAR_IS_LIGHT = SIDEBAR.classList.contains("sidebar-light-warning");
 
     BODY.classList.toggle("dark-mode");
 
     // torna o navbar dark mode ou light mode
-    if (IS_LIGHT) {
+    if (NAVBAR_IS_LIGHT) {
         NAVBAR.classList.replace("navbar-light", "navbar-dark");
-        return;
+    } else {
+        NAVBAR.classList.replace("navbar-dark", "navbar-light");
     }
 
-    NAVBAR.classList.replace("navbar-dark", "navbar-light");
+
+    if (SIDEBAR_IS_LIGHT) {
+        SIDEBAR.classList.replace("sidebar-light-warning", "sidebar-dark-warning");
+    } else {
+        SIDEBAR.classList.replace("sidebar-dark-warning", "sidebar-light-warning");
+    }
 }
 
 // Salvar ou remover dark-mode do localStorage

@@ -63,14 +63,15 @@
             <div class="container-fluid">
                 
                 
-                <!-- Info boxes -->
+                <!-- InfoBoxes -->
                 <div class="row">
                     
 
                     <!-- Box 1 -->
                     <div class="col-lg-3 col-6">
                         
-                        <div class="small-box bg-info">
+                        {{-- <div class="small-box bg-info"> --}}
+                        <div class="small-box bg-primary">
 
                             <div class="inner">
 
@@ -101,7 +102,8 @@
                     <!-- Box 2 -->
                     <div class="col-lg-3 col-6">
                     
-                        <div class="small-box bg-success">
+                        {{-- <div class="small-box bg-success"> --}}
+                        <div class="small-box bg-warning">
 
                             <div class="inner">
 
@@ -132,7 +134,8 @@
                     <!-- Box 3 -->
                     <div class="col-lg-3 col-6">
                     
-                        <div class="small-box bg-maroon">
+                        {{-- <div class="small-box bg-maroon"> --}}
+                        <div class="small-box bg-primary">
 
                             <div class="inner">
                                 <h3>
@@ -162,7 +165,8 @@
                     <!-- Box 4 -->
                     <div class="col-lg-3 col-6">
                     
-                        <div class="small-box bg-danger">
+                        {{-- <div class="small-box bg-danger"> --}}
+                        <div class="small-box bg-warning">
 
                             <div class="inner">
                                 
@@ -190,6 +194,7 @@
                     <!-- ./Box 4 -->
                     
                 </div>
+                <!-- ./InfoBoxes -->
                 
 
                 <!-- Card -->
@@ -205,13 +210,13 @@
                             <div class="card-body">
                                 
                                 <h5 class="card-title">
-                                    Card title
+                                    Título do card
                                 </h5>
                                 
                                 <p class="card-text">
-                                    Some quick example text to build on the
-                                    card title and make up the bulk of the
-                                    card's content.
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                    In aspernatur quidem aperiam impedit ratione sapiente rem aut excepturi?
+                                    Ex nam quibusdam ipsa quam excepturi, perferendis nostrum nihil alias possimus obcaecati.
                                 </p>
                                 
                                 <a href="#" class="card-link">
