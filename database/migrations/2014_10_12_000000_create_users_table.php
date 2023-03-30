@@ -17,14 +17,13 @@ return new class extends Migration
             $table->string('email', 100)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->enum(
-                'role',
-                ['admin', 'manager', 'coordinator', 'teacher', 'student']
-                )->nullable();
-                $table->rememberToken();
-                $table->timestamps();
-                $table->boolean('status')->default(true);
-                $table->foreignId('school_id')->nullable();
+            $table->enum('role',
+                ['admin', 'manager', 'coordinator', 'teacher', 'student'])
+                ->nullable();
+            $table->rememberToken();
+            $table->timestamps();
+            $table->boolean('status')->default(true);
+            $table->foreignId('school_id')->nullable();
         });
     }
 

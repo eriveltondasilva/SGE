@@ -41,32 +41,42 @@ dashboard
 			|-- show.blade.php
 			|-- store.blade.php
 			|-- edit.blade.php
-		|-- schedule
-			|-- index.blade.php
-			|-- show.blade.php
-			|-- store.blade.php
-			|-- edit.blade.php
-		|-- documents
-			|-- index.blade.php
-			|-- show.blade.php
-			|-- store.blade.php
-			|-- edit.blade.php
-		|-- students
-			|-- index.blade.php
-			|-- show.blade.php
-			|-- store.blade.php
-			|-- edit.blade.php
+			|-- delete.blade.php
 		|-- classes
 			|-- index.blade.php
 			|-- show.blade.php
 			|-- store.blade.php
 			|-- edit.blade.php
-		|-- teachers
+		|-- classDiary
 			|-- index.blade.php
 			|-- show.blade.php
 			|-- store.blade.php
 			|-- edit.blade.php
+			|-- delete.blade.php
+		|-- documents
+			|-- index.blade.php
+			|-- show.blade.php
+			|-- store.blade.php
+			|-- edit.blade.php
+			|-- delete.blade.php
 		|-- grades
+			|-- index.blade.php
+			|-- show.blade.php
+			|-- store.blade.php
+			|-- edit.blade.php
+			|-- delete.blade.php
+		|-- schedule
+			|-- index.blade.php
+			|-- show.blade.php
+			|-- store.blade.php
+			|-- edit.blade.php
+			|-- delete.blade.php
+		|-- students
+			|-- index.blade.php
+			|-- show.blade.php
+			|-- store.blade.php
+			|-- edit.blade.php
+		|-- teachers
 			|-- index.blade.php
 			|-- show.blade.php
 			|-- store.blade.php
