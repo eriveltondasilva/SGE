@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 // !Rota para teste
 Route::get('/teste', function () {
-    return view('dashboard/manager/index');
+    return view('');
 })->name('teste');
 
 
@@ -31,7 +31,7 @@ Route::get('/', function () {
 
 // *Rota para "painel"
 Route::get('/painel', function () {
-    return view('dashboard');
+    return view('dashboard/manager/index');
 })->middleware('auth')->name('dashboard');
 
 

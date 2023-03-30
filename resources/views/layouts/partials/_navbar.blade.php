@@ -128,11 +128,15 @@
                         </div>
 
                         <div class="col-sm-6 py-1">
-
-                            <a href="#" class="btn btn-danger btn-block">
-                                <i class="fa-solid fa-right-from-bracket mr-1"></i>
-                                Sair
-                            </a>
+                            
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                
+                                <a href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();" class="btn btn-danger btn-block">
+                                    <i class="fa-solid fa-right-from-bracket mr-1"></i>
+                                    Sair
+                                </a>
+                            </form>
 
                         </div>
                         
