@@ -12,9 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('school_classes', function (Blueprint $table) {
-            $table->tinyInteger('school_class');
-            $table->date('school_year')->primary();
+            $table->id();
+            $table->string('class_name');
             $table->timestamps();
+            $table->foreignId('school_years_year');
         });
     }
 

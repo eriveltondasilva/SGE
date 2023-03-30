@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('facebook', 100)->nullable();
             $table->string('whatsapp', 100)->nullable();
             $table->string('photo_path', 2048)->nullable();
-            $table->boolean('status')->default(true);
             $table->timestamps();
+            $table->boolean('status')->default(true);
         });
     }
 

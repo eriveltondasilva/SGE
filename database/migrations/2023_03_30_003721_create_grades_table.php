@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('attendances', function (Blueprint $table) {
-            $table->date('attendance')->primary();
-            $table->boolean('is_present');
+        Schema::create('grades', function (Blueprint $table) {
+            $table->id();
+            // TODO: acrescentar o restante das propriedades da nota do aluno
             $table->timestamps();
-            $table->foreignId('student_id');
         });
     }
 
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('attendances');
+        Schema::dropIfExists('grades');
     }
 };

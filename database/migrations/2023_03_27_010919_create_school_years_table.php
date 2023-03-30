@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('school_years', function (Blueprint $table) {
-            $table->date('school_year')->primary();
+            $table->date('year')->primary();
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }
