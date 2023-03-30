@@ -1,5 +1,5 @@
 -----------------------------------
-// Rotas completas
+// #mapa do site
 
 dashboard
 	|-- admin
@@ -34,6 +34,7 @@ dashboard
 			|-- show.blade.php
 			|-- store.blade.php
 			|-- edit.blade.php
+
 	|-- manager
 		|-- index.blade.php #
 		|-- calendar
@@ -121,3 +122,54 @@ dashboard
 			|-- index.blade.php
 		|-- students
 			|-- show.blade.php
+
+-----------------------------------
+// #todas as rotas
+
+dashboard
+	|-- index.blade.php #
+	|-- calendar #
+		|-- index.blade.php
+		|-- show.blade.php
+		|-- store.blade.php
+		|-- edit.blade.php
+		|-- delete.blade.php
+	|-- classes #
+		|-- index.blade.php
+		|-- show.blade.php
+		|-- store.blade.php
+		|-- edit.blade.php
+	|-- classDiary
+		|-- index.blade.php
+		|-- show.blade.php
+		|-- store.blade.php
+		|-- edit.blade.php
+		|-- delete.blade.php
+	|-- documents #
+		|-- index.blade.php
+		|-- show.blade.php
+		|-- store.blade.php
+		|-- edit.blade.php
+		|-- delete.blade.php
+	|-- grades #
+		|-- index.blade.php
+		|-- show.blade.php
+		|-- store.blade.php
+		|-- edit.blade.php
+		|-- delete.blade.php
+	|-- schedule #
+		|-- index.blade.php
+		|-- show.blade.php
+		|-- store.blade.php
+		|-- edit.blade.php
+		|-- delete.blade.php
+	|-- students #
+		|-- index.blade.php
+		|-- show.blade.php
+		|-- store.blade.php
+		|-- edit.blade.php
+	|-- teachers #
+		|-- index.blade.php
+		|-- show.blade.php
+		|-- store.blade.php
+		|-- edit.blade.php
