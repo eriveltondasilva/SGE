@@ -1,31 +1,58 @@
 <!DOCTYPE html>
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-<!-- #HEAD -->
+
+<!-- HEAD -->
 @include('layouts.partials._head')
+<!-- ./HEAD -->
 
-<!-- #BODY -->
 
+<!-- BODY -->
 <body class="hold-transition sidebar-mini">
 
-    <!-- *Wrapper -->
+
+    <!-- wrapper -->
     <div class="wrapper">
 
-        <!-- *Navbar -->
+
+        <!-- navbar -->
         @include('layouts.partials._navbar')
+        <!-- ./navbar -->
 
-        <!-- Main Sidebar Container -->
+
+        <!-- sidebar -->
         @include('layouts.partials._sidebar')
+        <!-- ./sidebar -->
 
-        <!-- Content Wrapper. Contains page content -->
-        {{ $slot }}
 
-        <!-- Main Footer -->
+        <!-- content-wrapper -->
+        <div class="content-wrapper">
+         
+            
+            <!-- content-header -->
+            @include('layouts.partials._header')
+            <!-- ./content-header -->
+
+
+            {{ $slot }}
+
+
+        </div>
+        <!-- ./content-wrapper -->
+
+
+        <!-- main footer -->
         @include('layouts.partials._footer')
+        <!-- /.main footer -->
+
 
     </div>
     <!-- ./wrapper -->
 
+
 </body>
+<!-- ./BODY -->
+
 
 </html>

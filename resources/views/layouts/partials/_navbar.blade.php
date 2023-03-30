@@ -36,10 +36,10 @@
                     <div class="input-group input-group-sm">
                         
                         <input
-                        aria-label="pesquisa"
-                        class="form-control form-control-navbar bg-light"
-                        placeholder="Pesquisar..."
-                        type="search"
+                            aria-label="pesquisa"
+                            class="form-control form-control-navbar bg-light"
+                            placeholder="Pesquisar..."
+                            type="search"
                         />
                         
                         <div class="input-group-append">
