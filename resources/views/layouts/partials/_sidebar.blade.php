@@ -33,12 +33,12 @@
                 <!-- Menu: painel -->
                 <li class="nav-item">
 
-                    <a href="#" class="nav-link active">
-                        <i class="nav-icon fa-solid fa-house"></i>
-                        <p class="text-uppercase">
-                            painel
-                        </p>
-                    </a>
+                    <x-nav.link :href="route('dashboard')" :is_active="request()->routeIs('teste')">
+                        <x-slot:icon>
+                            <i class="nav-icon fa-solid fa-house"></i>
+                        </x-slot>
+                        Painel
+                    </x-nav.link>
 
                 </li>
                 <!-- ./Menu: painel -->
@@ -50,13 +50,13 @@
                 <!-- Menu: calendário -->
                 <li class="nav-item">
 
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa-solid fa-calendar-days"></i>
-                        <p class="text-uppercase">
-                            calendário
-                        </p>
-                    </a>
-
+                    <x-nav.link :href="route('dashboard')" {{-- :is_active="request()->routeIs('teste')" --}}>
+                        <x-slot:icon>
+                            <i class="nav-icon fa-solid fa-calendar-days"></i>
+                        </x-slot>
+                        Calendário
+                    </x-nav.link>
+                                        
                 </li>
                 <!-- ./Menu: calendário -->
 
@@ -64,12 +64,12 @@
                 <!-- Menu: horário -->
                 <li class="nav-item">
 
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa-solid fa-clock"></i>
-                        <p class="text-uppercase">
-                            horário
-                        </p>
-                    </a>
+                    <x-nav.link :href="route('dashboard')" {{-- :is_active="request()->routeIs('teste')" --}}>
+                        <x-slot:icon>
+                            <i class="nav-icon fa-solid fa-clock"></i>
+                        </x-slot>
+                        Horário
+                    </x-nav.link>
 
                 </li>
                 <!-- /Menu: horário -->
@@ -78,12 +78,12 @@
                 <!-- Menu: documentos -->
                 <li class="nav-item">
 
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa-solid fa-file-circle-exclamation"></i>
-                        <p class="text-uppercase">
-                            documentos
-                        </p>
-                    </a>
+                    <x-nav.link :href="route('dashboard')" {{-- :is_active="request()->routeIs('teste')" --}}>
+                        <x-slot:icon>
+                            <i class="nav-icon fa-solid fa-file-circle-exclamation"></i>
+                        </x-slot>
+                        Documentos
+                    </x-nav.link>
 
                 </li>
                 <!-- ./Menu: documentos -->
@@ -91,16 +91,16 @@
 
                 <div class="sidebar__separator"></div>
 
-
+                
                 <!-- Menu: matrícula -->
                 <li class="nav-item">
 
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa-solid fa-id-card"></i>
-                        <p class="text-uppercase">
-                            matrícula
-                        </p>
-                    </a>
+                    <x-nav.link :href="route('dashboard')" {{-- :is_active="request()->routeIs('teste')" --}}>
+                        <x-slot:icon>
+                            <i class="nav-icon fa-solid fa-id-card"></i>
+                        </x-slot>
+                        Matrícula
+                    </x-nav.link>
 
                 </li>
                 <!-- ./Menu: matrícula -->
@@ -110,45 +110,43 @@
                 <!-- <li class="nav-item menu-open"> -->
                 <li class="nav-item">
 
-                    <a href="#" class="nav-link">
+                    <x-nav.link href="#" {{-- :is_active="request()->routeIs('teste')" --}}>
+                        <x-slot:icon>
+                            <i class="nav-icon fa-solid fa-user"></i>
+                        </x-slot>
+                        Aluno
+                        <i class="right fa-solid fa-angle-left"></i>
+                    </x-nav.link>
 
-                        <i class="nav-icon fa-solid fa-user"></i>
 
-                        <p class="text-uppercase">
-                            aluno
-                            <i class="right fa-solid fa-angle-left"></i>
-                        </p>
-
-                    </a>
-
+                    <!-- Submenu: alunos -->
                     <ul class="nav nav-treeview">
 
                         <li class="nav-item">
 
-                            <a href="#" class="nav-link">
-
-                                <i class="nav-icon fa-regular fa-circle"></i>
-                                <p>
-                                    Lista de alunos
-                                </p>
-                            </a>
+                            <x-nav.link :href="route('dashboard')" {{-- :is_active="request()->routeIs('teste')" --}}>
+                                <x-slot:icon>
+                                    <i class="nav-icon fa-regular fa-circle"></i>
+                                </x-slot>
+                                lista de alunos
+                            </x-nav.link>
 
                         </li>
 
                         <li class="nav-item">
 
-                            <a href="#" class="nav-link">
-
-                                <i class="nav-icon fa-regular fa-circle"></i>
-                                <p>
-                                    page 2
-                                </p>
-
-                            </a>
+                            <x-nav.link :href="route('dashboard')" {{-- :is_active="request()->routeIs('teste')" --}}>
+                                <x-slot:icon>
+                                    <i class="nav-icon fa-regular fa-circle"></i>
+                                </x-slot>
+                                page 2
+                            </x-nav.link>
 
                         </li>
 
                     </ul>
+                    <!-- ./Submenu: alunos -->
+
                     
                 </li>
                 <!-- ./Menu: alunos -->
@@ -157,45 +155,43 @@
                 <!-- Menu: turmas -->
                 <li class="nav-item">
 
-                    <a href="#" class="nav-link">
+                    <x-nav.link :href="route('dashboard')" {{-- :is_active="request()->routeIs('teste')" --}}>
+                        <x-slot:icon>
+                            <i class="nav-icon fa-solid fa-users"></i>
+                        </x-slot>
+                        Turma
+                        <i class="right fa-solid fa-angle-left"></i>
+                    </x-nav.link>
 
-                        <i class="nav-icon fa-solid fa-users"></i>
-                        <p class="text-uppercase">
-                            turma
-                            <i class="right fa-solid fa-angle-left"></i>
-                        </p>
-
-                    </a>
-
+                    
+                    <!-- Submenu: turmas -->
                     <ul class="nav nav-treeview">
 
                         <li class="nav-item">
 
-                            <a href="#" class="nav-link">
-
-                                <i class="nav-icon fa-regular fa-circle"></i>
-
-                                <p>
-                                    Lista de turmas
-                                </p>
-                            </a>
+                            <x-nav.link :href="route('dashboard')" {{-- :is_active="request()->routeIs('teste')" --}}>
+                                <x-slot:icon>
+                                    <i class="nav-icon fa-regular fa-circle"></i>
+                                </x-slot>
+                                lista de turmas
+                            </x-nav.link>
 
                         </li>
 
                         <li class="nav-item">
 
-                            <a href="#" class="nav-link">
-
-                                <i class="nav-icon fa-regular fa-circle"></i>
-
-                                <p>
-                                    page 2
-                                </p>
-                            </a>
+                            <x-nav.link :href="route('dashboard')" {{-- :is_active="request()->routeIs('teste')" --}}>
+                                <x-slot:icon>
+                                    <i class="nav-icon fa-regular fa-circle"></i>
+                                </x-slot>
+                                page 2
+                            </x-nav.link>
 
                         </li>
 
                     </ul>
+                    <!-- ./Submenu: turmas -->
+
 
                 </li>
                 <!-- /Menu: turmas -->
@@ -203,43 +199,43 @@
 
                 <!-- Menu: professor -->
                 <li class="nav-item">
-
-                    <a href="#" class="nav-link">
-
-                        <i class="nav-icon fa-solid fa-chalkboard-user"></i>
-
-                        <p class="text-uppercase">
-                            professor
-                            <i class="right fa-solid fa-angle-left"></i>
-                        </p>
-
-                    </a>
-
+                    
+                    <x-nav.link :href="route('dashboard')" {{-- :is_active="request()->routeIs('teste')" --}}>
+                        <x-slot:icon>
+                            <i class="nav-icon fa-solid fa-chalkboard-user"></i>
+                        </x-slot>
+                        Professor
+                        <i class="right fa-solid fa-angle-left"></i>
+                    </x-nav.link>
+                    
+                    
+                    <!-- Submenu: professor -->
                     <ul class="nav nav-treeview">
-
+                        
                         <li class="nav-item">
-
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fa-regular fa-circle"></i>
-                                <p>
-                                    Lista de professores
-                                </p>
-                            </a>
-
+                            
+                            <x-nav.link :href="route('dashboard')" {{-- :is_active="request()->routeIs('teste')" --}}>
+                                <x-slot:icon>
+                                    <i class="nav-icon fa-regular fa-circle"></i>
+                                </x-slot>
+                                lista de professores
+                            </x-nav.link>
+                            
                         </li>
-
+                        
                         <li class="nav-item">
-
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fa-regular fa-circle"></i>
-                                <p>
-                                    page 2
-                                </p>
-                            </a>
-
+                            
+                            <x-nav.link :href="route('dashboard')" {{-- :is_active="request()->routeIs('teste')" --}}>
+                                <x-slot:icon>
+                                    <i class="nav-icon fa-regular fa-circle"></i>
+                                </x-slot>
+                                page 2
+                            </x-nav.link>
+                            
                         </li>
-
+                        
                     </ul>
+                    <!-- ./Submenu: professor -->
 
                 </li>
                 <!-- ./Menu: professores -->

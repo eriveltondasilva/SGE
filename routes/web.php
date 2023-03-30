@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 // !Rota para teste
 Route::get('/teste', function () {
-    return view('dashboard.manager.index');
+    return view('dashboard/manager/index');
 })->name('teste');
 
 
