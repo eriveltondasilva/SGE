@@ -20,35 +20,8 @@
     <!-- Sidebar -->
     <div class="sidebar">
 
-        <!-- SidebarSearch Form -->
-        <div class="form-inline mt-2">
-            
-            <div class="input-group" data-widget="sidebar-search">
-                
-                <input
-                class="form-control
-                form-control-sidebar"
-                type="search"
-                placeholder="Pesquisar..."
-                aria-label="Search"
-                />
-
-                <div class="input-group-append">
-
-                    <button class="btn btn-sidebar">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-        <!-- ./SidebarSearch Form -->
-
-
         <!-- Sidebar Menu -->
-        <nav class="mt-3">
+        <nav class="mt-2">
 
             <ul
             class="nav nav-pills nav-sidebar nav-collapse-hide-child flex-column"
