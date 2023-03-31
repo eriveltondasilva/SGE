@@ -18,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 
 // !Rota para teste
-Route::get('/teste', function () {
-    return view('dashboard/students/index');
-})->name('teste');
+// Route::get('/teste', function () {
+//     return view('dashboard/students/index');
+// })->name('teste');
 
 
 // *Rota para "bem-vindo"
@@ -49,26 +49,26 @@ Route::middleware('auth')
 // *Rota para "alunos"
 Route::resource('alunos', StudentController::class)
     ->names([
-        'index'   => 'student.index',
-        'store'   => 'student.store',
-        'create'  => 'student.create',
-        'show'    => 'student.show',
-        'update'  => 'student.update',
-        'destroy' => 'student.destroy',
-        'edit'    => 'student.edit'
+        'index'   => 'students.index',
+        'store'   => 'students.store',
+        'create'  => 'students.create',
+        'show'    => 'students.show',
+        'update'  => 'students.update',
+        'destroy' => 'students.destroy',
+        'edit'    => 'students.edit'
     ]);
 
 
 // *Rotas para "escola"
 Route::resource('escola', SchoolController::class)
     ->names([
-        'index'   => 'school.index',
-        'store'   => 'school.store',
-        'create'  => 'school.create',
-        'show'    => 'school.show',
-        'update'  => 'school.update',
-        'destroy' => 'school.destroy',
-        'edit'    => 'school.edit'
+        'index'   => 'schools.index',
+        'store'   => 'schools.store',
+        'create'  => 'schools.create',
+        'show'    => 'schools.show',
+        'update'  => 'schools.update',
+        'destroy' => 'schools.destroy',
+        'edit'    => 'schools.edit'
     ]);
 
 

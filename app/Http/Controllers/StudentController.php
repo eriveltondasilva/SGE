@@ -12,7 +12,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard/students/index');
     }
 
     /**
@@ -20,9 +20,9 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard/students/create');
     }
-
+    
     /**
      * Store a newly created resource in storage.
      */

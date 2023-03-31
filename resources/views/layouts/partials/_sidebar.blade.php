@@ -50,7 +50,7 @@
                 <!-- Menu: calendário -->
                 <li class="nav-item">
 
-                    <x-nav.link :href="route('teste')" :is_active="request()->routeIs('teste')">
+                    <x-nav.link {{-- :href="route('')" --}} :is_active="request()->routeIs('teste')">
                         <x-slot:icon>
                             <i class="nav-icon fa-solid fa-calendar-days"></i>
                         </x-slot>
@@ -93,24 +93,14 @@
 
                 
                 <!-- Menu: matrícula -->
-                <li class="nav-item">
-
-                    <x-nav.link :href="route('dashboard')" {{-- :is_active="request()->routeIs('teste')" --}}>
-                        <x-slot:icon>
-                            <i class="nav-icon fa-solid fa-id-card"></i>
-                        </x-slot>
-                        Matrícula
-                    </x-nav.link>
-
-                </li>
                 <!-- ./Menu: matrícula -->
 
 
                 <!-- Menu: alunos -->
                 <!-- <li class="nav-item menu-open"> -->
-                <li class="nav-item">
+                <li class="nav-item {{ request()->routeIs('students.*') ? "menu-open" : "" }}">
 
-                    <x-nav.link href="#" {{-- :is_active="request()->routeIs('teste')" --}}>
+                    <x-nav.link href="#" :is_active="request()->routeIs('students.*')">
                         <x-slot:icon>
                             <i class="nav-icon fa-solid fa-user"></i>
                         </x-slot>
@@ -124,9 +114,20 @@
 
                         <li class="nav-item">
 
-                            <x-nav.link :href="route('dashboard')" {{-- :is_active="request()->routeIs('teste')" --}}>
+                            <x-nav.link :href="route('students.create')" :is_active="request()->routeIs('students.create')" >
                                 <x-slot:icon>
-                                    <i class="nav-icon fa-regular fa-circle"></i>
+                                    <i class="nav-icon fa-regular fa-address-card"></i>
+                                </x-slot>
+                                Cadastrar aluno(a)
+                            </x-nav.link>
+        
+                        </li>
+
+                        <li class="nav-item">
+
+                            <x-nav.link :href="route('students.index')" :is_active="request()->routeIs('students.index')">
+                                <x-slot:icon>
+                                    <i class="nav-icon fa-solid fa-list-ul"></i>
                                 </x-slot>
                                 lista de alunos
                             </x-nav.link>
