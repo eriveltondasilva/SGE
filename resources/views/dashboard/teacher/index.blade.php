@@ -2,7 +2,7 @@
         
     <!-- browser page title -->
     <x-slot:head_title>
-        Lista de Alunos
+        Lista de Professores
     </x-slot>
     <!-- ./browser page title -->
 

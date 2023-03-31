@@ -12,7 +12,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return view('dashboard/students/index');
+        return view('dashboard/student/index');
     }
 
     /**
@@ -20,7 +20,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('dashboard/students/create');
+        return view('dashboard/student/create');
     }
     
     /**

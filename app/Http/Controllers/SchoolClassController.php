@@ -12,15 +12,15 @@ class SchoolClassController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard/school_class/index');
     }
-
+    
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view('dashboard/school_class/create');
     }
 
     /**

@@ -1,9 +1,14 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\StudentController;
-use App\Http\Controllers\SchoolController;
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
+
+use App\Http\Controllers\SchoolClassController;
+use App\Http\Controllers\SchoolController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -49,26 +54,52 @@ Route::middleware('auth')
 // *Rota para "alunos"
 Route::resource('alunos', StudentController::class)
     ->names([
-        'index'   => 'students.index',
-        'store'   => 'students.store',
-        'create'  => 'students.create',
-        'show'    => 'students.show',
-        'update'  => 'students.update',
-        'destroy' => 'students.destroy',
-        'edit'    => 'students.edit'
+        'index'   => 'student.index',
+        'store'   => 'student.store',
+        'create'  => 'student.create',
+        'show'    => 'student.show',
+        'update'  => 'student.update',
+        'destroy' => 'student.destroy',
+        'edit'    => 'student.edit'
     ]);
 
 
 // *Rotas para "escola"
 Route::resource('escola', SchoolController::class)
     ->names([
-        'index'   => 'schools.index',
-        'store'   => 'schools.store',
-        'create'  => 'schools.create',
-        'show'    => 'schools.show',
-        'update'  => 'schools.update',
-        'destroy' => 'schools.destroy',
-        'edit'    => 'schools.edit'
+        'index'   => 'school.index',
+        'store'   => 'school.store',
+        'create'  => 'school.create',
+        'show'    => 'school.show',
+        'update'  => 'school.update',
+        'destroy' => 'school.destroy',
+        'edit'    => 'school.edit'
+    ]);
+
+
+// *Rotas para "turmas"
+Route::resource('turmas', SchoolClassController::class)
+    ->names([
+        'index'   => 'school_class.index',
+        'store'   => 'school_class.store',
+        'create'  => 'school_class.create',
+        'show'    => 'school_class.show',
+        'update'  => 'school_class.update',
+        'destroy' => 'school_class.destroy',
+        'edit'    => 'school_class.edit'
+    ]);
+
+
+// *Rotas para "professores"
+Route::resource('professores', TeacherController::class)
+    ->names([
+        'index'   => 'teacher.index',
+        'store'   => 'teacher.store',
+        'create'  => 'teacher.create',
+        'show'    => 'teacher.show',
+        'update'  => 'teacher.update',
+        'destroy' => 'teacher.destroy',
+        'edit'    => 'teacher.edit'
     ]);
 
 
