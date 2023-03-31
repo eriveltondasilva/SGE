@@ -128,48 +128,65 @@ dashboard
 
 dashboard
 	|-- index.blade.php #
-	|-- calendar #
-		|-- index.blade.php
+	|-- Attendance => frequência dos alunos -cmMv
+		|-- index.blade.php #
 		|-- show.blade.php
 		|-- store.blade.php
 		|-- edit.blade.php
 		|-- delete.blade.php
-	|-- classes #
-		|-- index.blade.php
-		|-- show.blade.php
-		|-- store.blade.php
-		|-- edit.blade.php
-	|-- classDiary
-		|-- index.blade.php
+	|-- calendar => calendário escolar -v
+		|-- index.blade.php #
 		|-- show.blade.php
 		|-- store.blade.php
 		|-- edit.blade.php
 		|-- delete.blade.php
-	|-- documents #
-		|-- index.blade.php
+	|-- classDiary => diário de classe -cmMv
+		|-- index.blade.php #
 		|-- show.blade.php
 		|-- store.blade.php
 		|-- edit.blade.php
 		|-- delete.blade.php
-	|-- grades #
-		|-- index.blade.php
+	|-- documents => documentos da escola -v
+		|-- index.blade.php #
 		|-- show.blade.php
 		|-- store.blade.php
 		|-- edit.blade.php
 		|-- delete.blade.php
-	|-- schedule #
-		|-- index.blade.php
+	|-- grades => notas dos alunos -cmMv
+		|-- index.blade.php #
 		|-- show.blade.php
 		|-- store.blade.php
 		|-- edit.blade.php
 		|-- delete.blade.php
-	|-- students #
-		|-- index.blade.php
+	|-- schedule => horário escolar -v
+		|-- index.blade.php #
 		|-- show.blade.php
 		|-- store.blade.php
 		|-- edit.blade.php
-	|-- teachers #
-		|-- index.blade.php
+		|-- delete.blade.php
+	|-- school => escola -cmMv
+		|-- index.blade.php #
 		|-- show.blade.php
 		|-- store.blade.php
 		|-- edit.blade.php
+	|-- schoolClasses => turmas -cmMv
+		|-- index.blade.php #
+		|-- show.blade.php
+		|-- store.blade.php
+		|-- edit.blade.php
+	|-- schoolYears => ano letivo -cmMv
+		|-- index.blade.php #
+		|-- show.blade.php
+		|-- store.blade.php
+		|-- edit.blade.php
+	|-- students => alunos -cmMv
+		|-- index.blade.php #
+		|-- show.blade.php
+		|-- store.blade.php
+		|-- edit.blade.php
+	|-- teachers => professores -cmMv
+		|-- index.blade.php #
+		|-- show.blade.php
+		|-- store.blade.php
+		|-- edit.blade.php
+	
