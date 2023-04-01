@@ -15,15 +15,16 @@ return new class extends Migration
             $table->id();
             $table->string('full_name', 100);
             $table->string('email', 100)->unique()->nullable();
-            $table->string('rg', 15)->nullable();
-            $table->string('cpf', 15)->nullable();
+            $table->string('rg')->nullable();
+            $table->string('cpf')->nullable();
             $table->string('address_street')->nullable();
             $table->string('address_complement')->nullable();
-            $table->string('address_neighborhood', 50)->nullable();
-            $table->string('address_city', 100)->nullable();
-            $table->string('address_state', 100)->nullable();
-            $table->string('nationality', 50)->nullable();
-            $table->string('birth_place', 50)->nullable();
+            $table->string('address_neighborhood')->nullable();
+            $table->string('address_city')->nullable();
+            $table->string('address_cep')->nullable();
+            $table->string('address_state')->nullable();
+            $table->string('nationality')->nullable();
+            $table->string('birth_place')->nullable();
             $table->string('gov_benefits')->nullable();
             $table->string('health_problem')->nullable();
             $table->text('note')->nullable();
@@ -33,6 +34,9 @@ return new class extends Migration
             $table->timestamps();
             $table->boolean('status')->default(true);
             $table->foreignId('school_id')->nullable();
+            $table->string('responsible_name', 100)->nullable();
+            $table->string('responsible_kinship')->nullable();
+            $table->string('responsible_tel')->nullable();
         });
     }
 

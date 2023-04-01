@@ -3,7 +3,7 @@
 
     <!-- browser page title -->
     <x-slot:head_title>
-        Cadastrar Aluno
+        Cadastrar Aluno(a)
     </x-slot>
     <!-- ./browser page title -->
 
@@ -96,6 +96,7 @@
                                                 type       ="text"
                                                 class      ="form-control"
                                                 id         ="birth_place"
+                                                maxlength="50"
                                                 placeholder="Local de nascimento...">
                                         </div>
                                         
@@ -140,7 +141,7 @@
                                     <br>
                                     
                                     <div class="form-group">
-                                        <label for="full_name">Nome do Responsável:</label>
+                                        <label for="responsible_name">Nome do Responsável:</label>
                                         <input
                                             type       ="text"
                                             class      ="form-control"
