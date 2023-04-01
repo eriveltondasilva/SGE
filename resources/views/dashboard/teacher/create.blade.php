@@ -219,9 +219,12 @@
                                     <label for="state">Matéria(s) lecionada(s):</label>
                                     
                                     <br>
-
+                                    <br>
+                                    
                                     <label for="state">Turmas:</label>
-
+                                    
+                                    <br>
+                                    <br>
                                     
                                     <div class="form-group">
                                         <label for="note">Observação:</label>

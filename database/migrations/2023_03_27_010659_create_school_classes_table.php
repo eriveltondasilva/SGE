@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('school_classes', function (Blueprint $table) {
             $table->id();
             $table->string('class_name');
+            $table->string('shift');
+            $table->string('schooling');
+            $table->string('room');
             $table->timestamps();
             $table->foreignId('school_years_year');
         });
