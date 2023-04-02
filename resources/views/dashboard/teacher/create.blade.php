@@ -232,7 +232,7 @@
                                             class="form-control"
                                             id="note"
                                             rows="3"
-                                            placeholder="Insira alguma observação sobre o(a) aluno(a)..."
+                                            placeholder="Insira alguma observação sobre o(a) professor(a)..."
                                         ></textarea>
                                     </div>
 

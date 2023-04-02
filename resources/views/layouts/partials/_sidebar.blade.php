@@ -1,12 +1,12 @@
 <aside class="main-sidebar sidebar-expand sidebar-light-warning elevation-4 js-sidebar">
-    
+
     {{-- torna o menu selecionado aberto --}}
     <!-- <li class="nav-item menu-open"> -->
 
 
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
-        
+
         {{-- <img
         alt="AdminLTE Logo"
         class="brand-image img-circle elevation-3"
@@ -14,11 +14,11 @@
         /> --}}
 
         <i class="fa-solid fa-school ml-3 mr-1"></i>
-        
+
         <span class="brand-text font-weight-light">
             Escola Não-sei-o-quê
         </span>
-        
+
     </a>
     <!-- ./Brand Logo -->
 
@@ -29,12 +29,8 @@
         <!-- Sidebar Menu -->
         <nav class="mt-3">
 
-            <ul
-            class="nav nav-pills nav-sidebar nav-collapse-hide-child flex-column"
-            data-accordion="false"
-            data-widget="treeview"
-            role="menu"
-            >
+            <ul class="nav nav-pills nav-sidebar nav-collapse-hide-child flex-column" data-accordion="false"
+                data-widget="treeview" role="menu">
 
                 <!-- Menu: painel -->
                 <li class="nav-item">
@@ -42,8 +38,8 @@
                     <x-nav.link :href="route('dashboard')" :is_active="request()->routeIs('dashboard')">
                         <x-slot:icon>
                             <i class="nav-icon fa-solid fa-house"></i>
-                        </x-slot>
-                        Página Inicial
+                            </x-slot>
+                            Página Inicial
                     </x-nav.link>
 
                 </li>
@@ -59,10 +55,10 @@
                     <x-nav.link href="#" :is_active="request()->routeIs('teste')">
                         <x-slot:icon>
                             <i class="nav-icon fa-solid fa-calendar-days"></i>
-                        </x-slot>
-                        Calendário
+                            </x-slot>
+                            Calendário
                     </x-nav.link>
-                                        
+
                 </li>
                 <!-- ./Menu: calendário -->
 
@@ -73,8 +69,8 @@
                     <x-nav.link href="#" :is_active="request()->routeIs('teste')">
                         <x-slot:icon>
                             <i class="nav-icon fa-solid fa-clock"></i>
-                        </x-slot>
-                        Horário
+                            </x-slot>
+                            Horário
                     </x-nav.link>
 
                 </li>
@@ -87,8 +83,8 @@
                     <x-nav.link href="#" :is_active="request()->routeIs('teste')">
                         <x-slot:icon>
                             <i class="nav-icon fa-solid fa-file-circle-exclamation"></i>
-                        </x-slot>
-                        Documentos
+                            </x-slot>
+                            Documentos
                     </x-nav.link>
 
                 </li>
@@ -104,9 +100,9 @@
                     <x-nav.link href="#" {{-- :is_active="request()->routeIs('student.*')" --}}>
                         <x-slot:icon>
                             <i class="nav-icon fa-solid fa-book"></i>
-                        </x-slot>
-                        Caderneta
-                        <i class="right fa-solid fa-angle-left"></i>
+                            </x-slot>
+                            Caderneta
+                            <i class="right fa-solid fa-angle-left"></i>
                     </x-nav.link>
 
 
@@ -115,24 +111,24 @@
 
                         <li class="nav-item">
 
-                            <x-nav.link href="#" {{-- :is_active="request()->routeIs('student.create')" --}} >
+                            <x-nav.link href="#" {{-- :is_active="request()->routeIs('student.create')" --}}>
                                 <x-slot:icon>
                                     <i class="nav-icon fa-solid fa-caret-right"></i>
-                                </x-slot>
-                                planos de aula
+                                    </x-slot>
+                                    planos de aula
                             </x-nav.link>
-        
+
                         </li>
 
                         <li class="nav-item">
 
-                            <x-nav.link href="#" {{-- :is_active="request()->routeIs('student.create')" --}} >
+                            <x-nav.link href="#" {{-- :is_active="request()->routeIs('student.create')" --}}>
                                 <x-slot:icon>
                                     <i class="nav-icon fa-solid fa-caret-right"></i>
-                                </x-slot>
-                                cadastrar notas
+                                    </x-slot>
+                                    cadastrar notas
                             </x-nav.link>
-        
+
                         </li>
 
                     </ul>
@@ -147,14 +143,14 @@
 
 
                 <!-- Menu: alunos -->
-                <li class="nav-item {{ request()->routeIs('student.*') ? "menu-open" : "" }}">
+                <li class="nav-item {{ request()->routeIs('student.*') ? 'menu-open' : '' }}">
 
                     <x-nav.link href="#" :is_active="request()->routeIs('student.*')">
                         <x-slot:icon>
                             <i class="nav-icon fa-solid fa-user"></i>
-                        </x-slot>
-                        Aluno
-                        <i class="right fa-solid fa-angle-left"></i>
+                            </x-slot>
+                            Aluno
+                            <i class="right fa-solid fa-angle-left"></i>
                     </x-nav.link>
 
 
@@ -163,13 +159,13 @@
 
                         <li class="nav-item">
 
-                            <x-nav.link :href="route('student.create')" :is_active="request()->routeIs('student.create')" >
+                            <x-nav.link :href="route('student.create')" :is_active="request()->routeIs('student.create')">
                                 <x-slot:icon>
                                     <i class="nav-icon fa-solid fa-caret-right"></i>
-                                </x-slot>
-                                cadastrar aluno
+                                    </x-slot>
+                                    cadastrar aluno
                             </x-nav.link>
-        
+
                         </li>
 
                         <li class="nav-item">
@@ -177,8 +173,8 @@
                             <x-nav.link :href="route('student.index')" :is_active="request()->routeIs('student.index')">
                                 <x-slot:icon>
                                     <i class="nav-icon fa-solid fa-caret-right"></i>
-                                </x-slot>
-                                lista de alunos
+                                    </x-slot>
+                                    lista de alunos
                             </x-nav.link>
 
                         </li>
@@ -192,17 +188,17 @@
 
 
                 <!-- Menu: turmas -->
-                <li class="nav-item {{ request()->routeIs('school_class.*') ? "menu-open" : "" }}">
+                <li class="nav-item {{ request()->routeIs('school_class.*') ? 'menu-open' : '' }}">
 
                     <x-nav.link href="#" :is_active="request()->routeIs('school_class.*')">
                         <x-slot:icon>
                             <i class="nav-icon fa-solid fa-users"></i>
-                        </x-slot>
-                        Turma
-                        <i class="right fa-solid fa-angle-left"></i>
+                            </x-slot>
+                            Turma
+                            <i class="right fa-solid fa-angle-left"></i>
                     </x-nav.link>
 
-                    
+
                     <!-- Submenu: turmas -->
                     <ul class="nav nav-treeview">
 
@@ -211,8 +207,8 @@
                             <x-nav.link :href="route('school_class.create')" :is_active="request()->routeIs('school_class.create')">
                                 <x-slot:icon>
                                     <i class="nav-icon fa-solid fa-caret-right"></i>
-                                </x-slot>
-                                cadastrar turma
+                                    </x-slot>
+                                    cadastrar turma
                             </x-nav.link>
 
                         </li>
@@ -222,8 +218,8 @@
                             <x-nav.link :href="route('school_class.index')" :is_active="request()->routeIs('school_class.index')">
                                 <x-slot:icon>
                                     <i class="nav-icon fa-solid fa-caret-right"></i>
-                                </x-slot>
-                                ver turmas
+                                    </x-slot>
+                                    ver turmas
                             </x-nav.link>
 
                         </li>
@@ -237,42 +233,42 @@
 
 
                 <!-- Menu: professor -->
-                <li class="nav-item {{ request()->routeIs('teacher.*') ? "menu-open" : "" }}">
-                    
+                <li class="nav-item {{ request()->routeIs('teacher.*') ? 'menu-open' : '' }}">
+
                     <x-nav.link href="#" :is_active="request()->routeIs('teacher.*')">
                         <x-slot:icon>
                             <i class="nav-icon fa-solid fa-chalkboard-user"></i>
-                        </x-slot>
-                        Professor
-                        <i class="right fa-solid fa-angle-left"></i>
+                            </x-slot>
+                            Professor
+                            <i class="right fa-solid fa-angle-left"></i>
                     </x-nav.link>
-                    
-                    
+
+
                     <!-- Submenu: professor -->
                     <ul class="nav nav-treeview">
-                        
+
                         <li class="nav-item">
-                            
+
                             <x-nav.link :href="route('teacher.create')" :is_active="request()->routeIs('teacher.create')">
                                 <x-slot:icon>
                                     <i class="nav-icon fa-solid fa-caret-right"></i>
-                                </x-slot>
-                                cadastrar professor
+                                    </x-slot>
+                                    cadastrar professor
                             </x-nav.link>
-                            
+
                         </li>
-                        
+
                         <li class="nav-item">
-                            
+
                             <x-nav.link :href="route('teacher.index')" :is_active="request()->routeIs('teacher.index')">
                                 <x-slot:icon>
                                     <i class="nav-icon fa-solid fa-caret-right"></i>
-                                </x-slot>
-                                lista de professores
+                                    </x-slot>
+                                    lista de professores
                             </x-nav.link>
-                            
+
                         </li>
-                        
+
                     </ul>
                     <!-- ./Submenu: professor -->
 
@@ -323,5 +319,5 @@
 
     </div>
     <!-- ./sidebar -->
-    
+
 </aside>

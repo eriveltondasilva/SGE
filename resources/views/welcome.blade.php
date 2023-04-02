@@ -834,15 +834,20 @@
             <div class="p-6 text-right sm:fixed sm:top-0 sm:right-0">
                 @auth
                     <a href="{{ route('dashboard') }}"
-                        class="font-semibold text-gray-600 hover:text-gray-900 focus:rounded-sm focus:outline focus:outline-2 focus:outline-red-500 dark:text-gray-400 dark:hover:text-white">Dashboard</a>
+                        class="font-semibold text-gray-600 hover:text-gray-900 focus:rounded-sm focus:outline focus:outline-2 focus:outline-red-500 dark:text-gray-400 dark:hover:text-white">
+                        Painel
+                    </a>
                 @else
                     <a href="{{ route('login') }}"
-                        class="font-semibold text-gray-600 hover:text-gray-900 focus:rounded-sm focus:outline focus:outline-2 focus:outline-red-500 dark:text-gray-400 dark:hover:text-white">Log
-                        in</a>
+                        class="font-semibold text-gray-600 hover:text-gray-900 focus:rounded-sm focus:outline focus:outline-2 focus:outline-red-500 dark:text-gray-400 dark:hover:text-white">
+                        Entrar
+                    </a>
 
                     @if (Route::has('register'))
                         <a href="{{ route('register') }}"
-                            class="ml-4 font-semibold text-gray-600 hover:text-gray-900 focus:rounded-sm focus:outline focus:outline-2 focus:outline-red-500 dark:text-gray-400 dark:hover:text-white">Register</a>
+                            class="ml-4 font-semibold text-gray-600 hover:text-gray-900 focus:rounded-sm focus:outline focus:outline-2 focus:outline-red-500 dark:text-gray-400 dark:hover:text-white">
+                            Registrar
+                        </a>
                     @endif
                 @endauth
             </div>

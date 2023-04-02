@@ -9,6 +9,7 @@
 
 
 <!-- BODY -->
+
 <body class="hold-transition sidebar-mini">
 
 
@@ -28,8 +29,8 @@
 
         <!-- content-wrapper -->
         <div class="content-wrapper">
-         
-            
+
+
             <!-- content-header -->
             @include('layouts.partials._header')
             <!-- ./content-header -->

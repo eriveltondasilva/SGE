@@ -1,43 +1,43 @@
 <x-dashboard-layout>
-        
+
     <!-- browser page title -->
     <x-slot:head_title>
         Lista de turmas
-    </x-slot>
-    <!-- ./browser page title -->
+        </x-slot>
+        <!-- ./browser page title -->
 
-   <!-- Main content -->
-    <main class="content">
-        
-        <div class="container-fluid">
-        
-            <!-- row -->
-            <div class="row">
-            
-                <div class="col-lg-12">
-                
-                    <!-- card-outline -->
-                    <div class="card card-yellow card-outline">
-                    
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                    
+        <!-- Main content -->
+        <main class="content">
+
+            <div class="container-fluid">
+
+                <!-- row -->
+                <div class="row">
+
+                    <div class="col-lg-12">
+
+                        <!-- card-outline -->
+                        <div class="card card-yellow card-outline">
+
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+
+                        </div>
+                        <!-- /.card-outline -->
+
                     </div>
-                    <!-- /.card-outline -->
 
                 </div>
+                <!-- /.row -->
 
             </div>
-            <!-- /.row -->
+            <!-- /.container-fluid -->
 
-        </div>
-        <!-- /.container-fluid -->
-
-    </main>
-    <!-- /.content -->
+        </main>
+        <!-- /.content -->
 
 </x-dashboard-layout>
