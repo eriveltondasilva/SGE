@@ -29,11 +29,11 @@
                                 <div class="table-responsive-xl">
 
                                     <table class="table-sm table-hover table">
-                                        <thead>
+                                        <thead class="thead-light">
                                             <tr>
                                                 <th scope="col">#</th>
                                                 <th scope="col">Nome</th>
-                                                <th scope="col">Matrícula</th>
+                                                <th scope="col">Matr.</th>
                                                 <th scope="col">Endereço</th>
                                                 <th scope="col">Cidade</th>
                                                 <th scope="col"></th>
@@ -41,80 +41,35 @@
                                         </thead>
 
                                         <tbody>
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark Mark Mark Mark Mark Mark Mark</td>
-                                                <td class="text-center">002</td>
-                                                <td>Mark Mark Mark Mark Mark Mark Mark</td>
-                                                <td>Cajueiro</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-primary"
-                                                        title="Visualizar aluno">
-                                                        <i class="fa-regular fa-eye mr-1"></i>
-                                                        Visualizar
-                                                    </button>
-                                                </td>
-                                            </tr>
 
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>Mark Mark Mark Mark Mark Mark Mark</td>
-                                                <td class="text-center">005</td>
-                                                <td>Mark Mark Mark Mark Mark Mark Mark</td>
-                                                <td>Cajueiro</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-primary"
-                                                        title="Visualizar aluno">
-                                                        <i class="fa-regular fa-eye mr-1"></i>
-                                                        Visualizar
-                                                    </button>
-                                                </td>
-                                            </tr>
+                                            @foreach ($students as $student)
+                                                <tr>
+                                                    <th scope="row">
+                                                        {{ $loop->iteration }}
+                                                    </th>
+                                                    <td>
+                                                        {{ $student->full_name }}
+                                                    </td>
+                                                    <td>
+                                                        {{ str_pad($student->id, 3, '0', STR_PAD_LEFT) }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $student->address_street }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $student->address_city }}
+                                                    </td>
 
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td>Mark Mark Mark Mark Mark Mark Mark</td>
-                                                <td class="text-center">005</td>
-                                                <td>Mark Mark Mark Mark Mark Mark Mark</td>
-                                                <td>Cajueiro</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-primary"
-                                                        title="Visualizar aluno">
-                                                        <i class="fa-regular fa-eye mr-1"></i>
-                                                        Visualizar
-                                                    </button>
-                                                </td>
-                                            </tr>
+                                                    <td>
+                                                        <a href="/alunos/{{ $student->id }}"
+                                                            class="btn btn-sm btn-primary" title="Visualizar aluno">
+                                                            <i class="fa-regular fa-eye mr-1"></i>
+                                                            Visualizar
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
 
-                                            <tr>
-                                                <th scope="row">4</th>
-                                                <td>Mark Mark Mark Mark Mark Mark Mark</td>
-                                                <td class="text-center">008</td>
-                                                <td>Mark Mark Mark Mark Mark Mark Mark</td>
-                                                <td>Cajueiro </td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-primary"
-                                                        title="Visualizar aluno">
-                                                        <i class="fa-regular fa-eye mr-1"></i>
-                                                        Visualizar
-                                                    </button>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <th scope="row">5</th>
-                                                <td>Mark Mark Mark Mark Mark Mark Mark</td>
-                                                <td class="text-center">010</td>
-                                                <td>Mark Mark Mark Mark Mark Mark Mark</td>
-                                                <td>Cajueiro</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-primary"
-                                                        title="Visualizar aluno">
-                                                        <i class="fa-regular fa-eye mr-1"></i>
-                                                        Visualizar
-                                                    </button>
-                                                </td>
-                                            </tr>
                                         </tbody>
 
                                     </table>

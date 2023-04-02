@@ -12,7 +12,10 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return view('dashboard/student/index');
+
+        $students = Student::isActive()->orderBy('full_name')->get(); 
+
+        return view('dashboard.student.index', ['students' => $students]);
     }
 
     /**
@@ -20,9 +23,9 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('dashboard/student/create');
+        return view('dashboard.student.create');
     }
-    
+
     /**
      * Store a newly created resource in storage.
      */
@@ -30,13 +33,16 @@ class StudentController extends Controller
     {
         //
     }
-
+    
     /**
      * Display the specified resource.
      */
+    // TODO:  fazer a view student.show ver as infformação do banco de dados
     public function show(Student $student)
     {
-        //
+        // $student = $student->findOrFail();
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+        return view('dashboard.student.show', ['student' => $student]);
     }
 
     /**
