@@ -28,7 +28,7 @@
 
                                 <div class="table-responsive-xl">
 
-                                    <table class="table-sm table-hover table">
+                                    <table class="table-hover table">
                                         <thead class="thead-light">
                                             <tr>
                                                 <th scope="col">#</th>
@@ -61,7 +61,7 @@
                                                     </td>
 
                                                     <td>
-                                                        <a href="/alunos/{{ $student->id }}"
+                                                        <a href="/students/{{ $student->id }}"
                                                             class="btn btn-sm btn-primary" title="Visualizar aluno">
                                                             <i class="fa-regular fa-eye mr-1"></i>
                                                             Visualizar

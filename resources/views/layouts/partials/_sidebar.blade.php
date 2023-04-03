@@ -1,12 +1,13 @@
 <aside class="main-sidebar sidebar-expand sidebar-light-warning elevation-4 js-sidebar">
 
     {{-- torna o menu selecionado aberto --}}
-    <!-- <li class="nav-item menu-open"> -->
+    {{-- <!-- <li class="nav-item menu-open"> --> --}}
 
 
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
 
+        {{-- Imagem do logo da escola na sidebar --}}
         {{-- <img
         alt="AdminLTE Logo"
         class="brand-image img-circle elevation-3"
