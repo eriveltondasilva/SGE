@@ -38,6 +38,7 @@
 
 
                                         <div class="form-group">
+
                                             <label for="#" class="text-lg">
                                                 Matrícula:
                                                 <span class="font-weight-normal badge badge-secondary text-md">
@@ -47,7 +48,7 @@
 
                                             <div>
                                                 <a href="/students/{{ $student->id }}/editar"
-                                                    class="btn btn-primary disabled px-4">
+                                                    class="btn btn-sm btn-primary disabled px-4">
                                                     <i class="fa-solid fa-pen-to-square mr-1"></i>
                                                     Editar
                                                 </a>
@@ -55,7 +56,7 @@
 
                                         </div>
 
-                                        <br>
+
                                         <h4 class="text-center">Dados Pessoais</h4>
 
 
