@@ -43,7 +43,7 @@
                                         </label>
 
                                         <div>
-                                            <a href="/students/{{ $student->id }}/editar"
+                                            <a href="{{ route('student.edit', $student) }}"
                                                 class="btn btn-sm btn-primary px-4">
                                                 <i class="fa-solid fa-pen-to-square mr-1"></i>
                                                 Editar

@@ -30,7 +30,7 @@
                             <!-- col do form -->
                             <div class="col-sm-8 m-auto pt-3">
 
-                                <form method="POST" action="/students/{{ $student->id }}">
+                                <form method="POST" action="{{ route('student.update', $student) }}">
                                     @csrf
                                     @method('PUT')
 

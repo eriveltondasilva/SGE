@@ -52,7 +52,10 @@ Route::middleware('auth')
 
 
 // *Rota para "alunos"
-Route::resource('students', StudentController::class)
+Route::resource('alunos', StudentController::class)
+    ->parameters([
+        'alunos' => 'student'
+    ])
     ->names([
         'index'   => 'student.index',
         'store'   => 'student.store',
