@@ -32,39 +32,9 @@ class StudentController extends Controller
     {
         Student::create($request->all());
 
-        // $student = new Student();
-
-        // $student->full_name = $request->full_name;
-        // $student->rg = $request->rg;
-        // $student->cpf = $request->cpf;
-        // $student->email = $request->email;
-        // $student->birth_place = $request->birth_place;
-        // $student->birth_date = $request->birth_date;
-        // $student->gender = $request->gender;
-        // $student->kin_name = $request->kin_name;
-        // $student->kin_kinship = $request->kin_kinship;
-        // $student->kin_telephone = $request->kin_telephone;
-        // $student->address_street = $request->address_street;
-        // $student->address_complement = $request->address_complement;
-        // $student->address_neighborhood = $request->address_neighborhood;
-        // $student->address_city = $request->address_city;
-        // $student->address_cep = $request->address_cep;
-        // $student->address_state = $request->address_state;
-        // $student->nationality = $request->nationality;
-        // $student->gov_benefits = $request->gov_benefits;
-        // $student->health_problem = $request->health_problem;
-        // $student->note = $request->note;
-
-        // TODO: pegar a escola a qual pertence o usuário e colocar no
-        // cadastro do aluno
-        // $user = auth()->user();
-        // $student->school_id = $user->school_id;
-
-        // $student->save();
-
         return redirect()
-        ->route('student.create')
-        ->with('msg', 'Aluno cadastrado com sucesso!');
+            ->route('student.create')
+            ->with('msg', 'Aluno cadastrado com sucesso!');
     }
 
     /**
@@ -88,32 +58,13 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        $student->full_name = $request->full_name;
-        $student->rg = $request->rg;
-        $student->cpf = $request->cpf;
-        $student->email = $request->email;
-        $student->birth_place = $request->birth_place;
-        $student->birth_date = $request->birth_date;
-        $student->gender = $request->gender;
-        $student->kin_name = $request->kin_name;
-        $student->kin_kinship = $request->kin_kinship;
-        $student->kin_telephone = $request->kin_telephone;
-        $student->address_street = $request->address_street;
-        $student->address_complement = $request->address_complement;
-        $student->address_neighborhood = $request->address_neighborhood;
-        $student->address_city = $request->address_city;
-        $student->address_cep = $request->address_cep;
-        $student->address_state = $request->address_state;
-        $student->nationality = $request->nationality;
-        $student->gov_benefits = $request->gov_benefits;
-        $student->health_problem = $request->health_problem;
-        $student->note = $request->note;
+        $data = $request->all();
 
-        $student->save();
+        $student->update($data);
 
         return redirect()
-        ->route('student.show', $student)
-        ->with('msg', 'Aluno editado com sucesso!');
+            ->route('student.show', $student)
+            ->with('msg', 'Aluno editado com sucesso!');
     }
 
     /**

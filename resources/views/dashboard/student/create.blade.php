@@ -23,8 +23,9 @@
                         <!-- card-outline -->
                         <div class="card card-yellow">
 
+                            {{-- Código para deixar uma linha grossa no início das páginas  --}}
                             <div class="card-header">
-                                <h4></h4>
+                                <h5></h5>
                             </div>
 
                             <!-- col do form -->
@@ -35,179 +36,208 @@
 
                                     <div class="card-body">
 
-                                        <h4 class="text-center">Dados Pessoais</h4>
+                                        {{-- Componente para retornar mensage: "cadastro com sucesso!" --}}
+                                        <x-alert-dismissing></x-alert-dismissing>
+
 
                                         <br>
+                                        <h4 class="text-center">Dados Pessoais</h4>
 
+
+                                        {{-- Campo para o nome completo do aluno --}}
                                         <div class="form-group">
-                                            <label for="full_name">Nome Completo <span
-                                                    class="text-red">*</span>:</label>
-                                            <input type="text" class="form-control" name="full_name" maxlength="100"
-                                                placeholder="Insira o nome..." autofocus required>
+                                            <label for="full_name">Nome Completo<span class="text-red">*</span>:</label>
+                                            <input type="text" class="form-control" id="full_name" name="full_name"
+                                                maxlength="100" placeholder="Insira o nome..." autofocus required>
                                         </div>
 
 
+                                        {{-- Campos para o RG e CPF do aluno --}}
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="rg">RG:</label>
-                                                <input type="text" class="form-control" name="rg"
-                                                    title="Formato correto do RG é: 00.000.000-0" maxlength="12"
-                                                    pattern="[0-9]{2}.[0-9]{3}.[0-9]{3}-[0-9]{1}"
-                                                    placeholder="00.000.000-0">
+                                                <input type="text" class="form-control" id="rg" name="rg"
+                                                    maxlength="9" placeholder="0000000-0">
                                             </div>
 
                                             <div class="form-group col-md-6">
                                                 <label for="cpf">CPF:</label>
-                                                <input type="text" class="form-control" name="cpf"
-                                                    title="Formato correto do CFP é: 000.000.000-00" maxlength="14"
-                                                    pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}"
-                                                    placeholder="000.000.000-00">
+                                                <input type="text" class="form-control" id="cpf" name="cpf"
+                                                    maxlength="14" placeholder="000.000.000-00">
                                             </div>
                                         </div>
 
 
+                                        {{-- Campo para e-mail do aluno --}}
                                         <div class="form-group">
                                             <label for="email">E-mail:</label>
-                                            <input type="email" class="form-control" name="email" maxlength="100"
-                                                placeholder="Insira o e-mail...">
+                                            <input type="email" class="form-control" id="email" name="email"
+                                                maxlength="100" placeholder="Insira o e-mail...">
                                         </div>
 
 
+                                        {{-- Campos para lugar de nascimento e data de nascimento do aluno --}}
                                         <div class="form-row">
                                             <div class="form-group col-6 col-sm-7 col-md-8">
                                                 <label for="birth_place">Lugar de Nasc:</label>
-                                                <input type="text" class="form-control" name="birth_place"
-                                                    maxlength="50" placeholder="Local de nascimento...">
+                                                <input type="text" class="form-control" id="birth_place"
+                                                    name="birth_place" maxlength="50"
+                                                    placeholder="Local de nascimento...">
                                             </div>
 
                                             <div class="form-group col-6 col-sm-5 col-md-4">
                                                 <label for="birth_date">Data de Nasc.:</label>
-                                                <input type="date" class="form-control" name="birth_date">
+                                                <input type="date" class="form-control" id="birth_date"
+                                                    name="birth_date">
                                             </div>
                                         </div>
 
+
+                                        {{-- Campo para o sexo do aluno --}}
                                         <label for="male">Sexo:</label>
                                         <div class="form-group">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="gender"
-                                                    name="gender_female" value="F" checked>
+                                                <input type="radio" class="form-check-input" id="gender_female"
+                                                    name="gender" value="F" checked>
                                                 <label class="form-check-label" for="gender_female">Feminino</label>
                                             </div>
 
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="gender"
-                                                    name="gender_male" value="M">
+                                                <input type="radio" class="form-check-input" id="gender_male"
+                                                    name="gender" value="M">
                                                 <label class="form-check-label" for="gender_male">Masculino</label>
                                             </div>
                                         </div>
 
-                                        <br>
-                                        <br>
 
+                                        <br>
+                                        <br>
                                         <h4 class="text-center">Dados Pessoais do Responsável</h4>
 
-                                        <br>
 
+                                        {{-- Campo para nome do responsável pelo aluno --}}
                                         <div class="form-group">
-                                            <label for="responsible_name">Nome do Responsável:</label>
-                                            <input type="text" class="form-control" name="kin_name" maxlength="100"
-                                                placeholder="Insira o nome...">
+                                            <label for="kin_name">Nome do Responsável:</label>
+                                            <input type="text" class="form-control" id="kin_name" name="kin_name"
+                                                maxlength="100" placeholder="Insira o nome...">
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="kinship">Parentesco:</label>
-                                            <input type="text" class="form-control" name="kin_kinship"
-                                                placeholder="Insira parentesco...">
+
+                                        {{-- Campo para o parentesco e o telefone do responsável --}}
+                                        <div class="form-row">
+                                            <div class="form-group col-md">
+                                                <label for="kin_kinship">Parentesco:</label>
+                                                <input list="kinship" class="form-control" id="kin_kinship"
+                                                    name="kin_kinship"
+                                                    placeholder="Insira o parentesco do responsável...">
+                                                <datalist id="kinship">
+                                                    <option value="Mãe">
+                                                    <option value="Pai">
+                                                    <option value="Tia">
+                                                    <option value="Tio">
+                                                    <option value="Avó">
+                                                    <option value="Avô">
+                                                </datalist>
+                                            </div>
+
+                                            <div class="form-group col-md">
+                                                <label for="kin_telephone">Telefone:</label>
+                                                <input type="text" class="form-control" id="kin_telephone"
+                                                    name="kin_telephone" maxlength="16"
+                                                    placeholder="(82) 9 9999-9999">
+                                            </div>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="full_name">Telefone:</label>
-                                            <input type="text" class="form-control" name="kin_telephone"
-                                                maxlength="16" placeholder="(82) 9 9999-9999">
-                                        </div>
 
                                         <br>
                                         <br>
-
                                         <h4 class="text-center">Dados de Endereço</h4>
 
-                                        <br>
 
+                                        {{-- Campo para o endereço do aluno --}}
                                         <div class="form-group">
-                                            <label for="street">Endereço:</label>
-                                            <input type="text" class="form-control" name="address_street"
+                                            <label for="address_street">Endereço:</label>
+                                            <input type="text" class="form-control" id="address_street"
+                                                name="address_street"
                                                 placeholder="Av. São Francisco de Assis, nº 100...">
                                         </div>
 
 
+                                        {{-- Campos para complemento e bairro do endereço do aluno --}}
                                         <div class="form-row">
                                             <div class="form-group col-md-8">
-                                                <label for="complement">Complemento:</label>
-                                                <input type="text" class="form-control" name="address_complement"
+                                                <label for="address_complement">Complemento:</label>
+                                                <input type="text" class="form-control" id="address_complement"
+                                                    name="address_complement"
                                                     placeholder="Insira o complemento de endereço...">
                                             </div>
 
                                             <div class="form-group col-md-4">
-                                                <label for="neighborhood">Bairro:</label>
-                                                <input type="text" class="form-control"
+                                                <label for="address_neighborhood">Bairro:</label>
+                                                <input type="text" class="form-control" id="address_neighborhood"
                                                     name="address_neighborhood" placeholder="Insira o bairro...">
                                             </div>
                                         </div>
 
 
+                                        {{-- Campos para a cidade e o CEP --}}
                                         <div class="form-row">
                                             <div class="form-group col-md-8">
-                                                <label for="city">Cidade:</label>
-                                                <input type="text" class="form-control" name="address_city"
-                                                    placeholder="Insira a cidade...">
+                                                <label for="address_city">Cidade:</label>
+                                                <input type="text" class="form-control" id="address_city"
+                                                    name="address_city" value="Cajueiro">
                                             </div>
 
                                             <div class="form-group col-md-4">
-                                                <label for="zip">CEP:</label>
+                                                <label for="address_cep">CEP:</label>
                                                 <input type="text" class="form-control" name="address_cep"
-                                                    maxlength="10" pattern="[0-9]{1}.[0-9]{4}-[0-9]{3}"
-                                                    placeholder="0.000-000">
+                                                    maxlength="9" value="57770-000">
                                             </div>
                                         </div>
 
 
+                                        {{-- Campos para o Estado e a nacionalidade do aluno --}}
                                         <div class="form-row">
                                             <div class="form-group col-md-8">
-                                                <label for="state">Estado:</label>
-                                                <input type="text" class="form-control" name="address_state"
-                                                    placeholder="Insira o Estado..." value="Alagoas">
+                                                <label for="address_state">Estado:</label>
+                                                <input type="text" class="form-control" id="address_state"
+                                                    name="address_state" value="Alagoas">
                                             </div>
 
                                             <div class="form-group col-md-4">
                                                 <label for="nationality">Nacionalidade:</label>
-                                                <input type="text" class="form-control" name="nationality"
-                                                    placeholder="Insira a nacionalidade..." value="Brasileiro(a)">
+                                                <input type="text" class="form-control" id="nationality"
+                                                    name="nationality" value="Brasileiro(a)">
                                             </div>
                                         </div>
 
-                                        <br>
-                                        <br>
 
+                                        <br>
+                                        <br>
                                         <h4 class="text-center">Outros Dados</h4>
 
-                                        <br>
 
+                                        {{-- Campo para benefícios de governo --}}
                                         <div class="form-group">
                                             <label for="gov_benefits">Benefício do Governo:</label>
-                                            <input type="text" class="form-control" name="gov_benefits"
-                                                placeholder="Insira benefícios do governo...">
+                                            <input type="text" class="form-control" id="gov_benefits"
+                                                name="gov_benefits" placeholder="Insira benefícios do governo...">
                                         </div>
 
 
+                                        {{-- Campo para colocar problemas de saúde do aluno --}}
                                         <div class="form-group">
                                             <label for="health_problem">Problema de Saúde:</label>
-                                            <input type="text" class="form-control" name="health_problem"
+                                            <input type="text" class="form-control" id="health_problem"
+                                                name="health_problem"
                                                 placeholder="Insira problemas de saúde pertencentes ao(a) aluno(a)...">
                                         </div>
 
+
+                                        {{-- Campo para as observações referentes ao aluno --}}
                                         <div class="form-group">
                                             <label for="note">Observação:</label>
-                                            <textarea class="form-control" name="note" rows="5"
+                                            <textarea class="form-control" id="note" name="note" rows="5"
                                                 placeholder="Insira alguma observação sobre o(a) aluno(a)..."></textarea>
                                         </div>
 
