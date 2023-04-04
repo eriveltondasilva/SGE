@@ -34,8 +34,11 @@
                                 <div class="card-body">
 
 
-                                    <div class="form-group">
+                                    {{-- Componente para retornar mensage: "cadastro atualizado com sucesso!" --}}
+                                    <x-alert-dismissing></x-alert-dismissing>
 
+
+                                    <div class="form-group">
                                         <label for="#" class="text-lg">
                                             Matrícula:
                                             <span class="font-weight-normal badge badge-secondary text-md">
@@ -51,12 +54,7 @@
                                                 Editar
                                             </a>
                                         </div>
-
                                     </div>
-
-
-                                    {{-- Componente para retornar mensage: "cadastro atualizado com sucesso!" --}}
-                                    <x-alert-dismissing></x-alert-dismissing>
 
 
                                     <h4 class="text-center">Dados Pessoais</h4>

@@ -36,8 +36,12 @@
 
                                     <div class="card-body">
 
+
                                         {{-- Componente para retornar mensage: "cadastro com sucesso!" --}}
                                         <x-alert-dismissing></x-alert-dismissing>
+
+
+                                        <x-alert-error></x-alert-error>
 
 
                                         <br>
