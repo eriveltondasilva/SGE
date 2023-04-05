@@ -38,7 +38,21 @@
 
 
                                         {{-- Componente para retornar mensage: "cadastro com sucesso!" --}}
-                                        <x-alert-dismissing></x-alert-dismissing>
+                                        @if (session('msg'))
+                                            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                                                {{ session('msg') }}
+                                                <a href="{{ route('student.show', $lastStudent) }}" class="alert-link">
+                                                    Clique aqui
+                                                </a>
+                                                para ver o último aluno cadastrado.
+                                                <button type="button" class="close" data-dismiss="alert"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">
+                                                        <i class="fa-solid fa-circle-xmark"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        @endif
 
 
                                         <x-alert-error></x-alert-error>

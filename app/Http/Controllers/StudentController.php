@@ -10,19 +10,37 @@ class StudentController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $students = Student::isActive()->orderBy('full_name')->get();
+        $search = $request->search;
+        $students = Student::isActive();
 
-        return view('dashboard.student.index', ['students' => $students]);
+
+        if ($search) {
+            if (is_numeric($search)) {
+                $students = $students->where('id', $search)->get();
+            } else {
+                $students = $students->where('full_name', 'like', $search . '%')->get();
+            }
+        } else {
+            $students = $students->orderBy('full_name')->get();
+        }
+
+
+        return view('dashboard.student.index', [
+            'students' => $students,
+            'search'   => $search,
+        ]);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Student $student)
     {
-        return view('dashboard.student.create');
+        $lastStudent = Student::isActive()->latest()->first();
+
+        return view('dashboard.student.create', ['lastStudent' => $lastStudent]);
     }
 
     /**
@@ -108,7 +126,7 @@ class StudentController extends Controller
 
         return redirect()
             ->route('student.show', $student)
-            ->with('msg', 'Aluno editado com sucesso!');
+            ->with('msg', 'Aluno atualizado com sucesso!');
     }
 
     /**

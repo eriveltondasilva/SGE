@@ -4,11 +4,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SchoolClassController;
 use App\Http\Controllers\SchoolController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -34,10 +34,18 @@ Route::get('/', function () {
 });
 
 
-// *Rota para "painel"
-Route::get('/painel', function () {
-    return view('dashboard/index');
-})->middleware('auth')->name('dashboard');
+
+
+
+// *Rota para "painel"    
+Route::middleware('auth')
+    ->controller(DashboardController::class)
+    ->group(function () {
+        Route::get('/painel', 'index')->name('dashboard');
+});
+
+
+
 
 
 // *Rota para "perfil"
@@ -48,14 +56,15 @@ Route::middleware('auth')
         Route::get('/perfil', 'edit')->name('edit');
         Route::patch('/perfil', 'update')->name('update');
         Route::delete('/perfil', 'destroy')->name('destroy');
-    });
+});
+
+
+
 
 
 // *Rota para "alunos"
 Route::resource('alunos', StudentController::class)
-    ->parameters([
-        'alunos' => 'student'
-    ])
+    ->parameters(['alunos' => 'student'])
     ->names([
         'index'   => 'student.index',
         'store'   => 'student.store',
@@ -64,7 +73,10 @@ Route::resource('alunos', StudentController::class)
         'update'  => 'student.update',
         'destroy' => 'student.destroy',
         'edit'    => 'student.edit'
-    ]);
+]);
+
+
+
 
 
 // *Rotas para "escola"
@@ -77,7 +89,10 @@ Route::resource('escola', SchoolController::class)
         'update'  => 'school.update',
         'destroy' => 'school.destroy',
         'edit'    => 'school.edit'
-    ]);
+]);
+
+
+
 
 
 // *Rotas para "turmas"
@@ -90,7 +105,10 @@ Route::resource('turmas', SchoolClassController::class)
         'update'  => 'school_class.update',
         'destroy' => 'school_class.destroy',
         'edit'    => 'school_class.edit'
-    ]);
+]);
+
+
+
 
 
 // *Rotas para "professores"
@@ -103,7 +121,7 @@ Route::resource('professores', TeacherController::class)
         'update'  => 'teacher.update',
         'destroy' => 'teacher.destroy',
         'edit'    => 'teacher.edit'
-    ]);
+]);
 
 
 // *Rota

@@ -27,7 +27,7 @@
                             <div class="inner">
 
                                 <h3>
-                                    150
+                                    {{ $students->count() }}
                                 </h3>
                                 <p>
                                     Alunos
@@ -39,7 +39,7 @@
                                 <i class="fa-solid fa-user"></i>
                             </div>
 
-                            <a href="#" class="small-box-footer">
+                            <a href="{{ route('student.index') }}" class="small-box-footer">
                                 Mais informações
                                 <i class="fa-solid fa-circle-right"></i>
                             </a>
