@@ -36,7 +36,8 @@
 
                                     {{-- Componente para retornar mensage: "cadastro atualizado com sucesso!" --}}
                                     @if (session('msg'))
-                                        <div class="alert alert-info alert-dismissible fade show" role="alert">
+                                        <div class="alert alert-info alert-dismissible fade show js-close-alert"
+                                            role="alert">
                                             {{ session('msg') }}
                                             <button type="button" class="close" data-dismiss="alert"
                                                 aria-label="Close">

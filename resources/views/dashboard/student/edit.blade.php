@@ -64,7 +64,7 @@
                                         <div class="form-group">
                                             <label for="full_name">Nome Completo:</label>
                                             <input type="text" class="form-control" id="full_name" name="full_name"
-                                                value="{{ $student->full_name }}">
+                                                value="{{ $student->full_name }}" placeholder="Insira o nome...">
                                         </div>
 
 
@@ -72,14 +72,14 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="rg">RG:</label>
-                                                <input type="text" class="form-control" id="rg" name="rg"
-                                                    value="{{ $student->rg }}">
+                                                <input type="text" class="form-control js-rg" id="rg"
+                                                    name="rg" value="{{ $student->rg }}">
                                             </div>
 
                                             <div class="form-group col-md-6">
                                                 <label for="cpf">CPF:</label>
-                                                <input type="text" class="form-control" id="cpf" name="cpf"
-                                                    value="{{ $student->cpf }}">
+                                                <input type="text" class="form-control js-cpf" id="cpf"
+                                                    name="cpf" value="{{ $student->cpf }}">
                                             </div>
                                         </div>
 
@@ -88,7 +88,7 @@
                                         <div class="form-group">
                                             <label for="email">E-mail:</label>
                                             <input type="email" class="form-control" id="email" name="email"
-                                                value="{{ $student->email }}">
+                                                value="{{ $student->email }}" placeholder="Insira o e-mail...">
                                         </div>
 
 
@@ -97,7 +97,8 @@
                                             <div class="form-group col-6 col-sm-7 col-md-8">
                                                 <label for="birth_place">Lugar de Nasc:</label>
                                                 <input type="text" class="form-control" id="birth_place"
-                                                    name="birth_place" value="{{ $student->birth_place }}">
+                                                    name="birth_place" value="{{ $student->birth_place }}"
+                                                    placeholder="Insira o local de nascimento...">
                                             </div>
 
                                             <div class="form-group col-6 col-sm-5 col-md-4">
@@ -134,7 +135,8 @@
                                         <div class="form-group">
                                             <label for="kin_name">Nome do Responsável:</label>
                                             <input type="text" class="form-control" id="kin_name" name="kin_name"
-                                                value="{{ $student->kin_name }}">
+                                                value="{{ $student->kin_name }}"
+                                                placeholder="Insira o nome do responsável...">
                                         </div>
 
 
@@ -143,7 +145,8 @@
                                             <div class="form-group col-md">
                                                 <label for="kin_kinship">Parentesco:</label>
                                                 <input list="kinship" class="form-control" id="kin_kinship"
-                                                    name="kin_kinship" value="{{ $student->kin_kinship }}">
+                                                    name="kin_kinship" value="{{ $student->kin_kinship }}"
+                                                    placeholder="Insira o parentesco do responsável...">
                                                 <datalist id="kinship">
                                                     <option value="Mãe">
                                                     <option value="Pai">
@@ -156,7 +159,7 @@
 
                                             <div class="form-group col-md">
                                                 <label for="kin_telephone">Telefone:</label>
-                                                <input type="text" class="form-control" id="kin_telephone"
+                                                <input type="text" class="form-control js-fone" id="kin_telephone"
                                                     value="{{ $student->kin_telephone }}">
                                             </div>
                                         </div>
@@ -171,7 +174,8 @@
                                     <div class="form-group">
                                         <label for="address_street">Endereço:</label>
                                         <input type="text" class="form-control" id="address_street"
-                                            name="address_street" value="{{ $student->address_street }}">
+                                            name="address_street" value="{{ $student->address_street }}"
+                                            placeholder="Av. São Francisco de Assis, nº 100...">
                                     </div>
 
 
@@ -180,14 +184,16 @@
                                         <div class="form-group col-md-8">
                                             <label for="address_complement">Complemento:</label>
                                             <input type="text" class="form-control" id="address_complement"
-                                                name="address_complement" value="{{ $student->address_complement }}">
+                                                name="address_complement" value="{{ $student->address_complement }}"
+                                                placeholder="Insira o complemento de endereço...">
                                         </div>
 
                                         <div class="form-group col-md-4">
                                             <label for="address_neighborhood">Bairro:</label>
                                             <input type="text" class="form-control" id="address_neighborhood"
                                                 name="address_neighborhood"
-                                                value="{{ $student->address_neighborhood }}">
+                                                value="{{ $student->address_neighborhood }}"
+                                                placeholder="Insira o bairro...">
                                         </div>
                                     </div>
 
@@ -196,12 +202,13 @@
                                         <div class="form-group col-md-8">
                                             <label for="address_city">Cidade:</label>
                                             <input type="text" class="form-control" id="address_city"
-                                                name="address_city" value="{{ $student->address_city }}">
+                                                name="address_city" value="{{ $student->address_city }}"
+                                                placeholder="Insira a cidade do aluno...">
                                         </div>
 
                                         <div class="form-group col-md-4">
                                             <label for="address_cep">CEP:</label>
-                                            <input type="text" class="form-control" id="address_cep"
+                                            <input type="text" class="form-control js-cep" id="address_cep"
                                                 name="address_cep" value="{{ $student->address_cep }}">
                                         </div>
                                     </div>
@@ -212,13 +219,15 @@
                                         <div class="form-group col-md-8">
                                             <label for="address_state">Estado:</label>
                                             <input type="text" class="form-control" id="address_state"
-                                                name="address_state" value="{{ $student->address_state }}">
+                                                name="address_state" value="{{ $student->address_state }}"
+                                                placeholder="Insira o Estado do aluno...">
                                         </div>
 
                                         <div class="form-group col-md-4">
                                             <label for="nationality">Nacionalidade:</label>
                                             <input type="text" class="form-control" id="nationality"
-                                                name="nationality" value="{{ $student->nationality }}">
+                                                name="nationality" value="{{ $student->nationality }}"
+                                                placeholder="Insira a nacionalidade do aluno...">
                                         </div>
                                     </div>
 
@@ -232,7 +241,8 @@
                                     <div class="form-group">
                                         <label for="gov_benefits">Benefício do Governo:</label>
                                         <input type="text" class="form-control" id="gov_benefits"
-                                            name="gov_benefits" value="{{ $student->gov_benefits }}">
+                                            name="gov_benefits" value="{{ $student->gov_benefits }}"
+                                            placeholder="Insira benefícios do governo...">
                                     </div>
 
 
@@ -240,14 +250,16 @@
                                     <div class="form-group">
                                         <label for="health_problem">Problema de Saúde:</label>
                                         <input type="text" class="form-control" id="health_problem"
-                                            name="health_problem" value="{{ $student->health_problem }}">
+                                            name="health_problem" value="{{ $student->health_problem }}"
+                                            placeholder="Insira problemas de saúde pertencentes ao aluno...">
                                     </div>
 
 
                                     {{-- Campo para as observações referentes ao aluno --}}
                                     <div class="form-group">
                                         <label for="note">Observação:</label>
-                                        <textarea class="form-control" id="note" name="note" rows="5">{{ $student->note }}</textarea>
+                                        <textarea class="form-control" id="note" name="note" rows="5"
+                                            placeholder="Insira alguma observação sobre o aluno...">{{ $student->note }}</textarea>
                                     </div>
 
 

@@ -1,4 +1,22 @@
 "use strict";
+
+// #MASK
+
+$(".js-date").mask("00/00/0000", { placeholder: "__/__/____" });
+$(".js-hour").mask("00:00:00", { placeholder: "00:00:00" });
+$(".js-cep").mask("00000-000", { placeholder: "00000-000" });
+$(".js-fone").mask("(00) 0 0000-0000", { placeholder: "(00) 0 0000-0000" });
+$(".js-rg").mask("0000000-0", { placeholder: "0000000-0" });
+$(".js-cpf").mask("000.000.000-00", { placeholder: "000.000.000-00" });
+$(".js-money").mask("#.##0,00", { reverse: true, placeholder: "#.##0,00" });
+$(".js-percentage").mask("##0,00%", { reverse: true, placeholder: "%" });
+
+// ----------------
+// #DARK MODE
+
+$(".js-close-alert").delay(5000).slideUp("slow");
+
+// ----------------
 // #DARK MODE
 
 // *Variáveis:
@@ -17,7 +35,9 @@ MODE_DARK.addEventListener("click", () => {
 // Adicionar ou remove a classe "dark" do "body" para ativar ou desativar o modo dark
 function changeMode() {
     const NAVBAR_IS_LIGHT = NAVBAR.classList.contains("navbar-light");
-    const SIDEBAR_IS_LIGHT = SIDEBAR.classList.contains("sidebar-light-warning");
+    const SIDEBAR_IS_LIGHT = SIDEBAR.classList.contains(
+        "sidebar-light-warning"
+    );
 
     BODY.classList.toggle("dark-mode");
 
@@ -28,11 +48,16 @@ function changeMode() {
         NAVBAR.classList.replace("navbar-dark", "navbar-light");
     }
 
-
     if (SIDEBAR_IS_LIGHT) {
-        SIDEBAR.classList.replace("sidebar-light-warning", "sidebar-dark-warning");
+        SIDEBAR.classList.replace(
+            "sidebar-light-warning",
+            "sidebar-dark-warning"
+        );
     } else {
-        SIDEBAR.classList.replace("sidebar-dark-warning", "sidebar-light-warning");
+        SIDEBAR.classList.replace(
+            "sidebar-dark-warning",
+            "sidebar-light-warning"
+        );
     }
 }
 

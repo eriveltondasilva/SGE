@@ -74,14 +74,14 @@
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="rg">RG:</label>
-                                                <input type="text" class="form-control" id="rg" name="rg"
-                                                    maxlength="9" placeholder="0000000-0">
+                                                <input type="text" class="form-control js-rg" id="rg"
+                                                    name="rg">
                                             </div>
 
                                             <div class="form-group col-md-6">
                                                 <label for="cpf">CPF:</label>
-                                                <input type="text" class="form-control" id="cpf" name="cpf"
-                                                    maxlength="14" placeholder="000.000.000-00">
+                                                <input type="text" class="form-control js-cpf" id="cpf"
+                                                    name="cpf">
                                             </div>
                                         </div>
 
@@ -100,7 +100,7 @@
                                                 <label for="birth_place">Lugar de Nasc:</label>
                                                 <input type="text" class="form-control" id="birth_place"
                                                     name="birth_place" maxlength="50"
-                                                    placeholder="Local de nascimento...">
+                                                    placeholder="Insira o local de nascimento...">
                                             </div>
 
                                             <div class="form-group col-6 col-sm-5 col-md-4">
@@ -137,7 +137,7 @@
                                         <div class="form-group">
                                             <label for="kin_name">Nome do Responsável:</label>
                                             <input type="text" class="form-control" id="kin_name" name="kin_name"
-                                                maxlength="100" placeholder="Insira o nome...">
+                                                maxlength="100" placeholder="Insira o nome do(a) responsável...">
                                         </div>
 
 
@@ -147,7 +147,7 @@
                                                 <label for="kin_kinship">Parentesco:</label>
                                                 <input list="kinship" class="form-control" id="kin_kinship"
                                                     name="kin_kinship"
-                                                    placeholder="Insira o parentesco do responsável...">
+                                                    placeholder="Insira o parentesco do(a) responsável...">
                                                 <datalist id="kinship">
                                                     <option value="Mãe">
                                                     <option value="Pai">
@@ -160,9 +160,8 @@
 
                                             <div class="form-group col-md">
                                                 <label for="kin_telephone">Telefone:</label>
-                                                <input type="text" class="form-control" id="kin_telephone"
-                                                    name="kin_telephone" maxlength="16"
-                                                    placeholder="(82) 9 9999-9999">
+                                                <input type="text" class="form-control js-fone" id="kin_telephone"
+                                                    name="kin_telephone">
                                             </div>
                                         </div>
 
@@ -203,13 +202,14 @@
                                             <div class="form-group col-md-8">
                                                 <label for="address_city">Cidade:</label>
                                                 <input type="text" class="form-control" id="address_city"
-                                                    name="address_city" value="Cajueiro">
+                                                    name="address_city" value="Cajueiro"
+                                                    placeholder="Insira a cidade do aluno...">
                                             </div>
 
                                             <div class="form-group col-md-4">
                                                 <label for="address_cep">CEP:</label>
-                                                <input type="text" class="form-control" name="address_cep"
-                                                    maxlength="9" value="57770-000">
+                                                <input type="text" class="form-control js-cep" name="address_cep"
+                                                    value="57770-000">
                                             </div>
                                         </div>
 
@@ -219,13 +219,15 @@
                                             <div class="form-group col-md-8">
                                                 <label for="address_state">Estado:</label>
                                                 <input type="text" class="form-control" id="address_state"
-                                                    name="address_state" value="Alagoas">
+                                                    name="address_state" value="Alagoas"
+                                                    placeholder="Insira o Estado do aluno...">
                                             </div>
 
                                             <div class="form-group col-md-4">
                                                 <label for="nationality">Nacionalidade:</label>
                                                 <input type="text" class="form-control" id="nationality"
-                                                    name="nationality" value="Brasileiro(a)">
+                                                    name="nationality" value="Brasileiro(a)"
+                                                    placeholder="Insira a nacionalidade do aluno...">
                                             </div>
                                         </div>
 
@@ -248,7 +250,7 @@
                                             <label for="health_problem">Problema de Saúde:</label>
                                             <input type="text" class="form-control" id="health_problem"
                                                 name="health_problem"
-                                                placeholder="Insira problemas de saúde pertencentes ao(a) aluno(a)...">
+                                                placeholder="Insira problemas de saúde pertencentes ao aluno...">
                                         </div>
 
 
@@ -256,7 +258,7 @@
                                         <div class="form-group">
                                             <label for="note">Observação:</label>
                                             <textarea class="form-control" id="note" name="note" rows="5"
-                                                placeholder="Insira alguma observação sobre o(a) aluno(a)..."></textarea>
+                                                placeholder="Insira alguma observação sobre o aluno..."></textarea>
                                         </div>
 
 

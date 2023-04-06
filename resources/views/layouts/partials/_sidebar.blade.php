@@ -8,11 +8,8 @@
     <a href="#" class="brand-link">
 
         {{-- Imagem do logo da escola na sidebar --}}
-        {{-- <img
-        alt="AdminLTE Logo"
-        class="brand-image img-circle elevation-3"
-        src="dist/img/icons/school.jpg"
-        /> --}}
+        {{-- <img alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+            src="{{ public_path('/dist/img/icons/school.png') }}" /> --}}
 
         <i class="fa-solid fa-school ml-3 mr-1"></i>
 
