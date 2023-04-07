@@ -12,7 +12,7 @@ class SchoolClassController extends Controller
      */
     public function index()
     {
-        return view('dashboard/school_class/index');
+        return view('dashboard.school_class.index');
     }
     
     /**
@@ -20,7 +20,7 @@ class SchoolClassController extends Controller
      */
     public function create()
     {
-        return view('dashboard/school_class/create');
+        return view('dashboard.school_class.create');
     }
 
     /**

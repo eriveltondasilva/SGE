@@ -40,8 +40,8 @@
                             </div>
 
                             <a href="{{ route('student.index') }}" class="small-box-footer">
-                                Mais informações
-                                <i class="fa-solid fa-circle-right"></i>
+                                Lista de alunos
+                                <i class="fa-solid fa-circle-right ml-1"></i>
                             </a>
 
                         </div>
@@ -59,7 +59,7 @@
                             <div class="inner">
 
                                 <h3>
-                                    4
+                                    0
                                 </h3>
                                 <p>
                                     Turmas
@@ -73,7 +73,7 @@
 
                             <a href="#" class="small-box-footer">
                                 Mais informações
-                                <i class="fa-solid fa-circle-right"></i>
+                                <i class="fa-solid fa-circle-right ml-1"></i>
                             </a>
 
                         </div>
@@ -90,7 +90,7 @@
 
                             <div class="inner">
                                 <h3>
-                                    10
+                                    {{ $teachers->count() }}
                                 </h3>
 
                                 <p>
@@ -104,8 +104,8 @@
                             </div>
 
                             <a href="#" class="small-box-footer">
-                                Mais informações
-                                <i class="fa-solid fa-circle-right"></i>
+                                Lista de Professores
+                                <i class="fa-solid fa-circle-right ml-1"></i>
                             </a>
 
                         </div>
@@ -137,7 +137,7 @@
 
                             <a href="#" class="small-box-footer">
                                 Mais informações
-                                <i class="fa-solid fa-circle-right"></i>
+                                <i class="fa-solid fa-circle-right ml-1"></i>
                             </a>
                         </div>
 

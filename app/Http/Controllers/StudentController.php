@@ -38,9 +38,9 @@ class StudentController extends Controller
      */
     public function create(Student $student)
     {
-        $lastStudent = Student::isActive()->latest()->first();
+        $last_student = Student::isActive()->latest()->first();
 
-        return view('dashboard.student.create', ['lastStudent' => $lastStudent]);
+        return view('dashboard.student.create', ['last_student' => $last_student]);
     }
 
     /**

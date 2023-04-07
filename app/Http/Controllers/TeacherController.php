@@ -10,17 +10,37 @@ class TeacherController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('dashboard/teacher/index');
+        $search = $request->search;
+        $teachers = Teacher::isActive();
+
+
+        if ($search) {
+            if (is_numeric($search)) {
+                $teachers = $teachers->where('id', $search)->get();
+            } else {
+                $teachers = $teachers->where('full_name', 'like', $search . '%')->get();
+            }
+        } else {
+            $teachers = $teachers->orderBy('full_name')->get();
+        }
+
+
+        return view('dashboard.teacher.index', [
+            'teachers' => $teachers,
+            'search'   => $search,
+        ]);
     }
-    
+
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Teacher $teacher)
     {
-        return view('dashboard/teacher/create');
+        $last_teacher = Teacher::isActive()->latest()->first();
+
+        return view('dashboard/teacher/create', ['last_teacher' => $last_teacher]);
     }
 
     /**
@@ -28,7 +48,28 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'full_name'            => 'required|string|max:100',
+            'rg'                   => 'string|nullable|max:9',
+            'cpf'                  => 'string|nullable|max:14',
+            'email'                => 'email|nullable',
+            'telephone'            => 'string|nullable|max:16',
+            'birth_date'           => 'date|nullable',
+            'gender'               => 'string|nullable|max:1',
+            'address_street'       => 'string|nullable|max:255',
+            'address_complement'   => 'string|nullable|max:255',
+            'address_neighborhood' => 'string|nullable|max:255',
+            'address_city'         => 'string|nullable|max:255',
+            'address_cep'          => 'string|nullable|max:9',
+            'address_state'        => 'string|nullable',
+            'nationality'          => 'string|nullable',
+        ]);
+
+        Teacher::create($validated);
+
+        return redirect()
+            ->route('teacher.create')
+            ->with('msg', 'Professor cadastrado com sucesso!');
     }
 
     /**
@@ -36,7 +77,7 @@ class TeacherController extends Controller
      */
     public function show(Teacher $teacher)
     {
-        //
+        return view('dashboard.teacher.show', ['teacher' => $teacher]);
     }
 
     /**
@@ -44,7 +85,7 @@ class TeacherController extends Controller
      */
     public function edit(Teacher $teacher)
     {
-        //
+        return view('dashboard.teacher.edit', ['teacher' => $teacher]);
     }
 
     /**
@@ -52,7 +93,28 @@ class TeacherController extends Controller
      */
     public function update(Request $request, Teacher $teacher)
     {
-        //
+        $validated = $request->validate([
+            'full_name'            => 'required|string|max:100',
+            'rg'                   => 'string|nullable|max:9',
+            'cpf'                  => 'string|nullable|max:14',
+            'email'                => 'email|nullable',
+            'telephone'            => 'string|nullable|max:16',
+            'birth_date'           => 'date|nullable',
+            'gender'               => 'string|nullable|max:1',
+            'address_street'       => 'string|nullable|max:255',
+            'address_complement'   => 'string|nullable|max:255',
+            'address_neighborhood' => 'string|nullable|max:255',
+            'address_city'         => 'string|nullable|max:255',
+            'address_cep'          => 'string|nullable|max:9',
+            'address_state'        => 'string|nullable',
+            'nationality'          => 'string|nullable',
+        ]);
+
+        $teacher->update($validated);
+
+        return redirect()
+            ->route('teacher.show', $teacher)
+            ->with('msg', 'Professor atualizado com sucesso!');
     }
 
     /**

@@ -34,7 +34,6 @@ class Student extends Model
     ];
 
 
-
     //
     public function scopeIsActive(Builder $query): void
     {

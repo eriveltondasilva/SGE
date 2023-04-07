@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->string('full_name', 100);
-            $table->string('email', 100)->unique()->nullable();
             $table->string('rg')->nullable();
             $table->string('cpf')->nullable();
+            $table->string('email', 100)->unique()->nullable();
             $table->string('address_street')->nullable();
             $table->string('address_complement')->nullable();
             $table->string('address_neighborhood')->nullable();
@@ -34,9 +34,9 @@ return new class extends Migration
             $table->timestamps();
             $table->boolean('status')->default(true);
             $table->foreignId('school_id')->nullable();
-            $table->string('responsible_name', 100)->nullable();
-            $table->string('responsible_kinship')->nullable();
-            $table->string('responsible_tel')->nullable();
+            $table->string('kin_name', 100)->nullable();
+            $table->string('kin_kinship')->nullable();
+            $table->string('kin_telephone')->nullable();
         });
     }
 

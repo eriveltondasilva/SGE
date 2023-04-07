@@ -80,7 +80,7 @@
                                                             {{ $student->address_city }}
                                                         </td>
 
-                                                        <td>
+                                                        <td class="text-right">
                                                             <a href="{{ route('student.show', $student) }}"
                                                                 class="btn btn-sm btn-primary" title="Visualizar aluno">
                                                                 <i class="fa-regular fa-eye mr-1"></i>

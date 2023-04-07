@@ -41,7 +41,7 @@
                                         @if (session('msg'))
                                             <div class="alert alert-info alert-dismissible fade show" role="alert">
                                                 {{ session('msg') }}
-                                                <a href="{{ route('student.show', $lastStudent) }}" class="alert-link">
+                                                <a href="{{ route('student.show', $last_student) }}" class="alert-link">
                                                     Clique aqui
                                                 </a>
                                                 para ver o último aluno cadastrado.

@@ -30,22 +30,20 @@ use App\Http\Controllers\TeacherController;
 
 // *Rota para "bem-vindo"
 Route::get('/', function () {
+    if (auth()->user()) {
+        return redirect()->route('dashboard');
+    }
+
     return view('welcome');
 });
 
 
-
-
-
-// *Rota para "painel"    
+// *Rota para "painel"
 Route::middleware('auth')
     ->controller(DashboardController::class)
     ->group(function () {
         Route::get('/painel', 'index')->name('dashboard');
-});
-
-
-
+    });
 
 
 // *Rota para "perfil"
@@ -56,10 +54,7 @@ Route::middleware('auth')
         Route::get('/perfil', 'edit')->name('edit');
         Route::patch('/perfil', 'update')->name('update');
         Route::delete('/perfil', 'destroy')->name('destroy');
-});
-
-
-
+    });
 
 
 // *Rota para "alunos"
@@ -76,27 +71,23 @@ Route::resource('alunos', StudentController::class)
 ]);
 
 
-
-
-
-// *Rotas para "escola"
-Route::resource('escola', SchoolController::class)
+// *Rotas para "professores"
+Route::resource('professores', TeacherController::class)
+    ->parameters(['professores' => 'teacher'])
     ->names([
-        'index'   => 'school.index',
-        'store'   => 'school.store',
-        'create'  => 'school.create',
-        'show'    => 'school.show',
-        'update'  => 'school.update',
-        'destroy' => 'school.destroy',
-        'edit'    => 'school.edit'
+        'index'   => 'teacher.index',
+        'store'   => 'teacher.store',
+        'create'  => 'teacher.create',
+        'show'    => 'teacher.show',
+        'update'  => 'teacher.update',
+        'destroy' => 'teacher.destroy',
+        'edit'    => 'teacher.edit'
 ]);
-
-
-
 
 
 // *Rotas para "turmas"
 Route::resource('turmas', SchoolClassController::class)
+    ->parameters(['turmas' => 'school_class'])
     ->names([
         'index'   => 'school_class.index',
         'store'   => 'school_class.store',
@@ -111,17 +102,22 @@ Route::resource('turmas', SchoolClassController::class)
 
 
 
-// *Rotas para "professores"
-Route::resource('professores', TeacherController::class)
-    ->names([
-        'index'   => 'teacher.index',
-        'store'   => 'teacher.store',
-        'create'  => 'teacher.create',
-        'show'    => 'teacher.show',
-        'update'  => 'teacher.update',
-        'destroy' => 'teacher.destroy',
-        'edit'    => 'teacher.edit'
+
+
+// *Rotas para "escola"
+Route::resource('escola', SchoolController::class)
+->names([
+    'index'   => 'school.index',
+    'store'   => 'school.store',
+    'create'  => 'school.create',
+    'show'    => 'school.show',
+    'update'  => 'school.update',
+    'destroy' => 'school.destroy',
+    'edit'    => 'school.edit'
 ]);
+
+
+
 
 
 // *Rota
