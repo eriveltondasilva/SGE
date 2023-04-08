@@ -217,7 +217,7 @@
                 {{-- Campo para as observações referentes ao aluno --}}
                 <div class="form-group">
                     <label for="note">Observação:</label>
-                    <textarea class="form-control" id="note" name="note" rows="5"
+                    <textarea class="form-control text-justify" id="note" name="note" rows="5"
                         placeholder="Insira alguma observação sobre o aluno..."></textarea>
                 </div>
 

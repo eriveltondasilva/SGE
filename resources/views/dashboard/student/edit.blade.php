@@ -40,7 +40,7 @@
                 {{-- Campo para o nome completo do aluno --}}
                 <div class="form-group">
                     <label for="full_name">Nome Completo:</label>
-                    <input type="text" class="form-control@error('full_name') is-invalid @enderror" id="full_name"
+                    <input type="text" class="form-control @error('full_name') is-invalid @enderror" id="full_name"
                         name="full_name" value="{{ $student->full_name }}" placeholder="Insira o nome..." autofocus
                         required>
                     @error('full_name')
@@ -230,7 +230,7 @@
                 {{-- Campo para as observações referentes ao aluno --}}
                 <div class="form-group">
                     <label for="note">Observação:</label>
-                    <textarea class="form-control" id="note" name="note" rows="5"
+                    <textarea class="form-control text-justify" id="note" name="note" rows="5"
                         placeholder="Insira alguma observação sobre o aluno...">{{ $student->note }}</textarea>
                 </div>
 

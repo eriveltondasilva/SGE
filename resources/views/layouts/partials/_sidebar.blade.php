@@ -13,7 +13,7 @@
 
 
         <span class="brand-text font-weight-light">
-            Escola Não-sei-o-quê
+            Escola São Lucas
         </span>
 
     </a>

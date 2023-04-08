@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Teacher;
 use Illuminate\Http\Request;
+use App\Http\Requests\TeacherRequest;
 
 class TeacherController extends Controller
 {
@@ -46,24 +47,9 @@ class TeacherController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(TeacherRequest $request)
     {
-        $validated = $request->validate([
-            'full_name'            => 'required|string|max:100',
-            'rg'                   => 'string|nullable|max:9',
-            'cpf'                  => 'string|nullable|max:14',
-            'email'                => 'email|nullable',
-            'telephone'            => 'string|nullable|max:16',
-            'birth_date'           => 'date|nullable',
-            'gender'               => 'string|nullable|max:1',
-            'address_street'       => 'string|nullable|max:255',
-            'address_complement'   => 'string|nullable|max:255',
-            'address_neighborhood' => 'string|nullable|max:255',
-            'address_city'         => 'string|nullable|max:255',
-            'address_cep'          => 'string|nullable|max:9',
-            'address_state'        => 'string|nullable',
-            'nationality'          => 'string|nullable',
-        ]);
+        $validated = $request->validated();
 
         Teacher::create($validated);
 
@@ -91,24 +77,9 @@ class TeacherController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Teacher $teacher)
+    public function update(TeacherRequest $request, Teacher $teacher)
     {
-        $validated = $request->validate([
-            'full_name'            => 'required|string|max:100',
-            'rg'                   => 'string|nullable|max:9',
-            'cpf'                  => 'string|nullable|max:14',
-            'email'                => 'email|nullable',
-            'telephone'            => 'string|nullable|max:16',
-            'birth_date'           => 'date|nullable',
-            'gender'               => 'string|nullable|max:1',
-            'address_street'       => 'string|nullable|max:255',
-            'address_complement'   => 'string|nullable|max:255',
-            'address_neighborhood' => 'string|nullable|max:255',
-            'address_city'         => 'string|nullable|max:255',
-            'address_cep'          => 'string|nullable|max:9',
-            'address_state'        => 'string|nullable',
-            'nationality'          => 'string|nullable',
-        ]);
+        $validated = $request->validated();
 
         $teacher->update($validated);
 
