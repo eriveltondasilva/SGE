@@ -42,6 +42,8 @@
                         <!-- col-lg-12 -->
                         <div class="col-lg-12">
 
+                            {{ $dashboard_infobox ?? '' }}
+
                             <!-- card-yellow -->
                             <div class="card card-yellow">
 
@@ -50,15 +52,8 @@
                                     <h5></h5>
                                 </div>
 
-                                {{-- <!-- Page has a form -->
-                                @if (isset($is_form))
-                                @endif --}}
 
                                 {{ $slot }}
-
-                                {{-- <!-- Page has a form -->
-                                @if (isset($is_form))
-                                @endif --}}
 
                             </div>
                             <!-- ./card-yellow -->
