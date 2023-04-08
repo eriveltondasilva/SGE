@@ -58,7 +58,8 @@ Route::middleware('auth')
 
 
 // *Rota para "alunos"
-Route::resource('alunos', StudentController::class)
+Route::middleware(['auth', 'role:admin'])
+    ->resource('alunos', StudentController::class)
     ->parameters(['alunos' => 'student'])
     ->names([
         'index'   => 'student.index',
@@ -72,7 +73,8 @@ Route::resource('alunos', StudentController::class)
 
 
 // *Rotas para "professores"
-Route::resource('professores', TeacherController::class)
+Route::middleware('auth')
+    ->resource('professores', TeacherController::class)
     ->parameters(['professores' => 'teacher'])
     ->names([
         'index'   => 'teacher.index',
@@ -86,7 +88,8 @@ Route::resource('professores', TeacherController::class)
 
 
 // *Rotas para "turmas"
-Route::resource('turmas', SchoolClassController::class)
+Route::middleware('auth')
+    ->resource('turmas', SchoolClassController::class)
     ->parameters(['turmas' => 'school_class'])
     ->names([
         'index'   => 'school_class.index',
@@ -99,22 +102,21 @@ Route::resource('turmas', SchoolClassController::class)
 ]);
 
 
-
-
-
-
-
 // *Rotas para "escola"
-Route::resource('escola', SchoolController::class)
-->names([
-    'index'   => 'school.index',
-    'store'   => 'school.store',
-    'create'  => 'school.create',
-    'show'    => 'school.show',
-    'update'  => 'school.update',
-    'destroy' => 'school.destroy',
-    'edit'    => 'school.edit'
+Route::middleware('auth')
+    ->resource('escola', SchoolController::class)
+    ->parameters(['escola' => 'school'])
+    ->names([
+        'index'   => 'school.index',
+        'store'   => 'school.store',
+        'create'  => 'school.create',
+        'show'    => 'school.show',
+        'update'  => 'school.update',
+        'destroy' => 'school.destroy',
+        'edit'    => 'school.edit'
 ]);
+
+
 
 
 

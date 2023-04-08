@@ -13,9 +13,8 @@ class StudentController extends Controller
      */
     public function index(Request $request)
     {
-        $search = $request->search;
+        $search   = $request->search;
         $students = Student::isActive();
-
 
         if ($search) {
             if (is_numeric($search)) {
@@ -27,12 +26,12 @@ class StudentController extends Controller
             $students = $students->orderBy('full_name')->get();
         }
 
-
         return view('dashboard.student.index', [
             'students' => $students,
             'search'   => $search,
         ]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -41,8 +40,11 @@ class StudentController extends Controller
     {
         $last_student = Student::isActive()->max('id');
 
-        return view('dashboard.student.create', ['last_student' => $last_student]);
+        return view('dashboard.student.create', [
+            'last_student' => $last_student,
+        ]);
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -58,21 +60,28 @@ class StudentController extends Controller
             ->with('msg', 'Aluno cadastrado com sucesso!');
     }
 
+
     /**
      * Display the specified resource.
      */
     public function show(Student $student)
     {
-        return view('dashboard.student.show', ['student' => $student]);
+        return view('dashboard.student.show', [
+            'student' => $student,
+        ]);
     }
+
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Student $student)
     {
-        return view('dashboard.student.edit', ['student' => $student]);
+        return view('dashboard.student.edit', [
+            'student' => $student,
+        ]);
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -88,6 +97,7 @@ class StudentController extends Controller
             ->with('msg', 'Aluno atualizado com sucesso!');
     }
 
+    
     /**
      * Remove the specified resource from storage.
      */

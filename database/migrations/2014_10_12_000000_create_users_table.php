@@ -19,8 +19,7 @@ return new class () extends Migration {
             $table->enum(
                 'role',
                 ['admin', 'manager', 'coordinator', 'teacher', 'student']
-            )
-                ->nullable();
+            )->nullable();
             $table->rememberToken();
             $table->timestamps();
             $table->boolean('status')->default(true);

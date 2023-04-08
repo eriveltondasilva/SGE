@@ -15,9 +15,9 @@ class HasRole
      */
     public function handle(Request $request, Closure $next, string $role): Response
     {
-        if (! $request->user()->hasRole($role)) {
-            return redirect()->route('dashboard');
+        if (auth()->user()->role === $role) {
+            return $next($request);
         }
-        return $next($request);
+        return redirect()->route('dashboard');
     }
 }

@@ -13,9 +13,8 @@ class TeacherController extends Controller
      */
     public function index(Request $request)
     {
-        $search = $request->search;
+        $search   = $request->search;
         $teachers = Teacher::isActive();
-
 
         if ($search) {
             if (is_numeric($search)) {
@@ -34,6 +33,7 @@ class TeacherController extends Controller
         ]);
     }
 
+
     /**
      * Show the form for creating a new resource.
      */
@@ -41,8 +41,11 @@ class TeacherController extends Controller
     {
         $last_teacher = Teacher::isActive()->latest()->first();
 
-        return view('dashboard/teacher/create', ['last_teacher' => $last_teacher]);
+        return view('dashboard/teacher/create', [
+            'last_teacher' => $last_teacher,
+        ]);
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -58,21 +61,28 @@ class TeacherController extends Controller
             ->with('msg', 'Professor cadastrado com sucesso!');
     }
 
+
     /**
      * Display the specified resource.
      */
     public function show(Teacher $teacher)
     {
-        return view('dashboard.teacher.show', ['teacher' => $teacher]);
+        return view('dashboard.teacher.show', [
+            'teacher' => $teacher,
+        ]);
     }
+
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Teacher $teacher)
     {
-        return view('dashboard.teacher.edit', ['teacher' => $teacher]);
+        return view('dashboard.teacher.edit', [
+            'teacher' => $teacher,
+        ]);
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -87,6 +97,7 @@ class TeacherController extends Controller
             ->route('teacher.show', $teacher)
             ->with('msg', 'Professor atualizado com sucesso!');
     }
+
 
     /**
      * Remove the specified resource from storage.

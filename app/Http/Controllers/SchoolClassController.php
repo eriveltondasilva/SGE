@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\SchoolClass;
+use App\Models\SchoolYear;
 use Illuminate\Http\Request;
 
 class SchoolClassController extends Controller
@@ -15,17 +16,21 @@ class SchoolClassController extends Controller
         return view('dashboard.school_class.index');
     }
 
+
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        $school_classes = SchoolClass::get();
+        $school_classes   = SchoolClass::get();
+        $last_school_year = SchoolYear::max('year');
 
         return view('dashboard.school_class.create', [
-            'school_classes' => $school_classes
+            'school_classes'   => $school_classes,
+            'last_school_year' => $last_school_year,
         ]);
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -35,6 +40,7 @@ class SchoolClassController extends Controller
         //
     }
 
+
     /**
      * Display the specified resource.
      */
@@ -42,6 +48,7 @@ class SchoolClassController extends Controller
     {
         //
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -51,6 +58,7 @@ class SchoolClassController extends Controller
         //
     }
 
+
     /**
      * Update the specified resource in storage.
      */
@@ -58,6 +66,7 @@ class SchoolClassController extends Controller
     {
         //
     }
+    
 
     /**
      * Remove the specified resource from storage.

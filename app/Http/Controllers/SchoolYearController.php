@@ -15,6 +15,7 @@ class SchoolYearController extends Controller
         //
     }
 
+
     /**
      * Show the form for creating a new resource.
      */
@@ -22,6 +23,7 @@ class SchoolYearController extends Controller
     {
         //
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -31,6 +33,7 @@ class SchoolYearController extends Controller
         //
     }
 
+
     /**
      * Display the specified resource.
      */
@@ -38,6 +41,7 @@ class SchoolYearController extends Controller
     {
         //
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -47,6 +51,7 @@ class SchoolYearController extends Controller
         //
     }
 
+
     /**
      * Update the specified resource in storage.
      */
@@ -55,6 +60,7 @@ class SchoolYearController extends Controller
         //
     }
 
+    
     /**
      * Remove the specified resource from storage.
      */

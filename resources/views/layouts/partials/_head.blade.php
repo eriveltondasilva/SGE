@@ -9,7 +9,7 @@
 
     <!-- *Aba de título do navegador -->
     <title>{{ $head_title ?? 'SGE' }}</title>
-    <link rel="shortcut icon" href="icon.svg" type="image/x-icon" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
 
 
     <!-- *Fontes: Source Sans Pro -->
