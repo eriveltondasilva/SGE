@@ -109,7 +109,7 @@
                                 @endif
 
                             </div>
-                            <!-- col do form -->
+                            <!-- ./col -->
 
                             <br>
                             <br>

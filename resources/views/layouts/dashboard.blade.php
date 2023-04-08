@@ -2,58 +2,88 @@
 
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-
-<!-- HEAD -->
+<!-- head -->
 @include('layouts.partials._head')
-<!-- ./HEAD -->
+<!-- /head -->
 
-
-<!-- BODY -->
 
 <body class="hold-transition sidebar-mini">
-
 
     <!-- wrapper -->
     <div class="wrapper">
 
-
         <!-- navbar -->
         @include('layouts.partials._navbar')
-        <!-- ./navbar -->
+        <!-- /.navbar -->
 
 
         <!-- sidebar -->
         @include('layouts.partials._sidebar')
-        <!-- ./sidebar -->
+        <!-- /.sidebar -->
 
 
         <!-- content-wrapper -->
         <div class="content-wrapper">
 
-
             <!-- content-header -->
             @include('layouts.partials._header')
-            <!-- ./content-header -->
+            <!-- /.content-header -->
 
 
-            {{ $slot }}
+            <!-- main content -->
+            <main class="content">
 
+                <!-- container-fluid -->
+                <div class="container-fluid">
+
+                    <!-- row -->
+                    <div class="row">
+
+                        <!-- col-lg-12 -->
+                        <div class="col-lg-12">
+
+                            <!-- card-yellow -->
+                            <div class="card card-yellow">
+
+                                {{-- Código para deixar uma linha grossa no início das páginas  --}}
+                                <div class="card-header">
+                                    <h5></h5>
+                                </div>
+
+                                {{-- <!-- Page has a form -->
+                                @if (isset($is_form))
+                                @endif --}}
+
+                                {{ $slot }}
+
+                                {{-- <!-- Page has a form -->
+                                @if (isset($is_form))
+                                @endif --}}
+
+                            </div>
+                            <!-- ./card-yellow -->
+
+                        </div>
+                        <!-- ./col-lg-12 -->
+
+                    </div>
+                    <!-- /.row -->
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </main>
+            <!-- /.main content -->
 
         </div>
-        <!-- ./content-wrapper -->
+        <!-- /.content-wrapper -->
 
 
-        <!-- main footer -->
         @include('layouts.partials._footer')
-        <!-- /.main footer -->
-
 
     </div>
-    <!-- ./wrapper -->
-
+    <!-- /.wrapper -->
 
 </body>
-<!-- ./BODY -->
-
 
 </html>

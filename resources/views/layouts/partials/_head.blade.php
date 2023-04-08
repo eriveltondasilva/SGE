@@ -26,23 +26,17 @@
     <!-- *Styles: ### -->
     {{-- TODO: minificar o código abaixo antes de ir para a produção --}}
     <link rel="stylesheet" href="/dist/css/adminlte.css" />
-
     <link rel="stylesheet" href="/dist/css/app.css" />
 
 
-    <!-- *Scripts: jQuery_3.6.4 | Bootstrap_4.6.1 | AdminLTE_app -->
+    <!-- *Scripts: jQuery_3.6.4 | Bootstrap_4.6.1 | jquery.mask_1.14.16 | AdminLTE_app -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
-        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" defer></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" defer></script>
     <script src="/dist/js/vendors/bootstrap/js/bootstrap.bundle.min.js" defer></script>
 
     {{-- TODO: minificar o código abaixo antes de ir para a produção --}}
     <script src="/dist/js/adminlte.js" defer></script>
-
     <script src="/dist/js/app.js" defer></script>
 
 </head>

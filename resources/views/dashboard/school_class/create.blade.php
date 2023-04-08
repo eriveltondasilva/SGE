@@ -24,7 +24,7 @@
                         <div class="card card-yellow">
 
                             <div class="card-header">
-                                {{-- <h3 class="card-title text-center"></h3> --}}
+                                <h4></h4>
                             </div>
 
                             <!-- col do form -->
@@ -33,13 +33,11 @@
                                 <form>
 
                                     <div class="card-body">
-                                        {{-- <h4 class="text-center">Turma</h4> --}}
-
 
                                         <div class="form-row">
                                             <div class="form-group col-md">
                                                 <label for="class_name">Nome da Turma:</label>
-                                                <select class="form-control" id="class_name">
+                                                <select class="form-control" id="class_name" name="class_name">
                                                     <option>6º ano</option>
                                                     <option>7º ano</option>
                                                     <option>8º ano</option>
@@ -49,7 +47,7 @@
 
                                             <div class="form-group col-md">
                                                 <label for="shift">Turno:</label>
-                                                <select class="form-control" id="shift">
+                                                <select class="form-control" id="shift" name="shift">
                                                     <option>Matutino</option>
                                                     <option selected>Vespertino</option>
                                                 </select>
@@ -58,12 +56,24 @@
                                             <div class="form-group col-md">
                                                 <label for="schooling">Escolaridade:</label>
                                                 <input type="text" class="form-control" id="schooling"
-                                                    placeholder="Insira a Escolaridade..." value="Fundamental II">
+                                                    name="schooling" placeholder="Insira a Escolaridade..."
+                                                    value="Fundamental II">
                                             </div>
                                         </div>
 
+                                        <div class="form-row">
+                                            <div class="form-group col-md">
+                                                <label for="room">Sala:</label>
+                                                <input type="text" class="form-control" id="room" name="room"
+                                                    placeholder="Insira a sala...">
+                                            </div>
 
-
+                                            <div class="form-group col-md">
+                                                <label for="school_years_year">Ano Letivo:</label>
+                                                <input type="text" class="form-control" id="school_years_year"
+                                                    name="school_years_year" value="">
+                                            </div>
+                                        </div>
 
                                         <!-- botões cancelar e cadastrar -->
                                         <div class="form-row mt-4">
@@ -83,6 +93,76 @@
                                         </div>
                                         <!-- ./botões cancelar e cadastrar -->
 
+                                        <br>
+
+                                        @if (count($school_classes))
+
+                                            <!-- table  -->
+                                            <div class="table-responsive-xl">
+
+                                                <table class="table-hover table-sm table">
+                                                    <thead class="thead-light">
+                                                        <tr>
+                                                            <th scope="col">#</th>
+                                                            <th scope="col">Turma</th>
+                                                            <th scope="col">Turno</th>
+                                                            <th scope="col">Fundamental</th>
+                                                            <th scope="col">Sala</th>
+                                                            <th scope="col">Ano Letivo</th>
+                                                            <th scope="col"></th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+
+                                                        @foreach ($school_classes as $school_class)
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    {{ $loop->iteration }}
+                                                                </th>
+
+                                                                <td>
+                                                                    {{ $school_class->class_name }}
+                                                                </td>
+
+                                                                <td>
+                                                                    {{ $school_class->shift }}
+                                                                </td>
+
+                                                                <td>
+                                                                    {{ $school_class->schooling }}
+                                                                </td>
+
+                                                                <td>
+                                                                    {{ $school_class->room }}
+                                                                </td>
+
+                                                                <td>
+                                                                    {{ $school_class->school_years_year }}
+                                                                </td>
+
+                                                                <td>
+                                                                    <a href="{{ route('school_class.show', $school_class) }}"
+                                                                        class="btn btn-sm btn-block btn-primary"
+                                                                        title="Visualizar professor">
+                                                                        <i class="fa-regular fa-pen-to-square mr-1"></i>
+                                                                        Editar
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                        @endforeach
+
+                                                    </tbody>
+
+                                                </table>
+
+                                            </div>
+                                            <!-- /.table  -->
+
+                                        @endif
+
+
+
                                     </div>
                                     <!-- /.card-body -->
 
@@ -91,11 +171,15 @@
                             </div>
                             <!-- col do form -->
 
+                            <br>
+                            <br>
+                            <br>
+
                         </div>
-                        <!-- ./card-outline -->
+                        <!-- /.card-yellow -->
 
                     </div>
-                    <!-- ./col -->
+                    <!-- /.col-lg-12 -->
 
                 </div>
                 <!-- /.row -->

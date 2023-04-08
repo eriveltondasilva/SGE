@@ -1,12 +1,12 @@
 <header class="content-header">
 
-    <!-- .container-fluid -->
+    <!-- container-fluid -->
     <div class="container-fluid">
 
-        <!-- .row -->
+        <!-- row -->
         <div class="row mb-2">
 
-            <!-- .col -->
+            <!-- col -->
             <div class="col-sm-6">
 
                 <h1 class="m-0">
@@ -22,7 +22,7 @@
 
                 <ol class="breadcrumb float-sm-right">
 
-                    {{ $header_breadcrumb ?? '' }}
+                    {{-- {{ $header_breadcrumb ?? '' }} --}}
 
                 </ol>
 

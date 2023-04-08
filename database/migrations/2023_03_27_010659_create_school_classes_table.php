@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('school_classes', function (Blueprint $table) {
             $table->id();
-            $table->string('class_name');
-            $table->string('shift');
-            $table->string('schooling');
-            $table->string('room');
-            $table->timestamps();
-            $table->foreignId('school_years_year');
+            $table->string('class_name');             // Turma
+            $table->string('shift');                  // Turno
+            $table->string('schooling');              // Escolaridade
+            $table->string('room');                   // Sala
+            $table->timestamps();                     //
+            $table->foreignId ('school_years_year');  // Ano Letivo
         });
     }
 

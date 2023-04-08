@@ -16,18 +16,27 @@
 
                     <div class="col-lg-12">
 
-                        <!-- card-outline -->
-                        <div class="card card-yellow card-outline">
+                        <!-- card -->
+                        <div class="card card-yellow">
 
-                            <br />
-                            <br />
-                            <br />
+                            <div class="card-header">
+                                <h4></h4>
+                            </div>
+
+                            <div class="col-sm-10 m-auto pt-5">
+
+                                Teste
+
+                            </div>
+                            <!-- ./col -->
+
+
                             <br />
                             <br />
                             <br />
 
                         </div>
-                        <!-- /.card-outline -->
+                        <!-- /.card -->
 
                     </div>
 

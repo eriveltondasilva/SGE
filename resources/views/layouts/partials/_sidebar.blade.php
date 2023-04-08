@@ -8,17 +8,16 @@
     <a href="#" class="brand-link">
 
         {{-- Imagem do logo da escola na sidebar --}}
-        {{-- <img alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-            src="{{ public_path('/dist/img/icons/school.png') }}" /> --}}
+        {{-- <i class="fa-solid fa-school ml-3 mr-1"></i> --}}
+        <img alt="AdminLTE Logo" class="brand-image img-circle elevation-3" src="../../dist/img/icons/school.png" />
 
-        <i class="fa-solid fa-school ml-3 mr-1"></i>
 
         <span class="brand-text font-weight-light">
             Escola Não-sei-o-quê
         </span>
 
     </a>
-    <!-- ./Brand Logo -->
+    <!-- /.Brand Logo -->
 
 
     <!-- Sidebar -->
@@ -41,7 +40,7 @@
                     </x-nav.link>
 
                 </li>
-                <!-- ./Menu: painel -->
+                <!-- /.Menu: painel -->
 
 
                 <div class="sidebar__separator"></div>
@@ -58,7 +57,7 @@
                     </x-nav.link>
 
                 </li>
-                <!-- ./Menu: calendário -->
+                <!-- /.Menu: calendário -->
 
 
                 <!-- Menu: horário -->
@@ -86,7 +85,7 @@
                     </x-nav.link>
 
                 </li>
-                <!-- ./Menu: documentos -->
+                <!-- /.Menu: documentos -->
 
 
                 <div class="sidebar__separator"></div>
@@ -130,11 +129,11 @@
                         </li>
 
                     </ul>
-                    <!-- ./Submenu: caderneta -->
+                    <!-- /.Submenu: caderneta -->
 
 
                 </li>
-                <!-- ./Menu: caderneta -->
+                <!-- /.Menu: caderneta -->
 
 
                 <div class="sidebar__separator"></div>
@@ -178,11 +177,11 @@
                         </li>
 
                     </ul>
-                    <!-- ./Submenu: alunos -->
+                    <!-- /.Submenu: alunos -->
 
 
                 </li>
-                <!-- ./Menu: alunos -->
+                <!-- /.Menu: alunos -->
 
 
                 <!-- Menu: turmas -->
@@ -223,7 +222,7 @@
                         </li>
 
                     </ul>
-                    <!-- ./Submenu: turmas -->
+                    <!-- /.Submenu: turmas -->
 
 
                 </li>
@@ -268,10 +267,10 @@
                         </li>
 
                     </ul>
-                    <!-- ./Submenu: professor -->
+                    <!-- /.Submenu: professor -->
 
                 </li>
-                <!-- ./Menu: professores -->
+                <!-- /.Menu: professores -->
 
 
                 <div class="sidebar__separator"></div>
@@ -308,14 +307,14 @@
                     </div>
 
                 </div> --}}
-                <!-- ./Menu: redes sociais -->
+                <!-- /.Menu: redes sociais -->
 
             </ul>
 
         </nav>
-        <!-- ./sidebar-menu -->
+        <!-- /.sidebar-menu -->
 
     </div>
-    <!-- ./sidebar -->
+    <!-- /.sidebar -->
 
 </aside>
