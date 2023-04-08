@@ -56,10 +56,10 @@
                                 {{ $slot }}
 
                             </div>
-                            <!-- ./card-yellow -->
+                            <!-- /.card-yellow -->
 
                         </div>
-                        <!-- ./col-lg-12 -->
+                        <!-- /.col-lg-12 -->
 
                     </div>
                     <!-- /.row -->
