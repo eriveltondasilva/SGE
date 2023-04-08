@@ -23,7 +23,7 @@ class StudentRequest extends FormRequest
     {
         return [
             'full_name'            => 'required|string|max:100',
-            'rg'                   => 'required|string|nullable|max:9',
+            'rg'                   => 'string|nullable|max:9',
             'cpf'                  => 'string|nullable|max:14',
             'email'                => 'email|nullable',
             'birth_place'          => 'string|nullable|max:50',
