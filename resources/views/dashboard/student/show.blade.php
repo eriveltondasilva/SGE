@@ -10,7 +10,6 @@
 
         <div class="card-body">
 
-
             {{-- Componente para retornar mensage: "cadastro atualizado com sucesso!" --}}
             @if (session('msg'))
                 <div class="alert alert-info alert-dismissible fade show js-close-alert" role="alert">
