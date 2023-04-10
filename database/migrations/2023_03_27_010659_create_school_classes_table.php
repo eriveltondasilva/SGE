@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class () extends Migration {
     /**
      * Run the migrations.
      */
@@ -13,12 +12,12 @@ return new class extends Migration
     {
         Schema::create('school_classes', function (Blueprint $table) {
             $table->id();
-            $table->string('class_name');             // Turma
-            $table->string('shift');                  // Turno
-            $table->string('schooling');              // Escolaridade
-            $table->string('room');                   // Sala
-            $table->timestamps();                     //
-            $table->foreignId ('school_years_year');  // Ano Letivo
+            $table->foreignId('school_years_year');
+            $table->string('class_name');
+            $table->string('shift')->nullable();
+            $table->string('schooling')->nullable();
+            $table->string('room')->nullable();
+            $table->timestamps();
         });
     }
 

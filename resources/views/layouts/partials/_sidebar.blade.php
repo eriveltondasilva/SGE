@@ -13,7 +13,7 @@
 
 
         <span class="brand-text font-weight-light">
-            Escola São Lucas
+            Escola Viver
         </span>
 
     </a>

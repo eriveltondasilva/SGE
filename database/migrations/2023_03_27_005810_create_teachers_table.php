@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('school_id')->nullable();
             $table->string('full_name', 100);
             $table->string('rg')->nullable();
             $table->string('cpf')->nullable();
@@ -26,11 +27,10 @@ return new class extends Migration
             $table->string('address_state')->nullable();
             $table->string('nationality')->nullable();
             $table->date('birth_date')->nullable();
-            $table->enum('gender', ['F', 'M'])->nullable();
+            $table->set('gender', ['F', 'M'])->nullable();
             $table->string('photo_path', 2048)->nullable();
             $table->timestamps();
             $table->boolean('status')->default(true);
-            $table->foreignId('school_id')->nullable();
         });
     }
 

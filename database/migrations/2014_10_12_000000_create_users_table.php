@@ -12,18 +12,15 @@ return new class () extends Migration {
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('schools_id')->nullable();
+            $table->foreignId('roles_id')->nullable();
             $table->string('name', 100);
             $table->string('email', 100)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->enum(
-                'role',
-                ['admin', 'manager', 'coordinator', 'teacher', 'student']
-            )->nullable();
             $table->rememberToken();
             $table->timestamps();
             $table->boolean('status')->default(true);
-            $table->foreignId('school_id')->nullable();
         });
     }
 

@@ -8,7 +8,7 @@
     <!-- col do form -->
     <div class="col-sm-8 m-auto pt-3">
 
-        <form method="POST" action="{{ route('teacher.store') }}">
+        <form action="{{ route('teacher.store') }}" method="POST">
             @csrf
 
 

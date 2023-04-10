@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('attendances', function (Blueprint $table) {
             $table->date('attendance')->primary();
+            $table->foreignId('student_id');
             $table->boolean('is_present');
             $table->timestamps();
-            $table->foreignId('student_id');
         });
     }
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\SchoolClass;
 use App\Models\SchoolYear;
 use Illuminate\Http\Request;
+use App\Http\Requests\SchoolClassRequest;
 
 class SchoolClassController extends Controller
 {
@@ -35,9 +36,15 @@ class SchoolClassController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(SchoolClassRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        SchoolClass::create($validated);
+
+        return redirect()
+            ->route('school_class.create')
+            ->with('msg', 'Turma cadastrada com sucesso!');
     }
 
 
