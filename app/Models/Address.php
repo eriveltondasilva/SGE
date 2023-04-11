@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 
-class School extends Model
+class Address extends Model
 {
     use HasFactory;
 
@@ -16,19 +16,20 @@ class School extends Model
      *
      * @var string
      */
-    protected $table = 'schools';
+    protected $table = 'addresses';
 
 
 
 
 
-    public function schoolStudents(): HasMany
+    public function addressStudents(): HasMany
     {
         return $this->hasMany(Student::class, 'address_id', 'id');
     }
-
-    public function scTeachers(): HasMany
+   
+    public function addressTeachers(): HasMany
     {
         return $this->hasMany(Teacher::class, 'address_id', 'id');
     }
+
 }

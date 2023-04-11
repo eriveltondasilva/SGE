@@ -46,8 +46,8 @@
 
             {{-- Campo para o nome completo do aluno --}}
             <div class="form-group">
-                <label for="full_name">Nome Completo:</label>
-                <input type="text" class="form-control" id="full_name" value="{{ $student->full_name }}" readonly>
+                <label for="name">Nome Completo:</label>
+                <input type="text" class="form-control" id="name" value="{{ $student->name }}" readonly>
             </div>
 
 
@@ -141,7 +141,7 @@
             {{-- Campo para o endereço do aluno --}}
             <div class="form-group">
                 <label for="address_street">Endereço:</label>
-                <input type="text" class="form-control" id="address_street" value="{{ $student->address_street }}"
+                <input type="text" class="form-control" id="address_street" value="{{ $student->address->street }}"
                     readonly>
             </div>
 

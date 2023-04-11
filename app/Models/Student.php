@@ -5,13 +5,27 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Student extends Model
 {
     use HasFactory;
 
+
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'students';
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
-        'full_name',
+        'name',
         'rg',
         'cpf',
         'email',
@@ -34,7 +48,20 @@ class Student extends Model
     ];
 
 
-    //
+
+
+
+    // Address Model
+    public function studentAddress(): BelongsTo
+    {
+        return $this->belongsTo(Address::class, 'address_id', 'id');
+    }
+
+
+
+
+
+    // Limitar a buscar pelos alunos ativos ou desativos
     public function scopeIsActive(Builder $query): void
     {
         $query->where('status', true);

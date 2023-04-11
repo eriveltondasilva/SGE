@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('class_diaries', function (Blueprint $table) {
-            $table->date('subject_date')->primary();
-            $table->text('subject_taught');
-            $table->tinyInteger('class_number');
+        Schema::create('roles', function (Blueprint $table) {
+            $table->id();
+            $table->string('name'); // 'admin', 'manager', 'coordinator', 'teacher', 'student'.
+            $table->string('translation')->nullable();
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('class_diaries');
+        Schema::dropIfExists('roles');
     }
 };

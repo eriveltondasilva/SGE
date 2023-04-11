@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('attendances', function (Blueprint $table) {
-            $table->date('attendance')->primary();
-            $table->foreignId('student_id');
-            $table->boolean('is_present');
+        Schema::create('schoolYears', function (Blueprint $table) {
+            $table->year('year')->primary();
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('attendances');
+        Schema::dropIfExists('schoolYears');
     }
 };

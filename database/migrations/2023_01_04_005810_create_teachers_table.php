@@ -13,18 +13,11 @@ return new class extends Migration
     {
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('school_id')->nullable();
-            $table->string('full_name', 100);
+            $table->string('name', 100);
             $table->string('rg')->nullable();
             $table->string('cpf')->nullable();
             $table->string('email', 100)->unique()->nullable();
-            $table->string('telephone', 100)->nullable();
-            $table->string('address_street')->nullable();
-            $table->string('address_complement')->nullable();
-            $table->string('address_neighborhood')->nullable();
-            $table->string('address_city')->nullable();
-            $table->string('address_cep')->nullable();
-            $table->string('address_state')->nullable();
+            $table->string('telephone')->nullable();
             $table->string('nationality')->nullable();
             $table->date('birth_date')->nullable();
             $table->set('gender', ['F', 'M'])->nullable();

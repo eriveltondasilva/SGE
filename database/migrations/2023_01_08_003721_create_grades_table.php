@@ -4,16 +4,16 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class () extends Migration {
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-        Schema::create('school_years', function (Blueprint $table) {
-            $table->year('year')->primary();
-            $table->boolean('status')->default(true);
+        Schema::create('grades', function (Blueprint $table) {
+            $table->id();
+            $table->decimal('value', $total = 4, $places = 2, $unsigned = false);
+            $table->string('bimester');
             $table->timestamps();
         });
     }
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('school_years');
+        Schema::dropIfExists('grades');
     }
 };

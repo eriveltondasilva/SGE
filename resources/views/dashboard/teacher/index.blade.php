@@ -50,7 +50,7 @@
                                 </th>
 
                                 <td>
-                                    {{ $teacher->full_name }}
+                                    {{ $teacher->name }}
                                 </td>
 
                                 <td>

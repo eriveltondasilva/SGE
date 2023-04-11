@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('grades', function (Blueprint $table) {
-            $table->id();
-            // TODO: acrescentar o restante das propriedades da nota do aluno
+        Schema::create('schoolClasses_teachers', function (Blueprint $table) {
+            $table->foreignId('schoolClass_id')->constrained('schoolClasses');
+            $table->foreignId('teacher_id')->constrained('teachers');
             $table->timestamps();
         });
     }
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('grades');
+        Schema::dropIfExists('schoolClasses_teachers');
     }
 };

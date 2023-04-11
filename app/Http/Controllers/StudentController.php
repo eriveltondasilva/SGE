@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
+use App\Models\Address;
 use Illuminate\Http\Request;
 use App\Http\Requests\StudentRequest;
 
@@ -15,16 +16,18 @@ class StudentController extends Controller
     {
         $search   = $request->search;
         $students = Student::isActive();
-
+        
+        
         if ($search) {
             if (is_numeric($search)) {
                 $students = $students->where('id', $search)->get();
             } else {
-                $students = $students->where('full_name', 'like', $search . '%')->get();
+                $students = $students->where('name', 'like', $search . '%')->paginate(15);
             }
         } else {
-            $students = $students->orderBy('full_name')->get();
+            $students = $students->orderBy('name')->paginate(15);
         }
+
 
         return view('dashboard.student.index', [
             'students' => $students,

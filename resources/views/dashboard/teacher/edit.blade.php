@@ -40,10 +40,10 @@
 
                 {{-- Campo para o nome completo do professor --}}
                 <div class="form-group">
-                    <label for="full_name">Nome Completo<span class="text-red">*</span>:</label>
-                    <input type="text" class="form-control @error('full_name') is-invalid @enderror" id="full_name"
-                        name="full_name" value="{{ $teacher->full_name }}" placeholder="Insira o nome..." autofocus>
-                    @error('full_name')
+                    <label for="name">Nome Completo<span class="text-red">*</span>:</label>
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
+                        name="name" value="{{ $teacher->name }}" placeholder="Insira o nome..." autofocus>
+                    @error('name')
                         <div class="alert alert-danger js-close-alert mt-1">Por favor, insira o nome do professor.</div>
                     @enderror
                 </div>

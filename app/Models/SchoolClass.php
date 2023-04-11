@@ -14,6 +14,6 @@ class SchoolClass extends Model
         'shift',
         'schooling',
         'room',
-        'school_years_year',
+        'schoolYears_year',
     ];
 }

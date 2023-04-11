@@ -46,8 +46,8 @@
 
             {{-- Campo para o nome completo do professor --}}
             <div class="form-group">
-                <label for="full_name">Nome Completo<span class="text-red">*</span>:</label>
-                <input type="text" class="form-control" id="full_name" value="{{ $teacher->full_name }}" readonly>
+                <label for="name">Nome Completo<span class="text-red">*</span>:</label>
+                <input type="text" class="form-control" id="name" value="{{ $teacher->name }}" readonly>
             </div>
 
 

@@ -22,7 +22,8 @@
             </div>
         </form>
 
-        @if (count($students))
+
+        @if ($students)
 
             <!-- table  -->
             <div class="table-responsive-xl">
@@ -47,7 +48,7 @@
                                     {{ $loop->iteration }}
                                 </th>
                                 <td>
-                                    {{ $student->full_name }}
+                                    {{ $student->name }}
                                 </td>
                                 <td>
                                     {{ str_pad($student->id, 3, '0', STR_PAD_LEFT) }}
@@ -68,6 +69,10 @@
                                 </td>
                             </tr>
                         @endforeach
+
+                        @if (count($students) > 1)
+                            {{ $students->links() }}
+                        @endif
 
                     </tbody>
 

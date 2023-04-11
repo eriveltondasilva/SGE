@@ -22,19 +22,20 @@ class TeacherRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'full_name'            => 'required|string|max:100',
+            'name'            => 'required|string|max:100',
             'rg'                   => 'string|nullable|max:9',
             'cpf'                  => 'string|nullable|max:14',
             'email'                => 'email|nullable',
             'telephone'            => 'string|nullable|max:16',
             'birth_date'           => 'date|nullable',
             'gender'               => 'string|nullable|max:1',
-            'address_street'       => 'string|nullable|max:255',
-            'address_complement'   => 'string|nullable|max:255',
-            'address_neighborhood' => 'string|nullable|max:255',
-            'address_city'         => 'string|nullable|max:255',
-            'address_cep'          => 'string|nullable|max:9',
-            'address_state'        => 'string|nullable',
+            // 'address_street'       => 'string|nullable|max:255',
+            // 'address_number'       => 'string|nullable|max:255',
+            // 'address_complement'   => 'string|nullable|max:255',
+            // 'address_neighborhood' => 'string|nullable|max:255',
+            // 'address_city'         => 'string|nullable|max:255',
+            // 'address_cep'          => 'string|nullable|max:9',
+            // 'address_state'        => 'string|nullable',
             'nationality'          => 'string|nullable',
         ];
     }

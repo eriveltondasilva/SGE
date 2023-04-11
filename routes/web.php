@@ -58,7 +58,7 @@ Route::middleware('auth')
 
 
 // *Rota para "alunos"
-Route::middleware(['auth', 'role:admin'])
+Route::middleware(['auth', /* 'role:admin' */])
     ->resource('alunos', StudentController::class)
     ->parameters(['alunos' => 'student'])
     ->names([

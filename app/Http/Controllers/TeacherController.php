@@ -20,10 +20,10 @@ class TeacherController extends Controller
             if (is_numeric($search)) {
                 $teachers = $teachers->where('id', $search)->get();
             } else {
-                $teachers = $teachers->where('full_name', 'like', $search . '%')->get();
+                $teachers = $teachers->where('name', 'like', $search . '%')->get();
             }
         } else {
-            $teachers = $teachers->orderBy('full_name')->get();
+            $teachers = $teachers->orderBy('name')->get();
         }
 
 
