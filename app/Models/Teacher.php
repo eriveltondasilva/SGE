@@ -11,7 +11,6 @@ class Teacher extends Model
 {
     use HasFactory;
 
-
     /**
      * The table associated with the model.
      *
@@ -32,12 +31,6 @@ class Teacher extends Model
         'telephone',
         'birth_date',
         'gender',
-        'address_street',
-        'address_complement',
-        'address_neighborhood',
-        'address_city',
-        'address_cep',
-        'address_state',
         'nationality',
     ];
 
@@ -45,17 +38,22 @@ class Teacher extends Model
 
 
 
-    // Address Model
+    // * Relacionamentos:
     public function teacherAddress(): BelongsTo
     {
         return $this->belongsTo(Address::class, 'address_id', 'id');
+    }
+
+    public function teacherSchool(): BelongsTo
+    {
+        return $this->belongsTo(School::class, 'school_id', 'id');
     }
 
 
 
 
 
-    // Limitar a buscar pelos professores ativos ou desativos
+    // * Limitar a buscar pelos professores ativos ou desativos
     public function scopeIsActive(Builder $query): void
     {
         $query->where('status', true);

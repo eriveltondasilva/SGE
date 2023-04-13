@@ -22,13 +22,19 @@ class School extends Model
 
 
 
+    // * Relacionamentos:
     public function schoolStudents(): HasMany
     {
-        return $this->hasMany(Student::class, 'address_id', 'id');
+        return $this->hasMany(Student::class, 'school_id', 'id');
     }
 
-    public function scTeachers(): HasMany
+    public function schoolTeachers(): HasMany
     {
-        return $this->hasMany(Teacher::class, 'address_id', 'id');
+        return $this->hasMany(Teacher::class, 'school_id', 'id');
+    }
+
+    public function schoolUsers(): HasMany
+    {
+        return $this->hasMany(User::class, 'school_id', 'id');
     }
 }

@@ -29,10 +29,7 @@ class StudentController extends Controller
         }
 
 
-        return view('dashboard.student.index', [
-            'students' => $students,
-            'search'   => $search,
-        ]);
+        return view('dashboard.student.index', compact('students', 'search'));
     }
 
 
@@ -43,9 +40,7 @@ class StudentController extends Controller
     {
         $last_student = Student::isActive()->max('id');
 
-        return view('dashboard.student.create', [
-            'last_student' => $last_student,
-        ]);
+        return view('dashboard.student.create', compact('last_student'));
     }
 
 
@@ -69,9 +64,7 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        return view('dashboard.student.show', [
-            'student' => $student,
-        ]);
+        return view('dashboard.student.show', compact('student'));
     }
 
 
@@ -80,9 +73,7 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
-        return view('dashboard.student.edit', [
-            'student' => $student,
-        ]);
+        return view('dashboard.student.edit', compact('student'));
     }
 
 

@@ -9,11 +9,11 @@
 
         {{-- Imagem do logo da escola na sidebar --}}
         {{-- <i class="fa-solid fa-school ml-3 mr-1"></i> --}}
-        <img alt="AdminLTE Logo" class="brand-image img-circle elevation-3" src="../../dist/img/icons/school.png" />
+        <img alt="AdminLTE Logo" class="brand-image {{-- img-circle elevation-3 --}}" src="{{ Vite::icon('school.png') }}" />
 
 
         <span class="brand-text font-weight-light">
-            Escola Viver
+            {{ Auth::user()->userSchool()->first()->short_name }}
         </span>
 
     </a>

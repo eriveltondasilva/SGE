@@ -32,15 +32,6 @@ class Student extends Model
         'birth_place',
         'birth_date',
         'gender',
-        'kin_name',
-        'kin_kinship',
-        'kin_telephone',
-        'address_street',
-        'address_complement',
-        'address_neighborhood',
-        'address_city',
-        'address_cep',
-        'address_state',
         'nationality',
         'gov_benefits',
         'health_problem',
@@ -51,17 +42,22 @@ class Student extends Model
 
 
 
-    // Address Model
+    // * Relacionamentos:
     public function studentAddress(): BelongsTo
     {
         return $this->belongsTo(Address::class, 'address_id', 'id');
+    }
+
+    public function studentSchool(): BelongsTo
+    {
+        return $this->belongsTo(School::class, 'school_id', 'id');
     }
 
 
 
 
 
-    // Limitar a buscar pelos alunos ativos ou desativos
+    // * Limitar a buscar pelos alunos ativos ou desativos
     public function scopeIsActive(Builder $query): void
     {
         $query->where('status', true);

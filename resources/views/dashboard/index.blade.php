@@ -5,6 +5,7 @@
     <x-slot name="head_title">Página Inicial</x-slot>
     <!-- ./browser page title -->
 
+    <x-alert-msg></x-alert-msg>
 
     <!-- dashboard_infobox -->
     <x-slot name="dashboard_infobox">
@@ -20,7 +21,7 @@
                     <div class="inner">
 
                         <h3>
-                            {{ $students->count() }}
+                            {{ $students }}
                         </h3>
                         <p>
                             Alunos
@@ -83,7 +84,7 @@
 
                     <div class="inner">
                         <h3>
-                            {{ $teachers->count() }}
+                            {{ $teachers }}
                         </h3>
 
                         <p>
@@ -151,7 +152,7 @@
         </h5>
 
         <p class="card-text">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Erivelton da Silva Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             In aspernatur quidem aperiam impedit ratione sapiente rem aut excepturi?
             Ex nam quibusdam ipsa quam excepturi, perferendis nostrum nihil alias possimus
             obcaecati.

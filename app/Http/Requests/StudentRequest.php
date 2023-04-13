@@ -29,6 +29,10 @@ class StudentRequest extends FormRequest
             'birth_place'          => 'string|nullable|max:50',
             'birth_date'           => 'date|nullable',
             'gender'               => 'string|nullable|max:1',
+            'nationality'          => 'string|nullable',
+            'gov_benefits'         => 'string|nullable|',
+            'health_problem'       => 'string|nullable|',
+            'note'                 => 'string|nullable|',
             // 'kin_name'             => 'string|nullable|max:100',
             // 'kin_kinship'          => 'string|nullable',
             // 'kin_telephone'        => 'string|nullable|max:16',
@@ -39,10 +43,6 @@ class StudentRequest extends FormRequest
             // 'address_city'         => 'string|nullable|max:255',
             // 'address_cep'          => 'string|nullable|max:9',
             // 'address_state'        => 'string|nullable',
-            'nationality'          => 'string|nullable',
-            'gov_benefits'         => 'string|nullable|',
-            'health_problem'       => 'string|nullable|',
-            'note'                 => 'string|nullable|',
         ];
     }
 }

@@ -12,12 +12,9 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $students = Student::isActive();
-        $teachers = Teacher::isActive();
+        $students = Student::isActive()->count();
+        $teachers = Teacher::isActive()->count();
 
-        return view('dashboard.index', [
-            'students' => $students,
-            'teachers' => $teachers,
-        ]);
+        return view('dashboard.index', compact('students', 'teachers'));
     }
 }

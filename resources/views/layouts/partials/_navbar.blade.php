@@ -84,15 +84,15 @@
         <li class="nav-item dropdown user-menu">
 
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                <img src="../../dist/img/icons/profile-user.png" class="user-image img-circle elevation-2 mr-0"
+                <img src="{{ Vite::icon('user.png') }}" class="user-image img-circle elevation-2 mr-0 bg-white"
                     alt="Imagem do usuário" />
             </a>
 
             <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px">
 
-                <li class="user-header bg-primary">
+                <li class="user-header bg-yellow">
 
-                    <img src="../../dist/img/icons/profile-user.png" class="img-circle elevation-2"
+                    <img src="{{ Vite::icon('user.png') }}" class="img-circle elevation-2 bg-white"
                         alt="{{ Auth::user()->name }}" />
 
                     <h6 class="mt-2 mb-0">
@@ -100,7 +100,7 @@
                     </h6>
 
                     <p class="text-uppercase mt-0">
-                        {{ Auth::user()->role }}
+                        {{ Auth::user()->userRole()->first()->translation }}
                     </p>
 
                 </li>

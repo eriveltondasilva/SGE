@@ -14,20 +14,62 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // Inserir itens na tabela roles
         DB::table('roles')->insert([
-            ['name' => 'admin', 'translation' => 'administrador(a)'],
-            ['name' => 'manager', 'translation' => 'gestor(a)'],
-            ['name' => 'coordinator', 'translation' => 'coordenador(a)'],
-            ['name' => 'teacher', 'translation' => 'professor(a)'],
-            ['name' => 'student', 'translation' => 'aluno(a)'],
+            [
+                'name'        => 'admin',
+                'translation' => 'administrador(a)',
+            ],
+            [
+                'name'        => 'manager',
+                'translation' => 'gestor(a)',
+            ],
+            [
+                'name'        => 'coordinator',
+                'translation' => 'coordenador(a)',
+            ],
+            [
+                'name'        => 'teacher',
+                'translation' => 'professor(a)'],
+            [
+                'name'        => 'student',
+                'translation' => 'aluno(a)',
+            ],
         ]);
 
+        //
         DB::table('users')->insert([
-            'name' => 'Erivelton da Silva',
-            'email' => 'eriveltondasilva13@gmail.com',
-            'password' => '$2y$10$pI3e3VGJXsDIfqDVFH7tBOit2GwHHJetEmVLwfctHD4x3reePI1fa',
+            [
+                'name'      => 'Erivelton da Silva',
+                'email'     => 'eriveltondasilva13@gmail.com',
+                'password'  => '$2y$10$pI3e3VGJXsDIfqDVFH7tBOit2GwHHJetEmVLwfctHD4x3reePI1fa',
+                'school_id' => '1',
+                'role_id'   => '1',
+            ],
+            [
+                'name'      => 'Maria',
+                'email'     => 'maria@gmail.com',
+                'password'  => '$2y$10$pI3e3VGJXsDIfqDVFH7tBOit2GwHHJetEmVLwfctHD4x3reePI1fa',
+                'school_id' => '1',
+                'role_id'   => '2',
+            ],
+            [
+                'name'      => 'José',
+                'email'     => 'jose@gmail.com',
+                'password'  => '$2y$10$pI3e3VGJXsDIfqDVFH7tBOit2GwHHJetEmVLwfctHD4x3reePI1fa',
+                'school_id' => '2',
+                'role_id'   => '3',
+            ],
+            [
+                'name'      => 'Paulo',
+                'email'     => 'paulo@gmail.com',
+                'password'  => '$2y$10$pI3e3VGJXsDIfqDVFH7tBOit2GwHHJetEmVLwfctHD4x3reePI1fa',
+                'school_id' => '2',
+                'role_id'   => '4',
+            ],
         ]);
 
+        //
         DB::table('subjects')->insert([
             ['name' => 'Artes'],
             ['name' => 'Ciências'],
@@ -39,20 +81,30 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Matemática'],
         ]);
 
+        //
         DB::table('schools')->insert([
-            'name' => 'Escola De Educação Básica Centro Educacional Viver',
-            'short_name' => 'Escola Viver'
+            [
+                'name'       => 'Escola De Educação Básica Centro Educacional Viver',
+                'short_name' => 'Escola Viver'
+            ],
+            [
+                'name'       => 'Escola De Educação Básica Centro Educacional Viver',
+                'short_name' => 'Escola Livramento'
+            ],
         ]);
 
+        //
         DB::table('schoolYears')->insert([
             'year' => '2023',
         ]);
 
+        //
         DB::table('relatives')->insert([
             'name' => 'Maria José',
         ]);
 
 
+        //
         \App\Models\Student::factory(200)->create();
         \App\Models\Teacher::factory(10)->create();
         \App\Models\Address::factory(100)->create();
@@ -63,8 +115,6 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
-        //     'School_id' => '1',
-        //     'role_id' => '1',
         // ]);
     }
 }

@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-
 class Address extends Model
 {
     use HasFactory;
@@ -18,15 +17,31 @@ class Address extends Model
      */
     protected $table = 'addresses';
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'street',
+        'number',
+        'complement',
+        'neighborhood',
+        'city',
+        'cep',
+        'state',
+    ];
 
 
 
 
+
+    // * Relacionamentos:
     public function addressStudents(): HasMany
     {
         return $this->hasMany(Student::class, 'address_id', 'id');
     }
-   
+
     public function addressTeachers(): HasMany
     {
         return $this->hasMany(Teacher::class, 'address_id', 'id');

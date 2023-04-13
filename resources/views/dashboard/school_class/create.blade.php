@@ -38,7 +38,7 @@
                     <div class="form-group col-md">
                         <label for="class_name">Nome da Turma:</label>
                         <select class="form-control @error('class_name') is-invalid @enderror" id="class_name"
-                            name="class_name" autofocus>
+                                name="class_name" autofocus>
                             <option></option>
                             <option value="6">6º ano</option>
                             <option value="7">7º ano</option>
@@ -74,13 +74,13 @@
                     <div class="form-group col-md">
                         <label for="room">Sala:</label>
                         <input type="text" class="form-control" id="room" name="room"
-                            placeholder="Insira a sala...">
+                               placeholder="Insira a sala...">
                     </div>
 
                     <div class="form-group col-md">
                         <label for="school_years_year">Ano Letivo:</label>
                         <input type="text" class="form-control" id="school_years_year" name="school_years_year"
-                            value="{{ $last_school_year }}" disabled>
+                               value="{{-- {{ $last_school_year }} --}}" disabled>
                     </div>
                 </div>
 
@@ -150,7 +150,7 @@
 
                                     <td>
                                         <a href="{{ route('school_class.show', $school_class) }}"
-                                            class="btn btn-sm btn-block btn-primary" title="Visualizar professor">
+                                           class="btn btn-sm btn-block btn-primary" title="Visualizar professor">
                                             <i class="fa-regular fa-pen-to-square mr-1"></i>
                                             Editar
                                         </a>

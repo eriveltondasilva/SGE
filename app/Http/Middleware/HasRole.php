@@ -18,6 +18,7 @@ class HasRole
         if (auth()->user()->role === $role) {
             return $next($request);
         }
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard')
+            ->with('msg', 'Seu acesso não foi autorizado! Entre em contado com sua escola.');
     }
 }

@@ -27,10 +27,7 @@ class TeacherController extends Controller
         }
 
 
-        return view('dashboard.teacher.index', [
-            'teachers' => $teachers,
-            'search'   => $search,
-        ]);
+        return view('dashboard.teacher.index', compact('teachers', 'search'));
     }
 
 
@@ -41,9 +38,7 @@ class TeacherController extends Controller
     {
         $last_teacher = Teacher::isActive()->latest()->first();
 
-        return view('dashboard/teacher/create', [
-            'last_teacher' => $last_teacher,
-        ]);
+        return view('dashboard/teacher/create', compact('last_teacher'));
     }
 
 
@@ -67,9 +62,7 @@ class TeacherController extends Controller
      */
     public function show(Teacher $teacher)
     {
-        return view('dashboard.teacher.show', [
-            'teacher' => $teacher,
-        ]);
+        return view('dashboard.teacher.show', compact('teacher'));
     }
 
 
@@ -78,9 +71,7 @@ class TeacherController extends Controller
      */
     public function edit(Teacher $teacher)
     {
-        return view('dashboard.teacher.edit', [
-            'teacher' => $teacher,
-        ]);
+        return view('dashboard.teacher.edit', compact('teacher'));
     }
 
 

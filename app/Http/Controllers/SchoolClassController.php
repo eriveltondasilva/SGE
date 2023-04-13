@@ -23,13 +23,10 @@ class SchoolClassController extends Controller
      */
     public function create()
     {
-        $school_classes   = SchoolClass::get();
-        $last_school_year = SchoolYear::max('year');
+        // $school_classes   = SchoolClass::get();
+        // $last_school_year = SchoolYear::max('year');
 
-        return view('dashboard.school_class.create', [
-            'school_classes'   => $school_classes,
-            'last_school_year' => $last_school_year,
-        ]);
+        return view('dashboard.school_class.create', /* compact('school_classes', 'last_school_year') */);
     }
 
 
@@ -38,13 +35,13 @@ class SchoolClassController extends Controller
      */
     public function store(SchoolClassRequest $request)
     {
-        $validated = $request->validated();
+        // $validated = $request->validated();
 
-        SchoolClass::create($validated);
+        // SchoolClass::create($validated);
 
-        return redirect()
-            ->route('school_class.create')
-            ->with('msg', 'Turma cadastrada com sucesso!');
+        // return redirect()
+        // ->route('school_class.create')
+        // ->with('msg', 'Turma cadastrada com sucesso!');
     }
 
 
@@ -73,7 +70,7 @@ class SchoolClassController extends Controller
     {
         //
     }
-    
+
 
     /**
      * Remove the specified resource from storage.
