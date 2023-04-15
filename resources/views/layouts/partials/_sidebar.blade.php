@@ -13,7 +13,7 @@
 
 
         <span class="brand-text font-weight-light">
-            {{ Auth::user()->userSchool()->first()->short_name }}
+            {{ Auth::user()->userSchool->short_name }}
         </span>
 
     </a>

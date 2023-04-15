@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Facades\Auth;
+
 
 class Teacher extends Model
 {
@@ -56,11 +58,11 @@ class Teacher extends Model
     // * Limitar a buscar pelos professores ativos ou desativos
     public function scopeIsActive(Builder $query): void
     {
-        $query->where('status', true);
+        $query->where('status', true)->where('school_id', Auth::user()->school_id);
     }
 
     public function scopeIsNotActive(Builder $query): void
     {
-        $query->where('status', false);
+        $query->where('status', false)->where('school_id', Auth::user()->school_id);
     }
 }

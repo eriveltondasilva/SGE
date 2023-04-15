@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('schools', function (Blueprint $table) {
             $table->id();
+            $table->boolean('status')->default(true);
             $table->string('name');
-            $table->string('short_name', 20)->nullable();
+            $table->string('abbreviation', 20)->nullable();
             $table->string('instagram', 100)->nullable();
             $table->string('facebook', 100)->nullable();
             $table->string('whatsapp', 100)->nullable();
             $table->string('photo_path', 2048)->nullable();
             $table->timestamps();
-            $table->boolean('status')->default(true);
         });
     }
 

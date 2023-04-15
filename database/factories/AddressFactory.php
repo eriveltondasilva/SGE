@@ -23,7 +23,10 @@ class AddressFactory extends Factory
         return [
             'street' => $this->faker->streetName(),
             'number' => $this->faker->buildingNumber(),
+            'complement' => $this->faker->sentence(),
+            'neighborhood' => $this->faker->word(),
             'city' => $this->faker->city(),
+            'cep' => $this->faker->randomNumber(8, true),
             'state' => $this->faker->state(),
         ];
     }

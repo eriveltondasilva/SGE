@@ -77,13 +77,13 @@
                 <div class="form-group col-6 col-sm-7 col-md-8">
                     <label for="birth_place">Lugar de Nasc:</label>
                     <input type="text" class="form-control" id="birth_place" value="{{ $student->birth_place }}"
-                        readonly>
+                           readonly>
                 </div>
 
                 <div class="form-group col-6 col-sm-5 col-md-4">
                     <label for="birth_date">Data de Nasc.:</label>
                     <input type="date" class="form-control" id="birth_date" value="{{ $student->birth_date }}"
-                        readonly>
+                           readonly>
                 </div>
             </div>
 
@@ -93,13 +93,13 @@
             <div class="form-group">
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" id="gender_female" name="gender"
-                        @checked($student->gender === 'F') @disabled($student->gender !== 'F')>
+                           @checked($student->gender === 'F') @disabled($student->gender !== 'F')>
                     <label class="form-check-label" for="gender_female">Feminino</label>
                 </div>
 
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" id="gender_male" name="gender"
-                        @checked($student->gender === 'M') @disabled($student->gender !== 'M')>
+                           @checked($student->gender === 'M') @disabled($student->gender !== 'M')>
                     <label class="form-check-label" for="gender_male">Masculino</label>
                 </div>
             </div>
@@ -113,7 +113,7 @@
             {{-- Campo para nome do responsável pelo aluno --}}
             <div class="form-group">
                 <label for="kin_name">Nome do Responsável:</label>
-                <input type="text" class="form-control" id="kin_name" value="{{ $student->kin_name }}" readonly>
+                <input type="text" class="form-control" id="kin_name" value="" readonly>
             </div>
 
 
@@ -121,14 +121,12 @@
             <div class="form-row">
                 <div class="form-group col-md">
                     <label for="kin_kinship">Parentesco:</label>
-                    <input type="text" class="form-control" id="kin_kinship" value="{{ $student->kin_kinship }}"
-                        readonly>
+                    <input type="text" class="form-control" id="kin_kinship" value="" readonly>
                 </div>
 
                 <div class="form-group col-md">
                     <label for="kin_telephone">Telefone:</label>
-                    <input type="text" class="form-control" id="kin_telephone" value="{{ $student->kin_telephone }}"
-                        readonly>
+                    <input type="text" class="form-control" id="kin_telephone" value="" readonly>
                 </div>
             </div>
 
@@ -141,8 +139,8 @@
             {{-- Campo para o endereço do aluno --}}
             <div class="form-group">
                 <label for="address_street">Endereço:</label>
-                <input type="text" class="form-control" id="address_street" value="{{ $student->address->street }}"
-                    readonly>
+                <input type="text" class="form-control" id="address_street"
+                       value="{{ $student->studentAddress->street }}" readonly>
             </div>
 
 
@@ -151,13 +149,13 @@
                 <div class="form-group col-md-8">
                     <label for="address_complement">Complemento:</label>
                     <input type="text" class="form-control" id="address_complement"
-                        value="{{ $student->address_complement }}" readonly>
+                           value="{{ $student->StudentAddress->complement }}" readonly>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label for="address_neighborhood">Bairro:</label>
                     <input type="text" class="form-control" id="address_neighborhood"
-                        value="{{ $student->address_neighborhood }}" readonly>
+                           value="{{ $student->studentAddress->neighborhood }}" readonly>
                 </div>
             </div>
 
@@ -167,13 +165,13 @@
                 <div class="form-group col-md-8">
                     <label for="address_city">Cidade:</label>
                     <input type="text" class="form-control" id="address_city"
-                        value="{{ $student->address_city }}" readonly>
+                           value="{{ $student->studentAddress->city }}" readonly>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label for="address_cep">CEP:</label>
-                    <input type="text" class="form-control" id="address_cep" value="{{ $student->address_cep }}"
-                        readonly>
+                    <input type="text" class="form-control" id="address_cep"
+                           value="{{ $student->studentAddress->cep }}" readonly>
                 </div>
             </div>
 
@@ -182,13 +180,13 @@
                 <div class="form-group col-md-8">
                     <label for="address_state">Estado:</label>
                     <input type="text" class="form-control" id="address_state"
-                        value="{{ $student->address_state }}" readonly>
+                           value="{{ $student->studentAddress->state }}" readonly>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label for="nationality">Nacionalidade:</label>
                     <input type="text" class="form-control" id="nationality" value="{{ $student->nationality }}"
-                        readonly>
+                           readonly>
                 </div>
             </div>
 
@@ -202,7 +200,7 @@
             <div class="form-group">
                 <label for="gov_benefits">Benefício do Governo:</label>
                 <input type="text" class="form-control" id="gov_benefits" value="{{ $student->gov_benefits }}"
-                    readonly>
+                       readonly>
             </div>
 
 
@@ -210,7 +208,7 @@
             <div class="form-group">
                 <label for="health_problem">Problema de Saúde:</label>
                 <input type="text" class="form-control" id="health_problem"
-                    value="{{ $student->health_problem }}" readonly>
+                       value="{{ $student->health_problem }}" readonly>
             </div>
 
 

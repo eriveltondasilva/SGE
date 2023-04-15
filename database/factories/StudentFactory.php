@@ -32,8 +32,8 @@ class StudentFactory extends Factory
             'note' => $this->faker->sentence(50),
             'birth_date' => $this->faker->date('Y_m_d'),
             'gender' => $this->faker->randomElement(['F', 'M']),
-            'school_id' => '1',
-            'address_id' => $this->faker->numberBetween(1, 100),
+            'school_id' => $this->faker->numberBetween(2, 3),
+            'address_id' => $this->faker->numberBetween(1, 200),
         ];
     }
 }

@@ -5,7 +5,7 @@
     <x-slot name="head_title">Página Inicial</x-slot>
     <!-- ./browser page title -->
 
-    <x-alert-msg></x-alert-msg>
+    {{-- <x-alert-msg></x-alert-msg> --}}
 
     <!-- dashboard_infobox -->
     <x-slot name="dashboard_infobox">
@@ -97,7 +97,7 @@
                         <i class="fa-solid fa-chalkboard-user"></i>
                     </div>
 
-                    <a href="#" class="small-box-footer">
+                    <a href="{{ route('teacher.index') }}" class="small-box-footer">
                         Lista de Professores
                         <i class="fa-solid fa-circle-right ml-1"></i>
                     </a>

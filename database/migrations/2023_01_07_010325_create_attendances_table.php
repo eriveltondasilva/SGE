@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('attendances', function (Blueprint $table) {
             $table->id();
-            $table->boolean('absence');
             $table->date('date');
-            $table->string('bimester');
+            $table->boolean('absence')->default(true);
             $table->timestamps();
         });
     }

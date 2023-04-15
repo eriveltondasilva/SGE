@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('relatives', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('kinship')->nullable();
+            $table->string('email', 100)->unique()->nullable();
             $table->string('telephone')->nullable();
+            $table->string('kinship')->nullable();
             $table->timestamps();
         });
     }

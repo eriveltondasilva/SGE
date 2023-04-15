@@ -22,8 +22,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Paginator::useBootstrapFive();
+
         Vite::macro('img', fn (string $asset) => $this->asset("resources/img/{$asset}"));
         Vite::macro('icon', fn (string $asset) => $this->asset("resources/img/icon/{$asset}"));
+        
 
     }
 }

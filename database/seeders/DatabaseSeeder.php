@@ -43,28 +43,28 @@ class DatabaseSeeder extends Seeder
                 'name'      => 'Erivelton da Silva',
                 'email'     => 'eriveltondasilva13@gmail.com',
                 'password'  => '$2y$10$pI3e3VGJXsDIfqDVFH7tBOit2GwHHJetEmVLwfctHD4x3reePI1fa',
-                'school_id' => '1',
+                'school_id' => '2',
                 'role_id'   => '1',
             ],
             [
                 'name'      => 'Maria',
                 'email'     => 'maria@gmail.com',
                 'password'  => '$2y$10$pI3e3VGJXsDIfqDVFH7tBOit2GwHHJetEmVLwfctHD4x3reePI1fa',
-                'school_id' => '1',
+                'school_id' => '2',
                 'role_id'   => '2',
             ],
             [
                 'name'      => 'José',
                 'email'     => 'jose@gmail.com',
                 'password'  => '$2y$10$pI3e3VGJXsDIfqDVFH7tBOit2GwHHJetEmVLwfctHD4x3reePI1fa',
-                'school_id' => '2',
+                'school_id' => '3',
                 'role_id'   => '3',
             ],
             [
                 'name'      => 'Paulo',
                 'email'     => 'paulo@gmail.com',
                 'password'  => '$2y$10$pI3e3VGJXsDIfqDVFH7tBOit2GwHHJetEmVLwfctHD4x3reePI1fa',
-                'school_id' => '2',
+                'school_id' => '3',
                 'role_id'   => '4',
             ],
         ]);
@@ -83,6 +83,10 @@ class DatabaseSeeder extends Seeder
 
         //
         DB::table('schools')->insert([
+            [
+                'name'       => 'Escola de Educação Básica Teste',
+                'short_name' => 'Escola Teste'
+            ],
             [
                 'name'       => 'Escola De Educação Básica Centro Educacional Viver',
                 'short_name' => 'Escola Viver'
@@ -107,7 +111,7 @@ class DatabaseSeeder extends Seeder
         //
         \App\Models\Student::factory(200)->create();
         \App\Models\Teacher::factory(10)->create();
-        \App\Models\Address::factory(100)->create();
+        \App\Models\Address::factory(200)->create();
 
 
 

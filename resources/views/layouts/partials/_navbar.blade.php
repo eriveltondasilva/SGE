@@ -36,7 +36,7 @@
                     <div class="input-group input-group-sm">
 
                         <input aria-label="pesquisa" class="form-control form-control-navbar bg-light"
-                            placeholder="Pesquisar..." type="search" />
+                               placeholder="Pesquisar..." type="search" />
 
                         <div class="input-group-append">
 
@@ -85,7 +85,7 @@
 
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                 <img src="{{ Vite::icon('user.png') }}" class="user-image img-circle elevation-2 mr-0 bg-white"
-                    alt="Imagem do usuário" />
+                     alt="Imagem do usuário" />
             </a>
 
             <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px">
@@ -93,14 +93,14 @@
                 <li class="user-header bg-yellow">
 
                     <img src="{{ Vite::icon('user.png') }}" class="img-circle elevation-2 bg-white"
-                        alt="{{ Auth::user()->name }}" />
+                         alt="{{ Auth::user()->name }}" />
 
                     <h6 class="mt-2 mb-0">
                         {{ Auth::user()->name }}
                     </h6>
 
                     <p class="text-uppercase mt-0">
-                        {{ Auth::user()->userRole()->first()->translation }}
+                        {{ Auth::user()->userRole->translation }}
                     </p>
 
                 </li>
@@ -125,8 +125,8 @@
                                 @csrf
 
                                 <a href="route('logout')"
-                                    onclick="event.preventDefault(); this.closest('form').submit();"
-                                    class="btn btn-danger btn-block">
+                                   onclick="event.preventDefault(); this.closest('form').submit();"
+                                   class="btn btn-danger btn-block">
                                     <i class="fa-solid fa-right-from-bracket mr-1"></i>
                                     Sair
                                 </a>

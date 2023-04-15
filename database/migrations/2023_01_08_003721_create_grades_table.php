@@ -12,8 +12,7 @@ return new class () extends Migration {
     {
         Schema::create('grades', function (Blueprint $table) {
             $table->id();
-            $table->decimal('value', $total = 4, $places = 2, $unsigned = false);
-            $table->string('bimester');
+            $table->decimal('value', 4, 2, false);
             $table->timestamps();
         });
     }
