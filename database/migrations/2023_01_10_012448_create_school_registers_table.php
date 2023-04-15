@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('school_registers', function (Blueprint $table) {
             $table->id();
-            $table->start_date('date');
-            $table->end_date('date');
+            $table->date('start_date');
+            $table->date('end_date');
             $table->text('summary')->nullable();
             $table->tinyInteger('class_number');
             $table->timestamps();

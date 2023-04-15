@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->boolean('status')->default(true);
             $table->string('name');
-            $table->string('abbreviation', 20)->nullable();
+            $table->string('abbr', 20)->nullable();
             $table->string('instagram', 100)->nullable();
             $table->string('facebook', 100)->nullable();
             $table->string('whatsapp', 100)->nullable();

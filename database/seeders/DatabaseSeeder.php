@@ -14,6 +14,33 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        //
+        DB::table('school_years')->insert([
+           'year' => '2023',
+        ]);
+
+
+        // Inserir itens na tabela roles
+        DB::table('bimesters')->insert([
+            [
+                'name' => '1º bimestre',
+                'abbr' => '1º BIM',
+            ],
+            [
+                'name' => '2º bimestre',
+                'abbr' => '2º BIM',
+            ],
+            [
+                'name' => '3º bimestre',
+                'abbr' => '3º BIM',
+            ],
+            [
+                'name' => '4º bimestre',
+                'abbr' => '4º BIM',
+            ],
+        ]);
+
+
         // Inserir itens na tabela roles
         DB::table('roles')->insert([
             [
@@ -36,6 +63,24 @@ class DatabaseSeeder extends Seeder
                 'translation' => 'aluno(a)',
             ],
         ]);
+
+
+        //
+        DB::table('schools')->insert([
+            [
+                'name' => 'Escola de Educação Básica Teste',
+                'abbr' => 'Escola Teste'
+            ],
+            [
+                'name' => 'Escola De Educação Básica Centro Educacional Viver',
+                'abbr' => 'Escola Viver'
+            ],
+            [
+                'name' => 'Escola De Educação Básica Centro Educacional Viver',
+                'abbr' => 'Escola Livramento'
+            ],
+        ]);
+
 
         //
         DB::table('users')->insert([
@@ -69,38 +114,43 @@ class DatabaseSeeder extends Seeder
             ],
         ]);
 
+
         //
         DB::table('subjects')->insert([
-            ['name' => 'Artes'],
-            ['name' => 'Ciências'],
-            ['name' => 'Educação Física'],
-            ['name' => 'Geografia'],
-            ['name' => 'História'],
-            ['name' => 'Língua Inglesa'],
-            ['name' => 'Língua Portuguesa'],
-            ['name' => 'Matemática'],
+            [
+                'name' => 'Artes',
+                'abbr' => 'ART',
+            ],
+            [
+                'name' => 'Ciências',
+                'abbr' => 'CIE',
+            ],
+            [
+                'name' => 'Educação Física',
+                'abbr' => 'EFI',
+            ],
+            [
+                'name' => 'Geografia',
+                'abbr' => 'GEO',
+            ],
+            [
+                'name' => 'História',
+                'abbr' => 'HIS',
+            ],
+            [
+                'name' => 'Língua Inglesa',
+                'abbr' => 'LIN',
+            ],
+            [
+                'name' => 'Língua Portuguesa',
+                'abbr' => 'LPO',
+            ],
+            [
+                'name' => 'Matemática',
+                'abbr' => 'MAT',
+            ],
         ]);
 
-        //
-        DB::table('schools')->insert([
-            [
-                'name'       => 'Escola de Educação Básica Teste',
-                'short_name' => 'Escola Teste'
-            ],
-            [
-                'name'       => 'Escola De Educação Básica Centro Educacional Viver',
-                'short_name' => 'Escola Viver'
-            ],
-            [
-                'name'       => 'Escola De Educação Básica Centro Educacional Viver',
-                'short_name' => 'Escola Livramento'
-            ],
-        ]);
-
-        //
-        DB::table('schoolYears')->insert([
-            'year' => '2023',
-        ]);
 
         //
         DB::table('relatives')->insert([
@@ -110,7 +160,7 @@ class DatabaseSeeder extends Seeder
 
         //
         \App\Models\Student::factory(200)->create();
-        \App\Models\Teacher::factory(10)->create();
+        \App\Models\Teacher::factory(20)->create();
         \App\Models\Address::factory(200)->create();
 
 

@@ -28,6 +28,8 @@ class AddressFactory extends Factory
             'city' => $this->faker->city(),
             'cep' => $this->faker->randomNumber(8, true),
             'state' => $this->faker->state(),
+            'student_id' => $this->faker->numberBetween(1, 200),
+            'teacher_id' => $this->faker->numberBetween(1, 20),
         ];
     }
 }
