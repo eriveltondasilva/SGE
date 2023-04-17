@@ -12,8 +12,8 @@
         <img alt="AdminLTE Logo" class="brand-image {{-- img-circle elevation-3 --}}" src="{{ Vite::icon('school.png') }}" />
 
 
-        <span class="brand-text font-weight-light">
-            {{ Auth::user()->userSchool->short_name }}
+        <span class="brand-text font-weight-light ml-1">
+            {{ Auth::user()->userSchool->abbr }}
         </span>
 
     </a>

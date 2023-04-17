@@ -40,8 +40,8 @@ return new class () extends Migration {
         });
 
         Schema::table('students', function (Blueprint $table) {
-            $table->foreignId('school_id')->constrained('schools');
-            $table->foreignId('relative_id')->constrained('relatives');
+            $table->foreignId('school_id')->nullable()->constrained('schools');
+            $table->foreignId('relative_id')->nullable()->constrained('relatives');
         });
 
         Schema::table('teachers', function (Blueprint $table) {

@@ -27,32 +27,33 @@ class Student extends Model
      */
     protected $fillable = [
         'name',
+        'email',
         'rg',
         'cpf',
-        'email',
-        'birth_place',
+        'telephone',
+        'nationality',
         'birth_date',
         'gender',
-        'nationality',
+        'photo_path',
+        'birth_place',
         'gov_benefits',
-        'health_problem',
+        'health_problems',
         'note',
+        'school_id'
     ];
 
 
 
-
-
     // * Relacionamentos:
-    public function studentAddress(): BelongsTo
+    public function address(): BelongsTo
     {
-        return $this->belongsTo(Address::class, 'address_id', 'id');
+        return $this->belongsTo(Address::class, 'student_id', 'id');
     }
 
-    public function studentSchool(): BelongsTo
-    {
-        return $this->belongsTo(School::class, 'school_id', 'id');
-    }
+    // public function school(): HasOne
+    // {
+    //     return $this->hasOne(School::class, 'school_id', 'id');
+    // }
 
 
 
@@ -61,11 +62,11 @@ class Student extends Model
     // * Limitar a buscar pelos alunos ativos ou desativos
     public function scopeIsActive(Builder $query): void
     {
-        $query->where('status', true)->where('school_id', Auth::user()->school_id);
+        $query->where('status', true)/* ->where('school_id', Auth::user()->school_id) */;
     }
 
     public function scopeIsNotActive(Builder $query): void
     {
-        $query->where('status', false)->where('school_id', Auth::user()->school_id);
+        $query->where('status', false)/* ->where('school_id', Auth::user()->school_id) */;
     }
 }

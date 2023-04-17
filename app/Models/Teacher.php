@@ -41,15 +41,15 @@ class Teacher extends Model
 
 
     // * Relacionamentos:
-    public function teacherAddress(): BelongsTo
-    {
-        return $this->belongsTo(Address::class, 'address_id', 'id');
-    }
+    // public function teacherAddress(): BelongsTo
+    // {
+    //     return $this->belongsTo(Address::class, 'address_id', 'id');
+    // }
 
-    public function teacherSchool(): BelongsTo
-    {
-        return $this->belongsTo(School::class, 'school_id', 'id');
-    }
+    // public function teacherSchool(): BelongsTo
+    // {
+    //     return $this->belongsTo(School::class, 'school_id', 'id');
+    // }
 
 
 

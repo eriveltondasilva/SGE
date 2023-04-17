@@ -37,14 +37,14 @@ class Address extends Model
 
 
     // * Relacionamentos:
-    public function addressStudents(): HasMany
+    public function students(): HasMany
     {
-        return $this->hasMany(Student::class, 'address_id', 'id');
+        return $this->hasMany(Student::class);
     }
 
-    public function addressTeachers(): HasMany
-    {
-        return $this->hasMany(Teacher::class, 'address_id', 'id');
-    }
+    // public function addressTeachers(): HasMany
+    // {
+    //     return $this->hasMany(Teacher::class, 'address_id', 'id');
+    // }
 
 }

@@ -20,13 +20,14 @@ return new class extends Migration
             $table->string('cpf')->nullable();
             $table->string('telephone')->nullable();
             $table->string('nationality')->nullable();
-            $table->set('gender', ['F', 'M'])->nullable();
             $table->date('birth_date')->nullable();
+            $table->set('gender', ['F', 'M'])->nullable();
+            $table->string('photo_path', 2048)->nullable();
+
             $table->string('birth_place')->nullable();
             $table->string('gov_benefits')->nullable();
             $table->string('health_problems')->nullable();
             $table->text('note')->nullable();
-            $table->string('photo_path', 2048)->nullable();
             $table->timestamps();
         });
     }

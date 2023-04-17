@@ -139,8 +139,7 @@
             {{-- Campo para o endereço do aluno --}}
             <div class="form-group">
                 <label for="address_street">Endereço:</label>
-                <input type="text" class="form-control" id="address_street"
-                       value="{{ $student->studentAddress->street }}" readonly>
+                <input type="text" class="form-control" id="address_street" value="" readonly>
             </div>
 
 
@@ -148,14 +147,12 @@
             <div class="form-row">
                 <div class="form-group col-md-8">
                     <label for="address_complement">Complemento:</label>
-                    <input type="text" class="form-control" id="address_complement"
-                           value="{{ $student->StudentAddress->complement }}" readonly>
+                    <input type="text" class="form-control" id="address_complement" value="" readonly>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label for="address_neighborhood">Bairro:</label>
-                    <input type="text" class="form-control" id="address_neighborhood"
-                           value="{{ $student->studentAddress->neighborhood }}" readonly>
+                    <input type="text" class="form-control" id="address_neighborhood" value="" readonly>
                 </div>
             </div>
 
@@ -164,14 +161,12 @@
             <div class="form-row">
                 <div class="form-group col-md-8">
                     <label for="address_city">Cidade:</label>
-                    <input type="text" class="form-control" id="address_city"
-                           value="{{ $student->studentAddress->city }}" readonly>
+                    <input type="text" class="form-control" id="address_city" value="" readonly>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label for="address_cep">CEP:</label>
-                    <input type="text" class="form-control" id="address_cep"
-                           value="{{ $student->studentAddress->cep }}" readonly>
+                    <input type="text" class="form-control" id="address_cep" value="" readonly>
                 </div>
             </div>
 
@@ -179,8 +174,7 @@
             <div class="form-row">
                 <div class="form-group col-md-8">
                     <label for="address_state">Estado:</label>
-                    <input type="text" class="form-control" id="address_state"
-                           value="{{ $student->studentAddress->state }}" readonly>
+                    <input type="text" class="form-control" id="address_state" value="" readonly>
                 </div>
 
                 <div class="form-group col-md-4">

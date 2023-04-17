@@ -6,6 +6,7 @@ use App\Models\Student;
 use App\Models\Address;
 use Illuminate\Http\Request;
 use App\Http\Requests\StudentRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StudentController extends Controller
 {
@@ -16,8 +17,8 @@ class StudentController extends Controller
     {
         $search   = $request->search;
         $students = Student::isActive();
-        
-        
+
+
         if ($search) {
             if (is_numeric($search)) {
                 $students = $students->where('id', $search)->get();
@@ -50,8 +51,13 @@ class StudentController extends Controller
     public function store(StudentRequest $request)
     {
         $validated = $request->validated();
+        $school_id = Auth::user()->school_id;
 
-        Student::create($validated);
+        $student = Student::create($validated);
+
+        $student->fill(['school_id' => $school_id]);
+
+        $student->save();
 
         return redirect()
             ->route('student.create')
@@ -91,7 +97,7 @@ class StudentController extends Controller
             ->with('msg', 'Aluno atualizado com sucesso!');
     }
 
-    
+
     /**
      * Remove the specified resource from storage.
      */

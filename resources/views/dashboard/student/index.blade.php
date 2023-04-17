@@ -11,7 +11,7 @@
         <form action="{{ route('student.index') }}" method="GET">
             <div class="input-group mb-4">
                 <input type="search" class="form-control" id="search" name="search" value="{{ $search }}"
-                    autofocus placeholder="Pesquise matrícula ou nome do aluno...">
+                       autofocus placeholder="Pesquise matrícula ou nome do aluno...">
 
                 <div class="input-group-append">
                     <button type="submit" class="btn btn-primary">
@@ -24,6 +24,7 @@
 
 
         @if ($students)
+
 
             <!-- table  -->
             <div class="table-responsive-xl">
@@ -54,15 +55,15 @@
                                     {{ str_pad($student->id, 3, '0', STR_PAD_LEFT) }}
                                 </td>
                                 <td>
-                                    {{ $student->address_street }}
+                                    {{-- {{ student }} --}}
                                 </td>
                                 <td>
-                                    {{ $student->address_city }}
+                                    {{-- {{ student }} --}}
                                 </td>
 
                                 <td class="text-right">
                                     <a href="{{ route('student.show', $student) }}" class="btn btn-sm btn-primary"
-                                        title="Visualizar aluno">
+                                       title="Visualizar aluno">
                                         <i class="fa-regular fa-eye mr-1"></i>
                                         Visualizar
                                     </a>
