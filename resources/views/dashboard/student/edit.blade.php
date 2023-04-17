@@ -12,47 +12,50 @@
             @csrf
             @method('PUT')
 
+
             <div class="card-body">
 
                 <div class="form-group">
 
-                    <label for="#" class="text-lg">
+                    <label class="text-lg" for="#">
                         Matrícula:
                         <span class="font-weight-normal badge badge-secondary text-md">
                             {{ str_pad($student->id, 3, '0', STR_PAD_LEFT) }}
                         </span>
                     </label>
 
+
                     {{-- Botão desativado para editar o cadastro --}}
                     <div>
-                        <a href="#" class="btn btn-sm btn-primary disabled px-4">
+
+                        <a class="btn btn-sm btn-primary disabled px-4" href="#">
                             <i class="fa-solid fa-pen-to-square mr-1"></i>
                             Editar
                         </a>
+
                     </div>
 
                 </div>
 
 
-                <!--  -->
+                {{-- Dados pessoais --}}
                 <x-form.personal-data :person="$student" />
 
 
-                <!--  -->
+                {{-- Dados do responsáveis --}}
                 <x-form.relative-data />
 
 
-                <!--  -->
+                {{-- Dados do endereço --}}
                 <x-form.address />
 
 
-                <!--  -->
+                {{-- Outros datos --}}
                 <x-form.other-data :person="$student" />
 
 
-                <!-- botões: cancelar e atualizar -->
-                <x-form.footer btn="Atualizar" />
-
+                {{-- Botões: cancelar e cadastrar/atualizar --}}
+                <x-form.footer />
 
             </div>
             <!-- /.card-body -->
@@ -62,7 +65,9 @@
     </div>
     <!-- /.col do form -->
 
+
     <br>
     <br>
+
 
 </x-dashboard-layout>

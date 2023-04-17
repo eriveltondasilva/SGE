@@ -63,7 +63,8 @@
         <div class="form-group col-sm-7">
 
             <label for="telephone">Telefone:</label>
-            <input class="form-control js-fone" id="telephone" name="telephone" type="text" @readonly($readonly)>
+            <input class="form-control js-fone" id="telephone" name="telephone" type="text"
+                   value="{{ $person->telephone ?? old('telephone') }}" @readonly($readonly)>
 
         </div>
 
