@@ -10,7 +10,7 @@
         <div class="card-body">
 
             {{-- Componente para retornar mensage: "cadastro com sucesso!" --}}
-            <x-alert.msg alert="Aluno" />
+            <x-alert.msg name="student" text="Aluno" />
 
 
             {{-- Header do form --}}

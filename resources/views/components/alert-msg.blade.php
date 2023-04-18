@@ -1,5 +1,0 @@
-@if ($msg)
-    <div class="alert alert-danger">
-        {{ $msg }}
-    </div>
-@endif
