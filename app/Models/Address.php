@@ -37,10 +37,10 @@ class Address extends Model
 
 
     // * Relacionamentos:
-    public function students(): HasMany
-    {
-        return $this->hasMany(Student::class);
-    }
+    // public function students(): HasMany
+    // {
+    //     return $this->hasMany(Student::class);
+    // }
 
     // public function addressTeachers(): HasMany
     // {

@@ -6,15 +6,15 @@
 
 
     <!-- col do form -->
-    <div class="col-sm-10 m-auto pt-5">
+    <div class="col-sm-10 mx-auto">
 
         <form action="{{ route('student.index') }}" method="GET">
             <div class="input-group mb-4">
-                <input type="search" class="form-control" id="search" name="search" value="{{ $search }}"
+                <input class="form-control" id="search" name="search" type="search" value="{{ $search }}"
                        autofocus placeholder="Pesquise matrícula ou nome do aluno...">
 
                 <div class="input-group-append">
-                    <button type="submit" class="btn btn-primary">
+                    <button class="btn btn-primary" type="submit">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         pesquisar
                     </button>
@@ -62,7 +62,7 @@
                                 </td>
 
                                 <td class="text-right">
-                                    <a href="{{ route('student.show', $student) }}" class="btn btn-sm btn-primary"
+                                    <a class="btn btn-sm btn-primary" href="{{ route('student.show', $student) }}"
                                        title="Visualizar aluno">
                                         <i class="fa-regular fa-eye mr-1"></i>
                                         Visualizar

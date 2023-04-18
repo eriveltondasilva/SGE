@@ -23,17 +23,19 @@ class School extends Model
 
 
     // * Relacionamentos:
-    public function schoolStudents(): HasMany
+    public function students(): HasMany
     {
         return $this->hasMany(Student::class, 'school_id', 'id');
     }
 
-    public function schoolTeachers(): HasMany
+
+    public function teachers(): HasMany
     {
         return $this->hasMany(Teacher::class, 'school_id', 'id');
     }
 
-    public function schoolUsers(): HasMany
+
+    public function users(): HasMany
     {
         return $this->hasMany(User::class, 'school_id', 'id');
     }

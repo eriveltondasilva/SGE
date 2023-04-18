@@ -9,9 +9,7 @@
             <!-- col -->
             <div class="col-sm-6">
 
-                <h1 class="m-0">
-                    {{ $head_title }}
-                </h1>
+                <h1 class="m-0">{{ $head_title }}</h1>
 
             </div>
             <!-- /.col -->
@@ -37,7 +35,7 @@
 
 </header>
 
-{{-- 
+{{--
  <!-- breadcrumb header -->
  <x-slot:header_breadcrumb>
     <li class="breadcrumb-item active">

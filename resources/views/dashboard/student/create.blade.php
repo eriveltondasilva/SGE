@@ -2,35 +2,20 @@
 
     {{-- browser page title --}}
     <x-slot name="head_title">Cadastrar Aluno</x-slot>
-    {{-- ./browser page title --}}
 
 
     {{-- col do form --}}
-    <div class="col-sm-8 m-auto pt-3">
+    <div class="col-sm-8 mx-auto">
 
-        <form method="POST" action="{{ route('student.store') }}">
+        <form action="{{ route('student.store') }}" method="POST">
+
             @csrf
 
 
             <div class="card-body">
 
                 {{-- Componente para retornar mensage: "cadastro com sucesso!" --}}
-                @if (session('msg'))
-                    <div class="alert alert-info alert-dismissible fade show" role="alert">
-
-                        {{ session('msg') }}
-                        <a class="alert-link" href="{{ route('student.show', $last_student) }}">
-                            Clique aqui
-                        </a>
-                        para ver o último aluno cadastrado.
-                        <button class="close" data-dismiss="alert" type="button" aria-label="Close">
-                            <span aria-hidden="true">
-                                <i class="fa-solid fa-circle-xmark"></i>
-                            </span>
-                        </button>
-
-                    </div>
-                @endif
+                <x-alert.msg alert="Aluno" :person="$lastStudent" />
 
 
                 {{-- Dados pessoais --}}
@@ -63,6 +48,5 @@
 
     <br>
     <br>
-
 
 </x-dashboard-layout>

@@ -52,14 +52,17 @@ class User extends Authenticatable
     ];
 
 
+
+
+
      // * Relacionamentos:
-     public function userSchool(): BelongsTo
+     public function school(): BelongsTo
      {
          return $this->belongsTo(School::class, 'school_id', 'id');
      }
-    
 
-     public function userRole(): BelongsTo
+
+     public function role(): BelongsTo
      {
          return $this->belongsTo(Role::class, 'role_id', 'id');
      }

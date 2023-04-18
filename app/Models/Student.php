@@ -45,10 +45,10 @@ class Student extends Model
 
 
     // * Relacionamentos:
-    public function address(): BelongsTo
-    {
-        return $this->belongsTo(Address::class, 'student_id', 'id');
-    }
+    // public function address(): BelongsTo
+    // {
+    //     return $this->belongsTo(Address::class, 'student_id', 'id');
+    // }
 
     // public function school(): HasOne
     // {
@@ -62,11 +62,12 @@ class Student extends Model
     // * Limitar a buscar pelos alunos ativos ou desativos
     public function scopeIsActive(Builder $query): void
     {
-        $query->where('status', true)/* ->where('school_id', Auth::user()->school_id) */;
+        $query->where('status', true);
     }
+
 
     public function scopeIsNotActive(Builder $query): void
     {
-        $query->where('status', false)/* ->where('school_id', Auth::user()->school_id) */;
+        $query->where('status', false);
     }
 }

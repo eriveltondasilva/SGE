@@ -36,9 +36,9 @@ class TeacherController extends Controller
      */
     public function create(Teacher $teacher)
     {
-        $last_teacher = Teacher::isActive()->latest()->first();
+        $lastTeacher = Teacher::isActive()->latest()->first();
 
-        return view('dashboard/teacher/create', compact('last_teacher'));
+        return view('dashboard/teacher/create', compact('lastTeacher'));
     }
 
 

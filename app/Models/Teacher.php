@@ -58,11 +58,12 @@ class Teacher extends Model
     // * Limitar a buscar pelos professores ativos ou desativos
     public function scopeIsActive(Builder $query): void
     {
-        $query->where('status', true)->where('school_id', Auth::user()->school_id);
+        $query->where('status', true);
     }
+
 
     public function scopeIsNotActive(Builder $query): void
     {
-        $query->where('status', false)->where('school_id', Auth::user()->school_id);
+        $query->where('status', false);
     }
 }

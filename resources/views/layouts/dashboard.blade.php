@@ -2,52 +2,49 @@
 
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-<!-- head -->
+
 @include('layouts.partials._head')
-<!-- /head -->
 
 
 <body class="hold-transition sidebar-mini">
 
-    <!-- wrapper -->
+    {{-- wrapper --}}
     <div class="wrapper">
 
-        <!-- navbar -->
+        {{-- navbar --}}
         @include('layouts.partials._navbar')
-        <!-- /.navbar -->
 
 
-        <!-- sidebar -->
+        {{-- sidebar --}}
         @include('layouts.partials._sidebar')
-        <!-- /.sidebar -->
 
 
-        <!-- content-wrapper -->
+        {{-- content-wrapper --}}
         <div class="content-wrapper">
 
-            <!-- content-header -->
+            {{-- content-header --}}
             @include('layouts.partials._header')
-            <!-- /.content-header -->
 
 
-            <!-- main content -->
+            {{-- main content --}}
             <main class="content">
 
-                <!-- container-fluid -->
+                {{-- container-fluid --}}
                 <div class="container-fluid">
 
-                    <!-- row -->
+                    {{-- row --}}
                     <div class="row">
 
-                        <!-- col-lg-12 -->
-                        <div class="col-lg-12">
+                        {{-- col-12 --}}
+                        <div class="col-12">
 
-                            {{ $dashboard_infobox ?? '' }}
+                            {{ $infobox ?? '' }}
 
-                            <!-- card-yellow -->
+
+                            {{-- card-yellow --}}
                             <div class="card card-yellow">
 
-                                {{-- Código para deixar uma linha grossa no início das páginas  --}}
+                                {{-- Código para deixar uma linha grossa no topo dos mains das páginas  --}}
                                 <div class="card-header">
                                     <h5></h5>
                                 </div>
@@ -56,29 +53,30 @@
                                 {{ $slot }}
 
                             </div>
-                            <!-- /.card-yellow -->
+                            {{-- /.card-yellow --}}
 
                         </div>
-                        <!-- /.col-lg-12 -->
+                        {{-- /.col-12 --}}
 
                     </div>
-                    <!-- /.row -->
+                    {{-- /.row --}}
 
                 </div>
-                <!-- /.container-fluid -->
+                {{-- /.container-fluid --}}
 
             </main>
-            <!-- /.main content -->
+            {{-- /.main content --}}
 
         </div>
-        <!-- /.content-wrapper -->
+        {{-- /.content-wrapper --}}
 
 
         @include('layouts.partials._footer')
 
     </div>
-    <!-- /.wrapper -->
+    {{-- /.wrapper --}}
 
 </body>
+
 
 </html>

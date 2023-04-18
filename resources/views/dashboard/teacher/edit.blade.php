@@ -1,38 +1,20 @@
 <x-dashboard-layout>
 
     <!-- browser page title -->
-    <x-slot name="head_title">Editar Aluno</x-slot>
-    <!-- ./browser page title -->
+    <x-slot name="head_title">Editar Professor</x-slot>
 
 
     <!-- col do form -->
-    <div class="col-sm-8 m-auto pt-3">
+    <div class="col-sm-8 mx-auto">
 
-        <form method="POST" action="{{ route('teacher.update', $teacher) }}">
+        <form action="{{ route('teacher.update', $teacher) }}" method="POST">
+
             @csrf
             @method('PUT')
 
             <div class="card-body">
 
-
-                <div class="form-group">
-
-                    <label class="text-lg" for="#">
-                        Matrícula:
-                        <span class="font-weight-normal badge badge-secondary text-md">
-                            {{ str_pad($teacher->id, 3, '0', STR_PAD_LEFT) }}
-                        </span>
-                    </label>
-
-                    {{-- Botão desativado para editar o cadastro --}}
-                    <div>
-                        <a class="btn btn-sm btn-primary disabled px-4" href="#">
-                            <i class="fa-solid fa-pen-to-square mr-1"></i>
-                            Editar
-                        </a>
-                    </div>
-
-                </div>
+                <x-form.header-btn name="teacher" :person="$teacher" />
 
 
                 {{-- Dados pessoais --}}
@@ -57,6 +39,5 @@
 
     <br>
     <br>
-
 
 </x-dashboard-layout>

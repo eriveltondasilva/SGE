@@ -39,9 +39,9 @@ class StudentController extends Controller
      */
     public function create(Student $student)
     {
-        $last_student = Student::isActive()->max('id');
+        $lastStudent = Student::isActive()->max('id');
 
-        return view('dashboard.student.create', compact('last_student'));
+        return view('dashboard.student.create', compact('lastStudent'));
     }
 
 
@@ -61,7 +61,7 @@ class StudentController extends Controller
 
         return redirect()
             ->route('student.create')
-            ->with('msg', 'Aluno cadastrado com sucesso!');
+            ->with('store');
     }
 
 
@@ -94,7 +94,7 @@ class StudentController extends Controller
 
         return redirect()
             ->route('student.show', $student)
-            ->with('msg', 'Aluno atualizado com sucesso!');
+            ->with('update');
     }
 
 
