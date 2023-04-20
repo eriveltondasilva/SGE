@@ -19,15 +19,15 @@ class TeacherFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name(),
-            'rg' => $this->faker->rg(),
-            'cpf' => $this->faker->cpf(),
-            'email' => $this->faker->unique()->safeEmail(),
-            'telephone' => $this->faker->cellphoneNumber(),
+            'name'        => $this->faker->name(),
+            'rg'          => $this->faker->rg(),
+            'cpf'         => $this->faker->cpf(),
+            'email'       => $this->faker->unique()->safeEmail(),
+            'telephone'   => $this->faker->cellphoneNumber(),
             'nationality' => $this->faker->country(),
-            'birth_date' => $this->faker->date('Y_m_d'),
-            'gender' => $this->faker->randomElement(['F', 'M']),
-            'school_id' => $this->faker->randomElement(['2', '3']),
+            'birth_date'  => $this->faker->date('Y_m_d'),
+            'gender'      => $this->faker->randomElement(['F', 'M']),
+            'school_id'   => $this->faker->randomElement(['2', '3']),
         ];
     }
 }

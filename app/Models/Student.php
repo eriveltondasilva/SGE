@@ -5,8 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Student extends Model
 {
@@ -39,16 +38,15 @@ class Student extends Model
         'gov_benefits',
         'health_problems',
         'note',
-        'school_id'
     ];
 
 
 
     // * Relacionamentos:
-    // public function address(): BelongsTo
-    // {
-    //     return $this->belongsTo(Address::class, 'student_id', 'id');
-    // }
+    public function address(): HasOne
+    {
+        return $this->hasOne(Address::class, 'student_id', 'id');
+    }
 
     // public function school(): HasOne
     // {

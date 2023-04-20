@@ -1,6 +1,5 @@
-@php
-    $readonly = request()->routeIs('*.show');
-@endphp
+@props(['person'])
+@php($readonly = request()->routeIs('*.show'))
 
 
 <section class="other-data mt-5">
@@ -13,7 +12,7 @@
 
         <label for="gov_benefits">Benefício do Governo:</label>
         <input class="form-control" id="gov_benefits" name="gov_benefits" type="text"
-               value="{{ $person->gov_benefits ?? old('gov_benefits') }}" placeholder="Insira benefícios do governo..."
+               value="{{ old('gov_benefits', $person ?? '') }}" placeholder="Insira benefícios do governo..."
                @readonly($readonly)>
 
     </div>
@@ -24,8 +23,8 @@
 
         <label for="health_problems">Problema de Saúde:</label>
         <input class="form-control" id="health_problems" name="health_problems" type="text"
-               value="{{ $person->health_problems ?? old('health_problems') }}"
-               placeholder="Insira problemas de saúde..." @readonly($readonly)>
+               value="{{ old('health_problems', $person ?? '') }}" placeholder="Insira problemas de saúde..."
+               @readonly($readonly)>
 
     </div>
 
@@ -35,7 +34,7 @@
 
         <label for="note">Observação:</label>
         <textarea class="form-control text-justify" id="note" name="note" rows="5"
-                  placeholder="Insira alguma observação..." @readonly($readonly)>{{ $person->note ?? old('note') }}</textarea>
+                  placeholder="Insira alguma observação..." @readonly($readonly)>{{ old('note', $person ?? '') }}</textarea>
 
     </div>
 

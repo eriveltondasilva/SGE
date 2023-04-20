@@ -6,7 +6,7 @@
 
 
     <!-- col do form -->
-    <div class="col-sm-10 mx-auto">
+    <div class="col-sm-10 mx-auto mt-5">
 
         <form action="{{ route('student.index') }}" method="GET">
             <div class="input-group mb-4">
@@ -23,9 +23,31 @@
         </form>
 
 
+        <nav class="mb-0" aria-label="Page navigation">
+            <ul class="pagination justify-content-end">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+
+
+        {{-- ! --}}
+        {{-- {{ $students->first()->name }} --}}
+        <br>
+        {{-- {{ $students->first()->address->street }} --}}
+        <br>
+
+
+        {{-- @if (isset($students)) --}}
+
         @if ($students)
-
-
             <!-- table  -->
             <div class="table-responsive-xl">
 
@@ -41,6 +63,7 @@
                         </tr>
                     </thead>
 
+
                     <tbody>
 
                         @foreach ($students as $student)
@@ -52,13 +75,13 @@
                                     {{ $student->name }}
                                 </td>
                                 <td>
-                                    {{ str_pad($student->id, 3, '0', STR_PAD_LEFT) }}
+                                    {{ Str::padLeft($student->id, 3, '0') }}
                                 </td>
                                 <td>
-                                    {{-- {{ student }} --}}
+                                    {{ $student->address->street }}
                                 </td>
                                 <td>
-                                    {{-- {{ student }} --}}
+                                    {{ $student->address->city }}
                                 </td>
 
                                 <td class="text-right">
@@ -71,9 +94,9 @@
                             </tr>
                         @endforeach
 
-                        @if (count($students) > 1)
-                            {{ $students->links() }}
-                        @endif
+                        {{-- ! --}}
+                        {{-- @if (count($students) > 1)
+                        @endif --}}
 
                     </tbody>
 
@@ -83,11 +106,11 @@
             <!-- ./table  -->
         @else
             <div class="alert alert-danger pt-3" role="alert">
-                <h5>Pesquisa não encontrada! Por favor, tente novamene.
+                <h5>Pesquisa não encontrada! Por favor, tente novamente.
                 </h5>
             </div>
-
         @endif
+
 
     </div>
     <!-- /.col do form -->

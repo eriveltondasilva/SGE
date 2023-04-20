@@ -26,7 +26,7 @@
 
 
             {{-- Dados do endereço --}}
-            <x-form.address />
+            <x-form.address :person="$student" />
 
 
             {{-- Outros datos --}}

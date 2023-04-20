@@ -23,11 +23,11 @@
 
 
                 {{-- Dados do responsáveis --}}
-                <x-form.relative-data />
+                <x-form.relative-data :person="$student" />
 
 
                 {{-- Dados do endereço --}}
-                <x-form.address />
+                <x-form.address :person="$student" />
 
 
                 {{-- Outros datos --}}

@@ -21,20 +21,20 @@ class StudentFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name(),
-            'rg' => $this->faker->rg(),
-            'cpf' => $this->faker->cpf(),
-            'email' => $this->faker->unique()->safeEmail(),
-            'telephone' => $this->faker->cellphoneNumber(),
-            'nationality' => $this->faker->country(),
-            'birth_place' => $this->faker->city(),
-            'gov_benefits' => $this->faker->sentence(10),
+            'name'            => $this->faker->name(),
+            'rg'              => $this->faker->rg(),
+            'cpf'             => $this->faker->cpf(),
+            'email'           => $this->faker->unique()->safeEmail(),
+            'telephone'       => $this->faker->cellphoneNumber(),
+            'nationality'     => $this->faker->country(),
+            'birth_place'     => $this->faker->city(),
+            'gov_benefits'    => $this->faker->sentence(10),
             'health_problems' => $this->faker->sentence(10),
-            'note' => $this->faker->sentence(50),
-            'birth_date' => $this->faker->date('Y_m_d'),
-            'gender' => $this->faker->randomElement(['F', 'M']),
-            'school_id' => $this->faker->numberBetween(2, 3),
-            'relative_id' => '1',
+            'note'            => $this->faker->sentence(50),
+            'birth_date'      => $this->faker->date('Y_m_d'),
+            'gender'          => $this->faker->randomElement(['F', 'M']),
+            'school_id'       => $this->faker->numberBetween(2, 3),
+            'relative_id'     => '1',
         ];
     }
 }

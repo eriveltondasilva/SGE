@@ -1,6 +1,4 @@
-@php
-    $readonly = request()->routeIs('*.show');
-@endphp
+@php($readonly = request()->routeIs('*.show'))
 
 
 <section class="relative-data mt-5">

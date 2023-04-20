@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
-use App\Models\Address;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Requests\StudentRequest;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\AddressRequest;
+use App\Models\Address;
 
 class StudentController extends Controller
 {
@@ -23,15 +24,18 @@ class StudentController extends Controller
             if (is_numeric($search)) {
                 $students = $students->where('id', $search)->get();
             } else {
-                $students = $students->where('name', 'like', $search . '%')->paginate(15);
+                $students = $students->where('name', 'like', $search . '%')->paginate(25);
             }
         } else {
-            $students = $students->orderBy('name')->paginate(15);
+            $students = $students->orderBy('name')->paginate(25);
         }
 
 
         return view('dashboard.student.index', compact('students', 'search'));
     }
+
+
+
 
 
     /**
@@ -45,6 +49,9 @@ class StudentController extends Controller
     }
 
 
+
+
+
     /**
      * Store a newly created resource in storage.
      */
@@ -53,16 +60,33 @@ class StudentController extends Controller
         $validated = $request->validated();
         $school_id = Auth::user()->school_id;
 
+        // Criar o cadastro do aluno
         $student = Student::create($validated);
 
-        $student->fill(['school_id' => $school_id]);
 
-        $student->save();
+        // Adicionar id da escola no cadastro do aluno
+        $student->update(['school_id' => $school_id]);
+
+
+        // Adicionar endereço ao cadastro do aluno
+        $student->address()->create([
+            'street' => $request->street,
+            'complement' => $request->complement,
+            'neighborhood' => $request->neighborhood,
+            'city' => $request->city,
+            'cep' => $request->cep,
+            'state' => $request->state,
+        ]);
+
+
 
         return redirect()
             ->route('student.create')
             ->with('store');
     }
+
+
+
 
 
     /**
@@ -74,6 +98,9 @@ class StudentController extends Controller
     }
 
 
+
+
+
     /**
      * Show the form for editing the specified resource.
      */
@@ -81,6 +108,9 @@ class StudentController extends Controller
     {
         return view('dashboard.student.edit', compact('student'));
     }
+
+
+
 
 
     /**
@@ -96,6 +126,9 @@ class StudentController extends Controller
             ->route('student.show', $student)
             ->with('update');
     }
+
+
+
 
 
     /**

@@ -22,7 +22,12 @@ class AddressRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'street'       => 'string|nullable|max:255',
+            'complement'   => 'string|nullable|max:255',
+            'neighborhood' => 'string|nullable|max:255',
+            'city'         => 'string|nullable|max:255',
+            'cep'          => 'string|nullable',
+            'state'        => 'string|nullable',
         ];
     }
 }

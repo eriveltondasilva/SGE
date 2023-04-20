@@ -2,15 +2,17 @@
     $show = $name . '.show';
     $edit = $name . '.edit';
 @endphp
+@props(['person'])
 
-<header class="row form-header">
+
+<header class="row form-header mt-3">
 
     <div class="col-md mb-2">
 
         <div class="font-weight-bold text-lg" for="#">
             Matrícula:
             <span class="font-weight-normal badge badge-primary text-md">
-                {{ str_pad($person->id, 3, '0', STR_PAD_LEFT) }}
+                {{ Str::padLeft($person->id, 3, '0') }}
             </span>
         </div>
 
