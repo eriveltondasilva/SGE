@@ -34,20 +34,32 @@ return new class () extends Migration {
 
 
         // !Adicionar colunas de chaves estrangeiras
+        //
         Schema::table('users', function (Blueprint $table) {
             $table->foreignId('school_id')->constrained('schools');
             $table->foreignId('role_id')->constrained('roles');
         });
 
+
+        //
         Schema::table('students', function (Blueprint $table) {
             $table->foreignId('school_id')->nullable()->constrained('schools');
-            $table->foreignId('relative_id')->nullable()->constrained('relatives');
         });
 
+
+        //
+        Schema::table('relatives', function (Blueprint $table) {
+            $table->foreignId('student_id')->nullable()->constrained('students');
+        });
+
+
+        //
         Schema::table('teachers', function (Blueprint $table) {
             $table->foreignId('school_id')->constrained('schools');
         });
 
+
+        // Chaves estrangeiras da tabela de endereço
         Schema::table('addresses', function (Blueprint $table) {
             $table->foreignId('student_id')->nullable()->constrained('students');
             $table->foreignId('teacher_id')->nullable()->constrained('teachers');

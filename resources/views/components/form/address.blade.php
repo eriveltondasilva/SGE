@@ -58,7 +58,7 @@
 
             <label for="cep">CEP:</label>
             <input class="form-control js-cep" name="cep" type="text"
-                   value="{{ old('cep'), $person->address->cep ?? '' }}" @readonly($readonly)>
+                   value="{{ old('cep', $person->address->cep ?? '') }}" @readonly($readonly)>
 
         </div>
     </div>
@@ -69,7 +69,7 @@
 
         <label for="state">Estado:</label>
         <input class="form-control" id="state" name="state" type="text"
-               value="{{ old('state'), $person->address->state ?? '' }}" placeholder="Insira o Estado do aluno..."
+               value="{{ old('state', $person->address->state ?? '') }}" placeholder="Insira o Estado do aluno..."
                @readonly($readonly)>
 
     </div>

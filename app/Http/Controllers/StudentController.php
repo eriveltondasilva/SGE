@@ -6,8 +6,6 @@ use App\Models\Student;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Requests\StudentRequest;
-use App\Http\Requests\AddressRequest;
-use App\Models\Address;
 
 class StudentController extends Controller
 {
@@ -16,6 +14,7 @@ class StudentController extends Controller
      */
     public function index(Request $request)
     {
+        // Variáveis
         $search   = $request->search;
         $students = Student::isActive();
 
@@ -31,6 +30,8 @@ class StudentController extends Controller
         }
 
 
+
+        //
         return view('dashboard.student.index', compact('students', 'search'));
     }
 
@@ -43,8 +44,12 @@ class StudentController extends Controller
      */
     public function create(Student $student)
     {
+        // Variável
         $lastStudent = Student::isActive()->max('id');
 
+
+
+        //
         return view('dashboard.student.create', compact('lastStudent'));
     }
 
@@ -57,32 +62,53 @@ class StudentController extends Controller
      */
     public function store(StudentRequest $request)
     {
-        $validated = $request->validated();
-        $school_id = Auth::user()->school_id;
-
-        // Criar o cadastro do aluno
-        $student = Student::create($validated);
-
-
-        // Adicionar id da escola no cadastro do aluno
-        $student->update(['school_id' => $school_id]);
-
-
-        // Adicionar endereço ao cadastro do aluno
-        $student->address()->create([
-            'street' => $request->street,
-            'complement' => $request->complement,
-            'neighborhood' => $request->neighborhood,
-            'city' => $request->city,
-            'cep' => $request->cep,
-            'state' => $request->state,
+        // Validar os dados do responsável pelo aluno:
+        $validatedRelative = $request->validate([
+            'relative[name]'      => 'string|nullable',
+            'relative[email]'     => 'string|nullable',
+            'relative[telephone]' => 'string|nullable',
         ]);
 
 
+        // Validar o endereço do aluno
+        $validatedAddress = $request->validate([
+            'street'       => 'string|nullable',
+            'complement'   => 'string|nullable',
+            'neighborhood' => 'string|nullable',
+            'city'         => 'string|nullable',
+            'cep'          => 'string|nullable',
+            'state'        => 'string|nullable',
+        ]);
 
-        return redirect()
-            ->route('student.create')
-            ->with('store');
+
+        // Criar o cadastro do aluno
+        $student = Student::create($request->validated());
+
+
+        // Adicionar id da escola no cadastro do aluno
+        $student->school_id = Auth::user()->school_id;
+        $student->save();
+
+
+        // Adicionar responsável ao cadastro do aluno
+        $student->relative()->create([ $validatedRelative,
+            'name'        => $request->relative['name'],
+            'email'       => $request->relative['email'],
+            'telephone'   => $request->relative['telephone'],
+            'kinship'     => $request->kinship,
+        ]);
+
+
+        // Adicionar endereço ao cadastro do aluno
+        $student->address()->create($validatedAddress);
+
+
+
+
+
+        //
+        return back()
+            ->with('msg', 'Aluno cadastrado com sucesso!');
     }
 
 
@@ -94,6 +120,7 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
+        //
         return view('dashboard.student.show', compact('student'));
     }
 
@@ -106,6 +133,7 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
+        //
         return view('dashboard.student.edit', compact('student'));
     }
 
@@ -118,13 +146,48 @@ class StudentController extends Controller
      */
     public function update(StudentRequest $request, Student $student)
     {
+        // Validação dos dados pessoais do aluno através do StudentRequest
         $validated = $request->validated();
 
+
+        // Validação dos dados do responsável pelo aluno
+        $validatedRelative = $request->validate([
+            'relative[name]'      => 'string|nullable',
+            'relative[email]'     => 'string|nullable',
+            'relative[telephone]' => 'string|nullable',
+        ]);
+
+
+        // Validação do endereço do aluno:
+        $validatedAddress = $request->validate([
+            'street'       => 'string|nullable',
+            'complement'   => 'string|nullable',
+            'neighborhood' => 'string|nullable',
+            'city'         => 'string|nullable',
+            'cep'          => 'string|nullable',
+            'state'        => 'string|nullable',
+        ]);
+
+
+        // Atualizar cadastro dos dados pessoais do aluno
         $student->update($validated);
 
-        return redirect()
-            ->route('student.show', $student)
-            ->with('update');
+        $student->relative()->update($validatedRelative, [
+            'name'        => $request->relative['name'],
+            'email'       => $request->relative['email'],
+            'telephone'   => $request->relative['telephone'],
+            'kinship'     => $request->kinship,
+        ]);
+
+        $student->address()->update($validatedAddress);
+
+
+
+
+
+        //
+        return to_route('student.show', $student)
+            ->with('msg', 'Cadastro do aluno atualizado com sucesso!');
     }
 
 

@@ -9,9 +9,11 @@
 
         <div class="card-body">
 
+            {{-- TODO: consertar os alerts --}}
             {{-- Componente para retornar mensage: "cadastro com sucesso!" --}}
-            <x-alert.msg name="student" text="Aluno" />
-
+            {{-- @if (true)
+                <x-alert.msg :msg="$msg" />
+            @endif --}}
 
             {{-- Header do form --}}
             <x-form.header-btn name="student" :person="$student" />
@@ -22,7 +24,7 @@
 
 
             {{-- Dados do responsáveis --}}
-            <x-form.relative-data />
+            <x-form.relative-data :person="$student" />
 
 
             {{-- Dados do endereço --}}

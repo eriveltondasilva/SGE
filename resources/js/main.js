@@ -14,7 +14,7 @@ $(".js-percentage").mask("##0,00%", { reverse: true, placeholder: "%" });
 // ----------------
 // #DARK MODE
 
-$(".js-close-alert").delay(5000).slideUp("slow");
+$(".js-close_alert").delay(8000).slideUp("slow");
 
 // ----------------
 // #DARK MODE

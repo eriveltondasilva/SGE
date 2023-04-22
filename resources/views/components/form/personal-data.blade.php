@@ -112,7 +112,7 @@
         <div class="form-check form-check-inline">
 
             <input class="form-check-input" id="gender_female" name="gender" type="radio" value="F"
-                   @checked(isset($person) ? $person->gender === 'F' : 'checked') @readonly($readonly)>
+                   @checked(isset($person) ? $person->gender === 'F' : 'checked') @disabled($readonly ? $person->gender !== 'F' : '')>
             <label class="form-check-label" for="gender_female">Feminino</label>
 
         </div>
@@ -121,7 +121,7 @@
         <div class="form-check form-check-inline">
 
             <input class="form-check-input" id="gender_male" name="gender" type="radio" value="M"
-                   @checked(isset($person) ? $person->gender === 'M' : '') @readonly($readonly)>
+                   @checked(isset($person) ? $person->gender === 'M' : '') @disabled($readonly ? $person->gender !== 'M' : '')>
             <label class="form-check-label" for="gender_male">Masculino</label>
 
         </div>

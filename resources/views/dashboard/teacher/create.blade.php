@@ -15,8 +15,9 @@
             <div class="card-body">
 
 
+                {{-- TODO: consertar os alerts --}}
                 {{-- Componente para retornar mensage: "cadastro com sucesso!" --}}
-                <x-alert.msg name="teacher" text="Professor" :person="$lastTeacher" />
+                {{-- <x-alert.msg name="teacher" text="Professor" :person="$lastTeacher" /> --}}
 
 
                 {{-- Dados pessoais --}}

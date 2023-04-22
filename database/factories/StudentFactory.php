@@ -34,7 +34,6 @@ class StudentFactory extends Factory
             'birth_date'      => $this->faker->date('Y_m_d'),
             'gender'          => $this->faker->randomElement(['F', 'M']),
             'school_id'       => $this->faker->numberBetween(2, 3),
-            'relative_id'     => '1',
         ];
     }
 }

@@ -5,7 +5,7 @@
     <!-- ./browser page title -->
 
 
-    <!-- col do form -->
+    <!-- campo para pesquisa -->
     <div class="col-sm-10 mx-auto mt-5">
 
         <form action="{{ route('student.index') }}" method="GET">
@@ -22,7 +22,9 @@
             </div>
         </form>
 
-
+        {{-- ! --}}
+        {{-- Paginação --}}
+        {{--
         <nav class="mb-0" aria-label="Page navigation">
             <ul class="pagination justify-content-end">
                 <li class="page-item disabled">
@@ -36,84 +38,73 @@
                 </li>
             </ul>
         </nav>
+        --}}
 
 
-        {{-- ! --}}
-        {{-- {{ $students->first()->name }} --}}
-        <br>
-        {{-- {{ $students->first()->address->street }} --}}
-        <br>
+        <!-- table  -->
+        <div class="table-responsive-xl">
+
+            <table class="table-hover table-sm table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Matr.</th>
+                        <th scope="col">Endereço</th>
+                        <th scope="col">Cidade</th>
+                        <th scope="col justify-content-end"></th>
+                    </tr>
+                </thead>
 
 
-        {{-- @if (isset($students)) --}}
+                <tbody>
 
-        @if ($students)
-            <!-- table  -->
-            <div class="table-responsive-xl">
-
-                <table class="table-hover table-sm table">
-                    <thead class="thead-light">
+                    @foreach ($students as $student)
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Matr.</th>
-                            <th scope="col">Endereço</th>
-                            <th scope="col">Cidade</th>
-                            <th scope="col justify-content-end"></th>
+                            <th scope="row">
+                                {{ $loop->iteration }}
+                            </th>
+                            <td>
+                                {{ $student->name }}
+                            </td>
+                            <td>
+                                {{ Str::padLeft($student->id, 3, '0') }}
+                            </td>
+                            <td>
+                                {{ $student->address->street }}
+                            </td>
+                            <td>
+                                {{ $student->address->city }}
+                            </td>
+
+                            <td class="text-right">
+                                <a class="btn btn-sm btn-primary" href="{{ route('student.show', $student) }}"
+                                   title="Visualizar aluno">
+                                    <i class="fa-regular fa-eye mr-1"></i>
+                                    Visualizar
+                                </a>
+                            </td>
                         </tr>
-                    </thead>
-
-
-                    <tbody>
-
-                        @foreach ($students as $student)
-                            <tr>
-                                <th scope="row">
-                                    {{ $loop->iteration }}
-                                </th>
-                                <td>
-                                    {{ $student->name }}
-                                </td>
-                                <td>
-                                    {{ Str::padLeft($student->id, 3, '0') }}
-                                </td>
-                                <td>
-                                    {{ $student->address->street }}
-                                </td>
-                                <td>
-                                    {{ $student->address->city }}
-                                </td>
-
-                                <td class="text-right">
-                                    <a class="btn btn-sm btn-primary" href="{{ route('student.show', $student) }}"
-                                       title="Visualizar aluno">
-                                        <i class="fa-regular fa-eye mr-1"></i>
-                                        Visualizar
-                                    </a>
-                                </td>
-                            </tr>
                         @endforeach
 
-                        {{-- ! --}}
-                        {{-- @if (count($students) > 1)
-                        @endif --}}
+                </tbody>
 
-                    </tbody>
+            </table>
 
-                </table>
+        </div>
+        <!-- ./table  -->
 
-            </div>
-            <!-- ./table  -->
-        @else
-            <div class="alert alert-danger pt-3" role="alert">
-                <h5>Pesquisa não encontrada! Por favor, tente novamente.
-                </h5>
-            </div>
-        @endif
 
+        {{--
+        <div class="alert alert-danger pt-3" role="alert">
+            <h5>Pesquisa não encontrada! Por favor, tente novamente.
+            </h5>
+        </div>
+        --}}
 
     </div>
     <!-- /.col do form -->
+
 
     <br>
     <br>

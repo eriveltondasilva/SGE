@@ -9,8 +9,9 @@
 
         <div class="card-body">
 
+            {{-- TODO: consertar os alerts --}}
             {{-- Componente para retornar mensage: "cadastro com sucesso!" --}}
-            <x-alert.msg name="teacher" text="Professor" />
+            {{-- <x-alert.msg name="teacher" text="Professor" /> --}}
 
 
             {{-- Header do form --}}

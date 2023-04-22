@@ -76,7 +76,7 @@ class DatabaseSeeder extends Seeder
                 'abbr' => 'Escola Viver'
             ],
             [
-                'name' => 'Escola De Educação Básica Centro Educacional Viver',
+                'name' => 'Escola De Educação Básica Nossa Senhora do Livramento',
                 'abbr' => 'Escola Livramento'
             ],
         ]);
