@@ -20,7 +20,7 @@ return new class () extends Migration {
             $table->string('telephone')->nullable();
             $table->string('nationality')->nullable();
             $table->date('birth_date')->nullable();
-            $table->set('gender', ['F', 'M'])->nullable();
+            $table->enum('gender', ['F', 'M'])->nullable();
             $table->string('photo_path', 2048)->nullable();
             $table->timestamps();
         });

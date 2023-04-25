@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Enums\GenderEnum;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PersonRequest extends FormRequest

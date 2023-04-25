@@ -40,12 +40,10 @@ class TeacherController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Teacher $teacher)
+    public function create()
     {
-        $lastTeacher = Teacher::isActive()->max('id');
-
         //
-        return view('dashboard.teacher.create', compact('lastTeacher'));
+        return view('dashboard.teacher.create');
     }
 
 
@@ -70,10 +68,14 @@ class TeacherController extends Controller
         // Adicionar endereço ao cadastro do professor
         $teacher->address()->create($validated['address']);
 
+        // Captura id do último professor cadastrado para apresentar no 'alert.saved-person'
+        $lastTeacher = $teacher->id;
+
 
 
         //
-        return back()->with('msg', 'Cadastro do professor realizado com sucesso!');
+        return to_route('teacher.create', compact('lastTeacher'))
+            ->with('msg', 'Cadastro do professor realizado com sucesso!');
     }
 
 

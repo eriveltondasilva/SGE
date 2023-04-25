@@ -18,6 +18,10 @@
                 <x-form.header-btn name="student" :person="$student" />
 
 
+                {{-- Alerta de erros do formulário --}}
+                <x-alert-error />
+
+
                 {{-- Dados pessoais --}}
                 <x-form.personal-data :person="$student" />
 
