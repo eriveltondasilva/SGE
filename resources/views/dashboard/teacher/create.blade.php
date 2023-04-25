@@ -18,6 +18,10 @@
                 <x-alert.saved-person name="teacher" text="professor" :person="$lastTeacher" />
 
 
+                {{-- Alerta de erros do formulário --}}
+                <x-alert.error />
+
+
                 {{-- Dados pessoais --}}
                 <x-form.personal-data />
 

@@ -15,11 +15,11 @@
 
             <div class="card-body">
 
-                <x-form.header-btn name="student" :person="$student" />
-
-
                 {{-- Alerta de erros do formulário --}}
-                <x-alert-error />
+                <x-alert.error />
+
+
+                <x-form.header-btn name="student" :person="$student" />
 
 
                 {{-- Dados pessoais --}}
