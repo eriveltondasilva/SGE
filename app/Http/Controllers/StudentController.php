@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PersonRequest;
 use App\Models\Student;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\Http\Requests\StudentRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StudentController extends Controller
 {
@@ -17,7 +17,6 @@ class StudentController extends Controller
         // Variáveis
         $search   = $request->search;
         $students = Student::isActive();
-
 
         if ($search) {
             if (is_numeric($search)) {
@@ -60,55 +59,28 @@ class StudentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StudentRequest $request)
+    public function store(PersonRequest $request)
     {
-        // Validar os dados do responsável pelo aluno:
-        $validatedRelative = $request->validate([
-            'relative[name]'      => 'string|nullable',
-            'relative[email]'     => 'string|nullable',
-            'relative[telephone]' => 'string|nullable',
-        ]);
-
-
-        // Validar o endereço do aluno
-        $validatedAddress = $request->validate([
-            'street'       => 'string|nullable',
-            'complement'   => 'string|nullable',
-            'neighborhood' => 'string|nullable',
-            'city'         => 'string|nullable',
-            'cep'          => 'string|nullable',
-            'state'        => 'string|nullable',
-        ]);
-
+        // Variável para encurtar validação
+        $validated = $request->validated();
 
         // Criar o cadastro do aluno
-        $student = Student::create($request->validated());
-
+        $student = Student::create($validated);
 
         // Adicionar id da escola no cadastro do aluno
         $student->school_id = Auth::user()->school_id;
         $student->save();
 
-
         // Adicionar responsável ao cadastro do aluno
-        $student->relative()->create([ $validatedRelative,
-            'name'        => $request->relative['name'],
-            'email'       => $request->relative['email'],
-            'telephone'   => $request->relative['telephone'],
-            'kinship'     => $request->kinship,
-        ]);
-
+        $student->relative()->create($validated['relative']);
 
         // Adicionar endereço ao cadastro do aluno
-        $student->address()->create($validatedAddress);
-
-
+        $student->address()->create($validated['address']);
 
 
 
         //
-        return back()
-            ->with('msg', 'Aluno cadastrado com sucesso!');
+        return back()->with('msg', 'Cadastro do aluno realizado com sucesso!');
     }
 
 
@@ -144,44 +116,20 @@ class StudentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(StudentRequest $request, Student $student)
+    public function update(PersonRequest $request, Student $student)
     {
-        // Validação dos dados pessoais do aluno através do StudentRequest
+        // Variável
         $validated = $request->validated();
 
 
-        // Validação dos dados do responsável pelo aluno
-        $validatedRelative = $request->validate([
-            'relative[name]'      => 'string|nullable',
-            'relative[email]'     => 'string|nullable',
-            'relative[telephone]' => 'string|nullable',
-        ]);
-
-
-        // Validação do endereço do aluno:
-        $validatedAddress = $request->validate([
-            'street'       => 'string|nullable',
-            'complement'   => 'string|nullable',
-            'neighborhood' => 'string|nullable',
-            'city'         => 'string|nullable',
-            'cep'          => 'string|nullable',
-            'state'        => 'string|nullable',
-        ]);
-
-
-        // Atualizar cadastro dos dados pessoais do aluno
+        // Atualizar cadastro do aluno
         $student->update($validated);
 
-        $student->relative()->update($validatedRelative, [
-            'name'        => $request->relative['name'],
-            'email'       => $request->relative['email'],
-            'telephone'   => $request->relative['telephone'],
-            'kinship'     => $request->kinship,
-        ]);
+        // Atualizar dados do responsável pelo aluno
+        $student->relative()->update($validated['relative']);
 
-        $student->address()->update($validatedAddress);
-
-
+        // Atualizar endereço do aluno
+        $student->address()->update($validated['address']);
 
 
 
@@ -197,8 +145,8 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Student $student)
-    {
-        //
-    }
+    // public function destroy(Student $student)
+    // {
+    //     //
+    // }
 }

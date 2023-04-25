@@ -11,9 +11,6 @@ class Address extends Model
     use HasFactory;
 
 
-
-
-
     protected $table = 'addresses';
 
 

@@ -5,8 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Teacher extends Model
 {
@@ -23,8 +22,15 @@ class Teacher extends Model
         'email',
         'telephone',
         'birth_date',
-        'gender',
         'nationality',
+        'gender',
+        'photo_path',
+
+    ];
+
+
+    protected $casts = [
+        'birth_date' => 'date',
     ];
 
 
@@ -32,6 +38,10 @@ class Teacher extends Model
 
 
     // * Relacionamentos:
+    public function address(): HasOne
+    {
+        return $this->hasOne(Address::class, 'teacher_id', 'id');
+    }
 
 
 

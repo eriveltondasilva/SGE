@@ -71,10 +71,10 @@
                                 {{ Str::padLeft($student->id, 3, '0') }}
                             </td>
                             <td>
-                                {{ $student->address->street }}
+                                {{ $student->address->street ?? '' }}
                             </td>
                             <td>
-                                {{ $student->address->city }}
+                                {{ $student->address->city ?? '' }}
                             </td>
 
                             <td class="text-right">

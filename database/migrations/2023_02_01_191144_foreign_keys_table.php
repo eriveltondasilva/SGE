@@ -41,8 +41,14 @@ return new class () extends Migration {
         });
 
 
-        //
+        // Chave estrangeira para adicionar o id da escola ao aluno
         Schema::table('students', function (Blueprint $table) {
+            $table->foreignId('school_id')->nullable()->constrained('schools');
+        });
+
+
+        // Chave estrangeira para adicionar o id da escola ao professor
+        Schema::table('teachers', function (Blueprint $table) {
             $table->foreignId('school_id')->nullable()->constrained('schools');
         });
 
@@ -53,18 +59,10 @@ return new class () extends Migration {
         });
 
 
-        //
-        Schema::table('teachers', function (Blueprint $table) {
-            $table->foreignId('school_id')->constrained('schools');
-        });
-
-
         // Chaves estrangeiras da tabela de endereço
         Schema::table('addresses', function (Blueprint $table) {
             $table->foreignId('student_id')->nullable()->constrained('students');
             $table->foreignId('teacher_id')->nullable()->constrained('teachers');
-            // TODO: Adicionar a opção para guardar o endereço do responsável pelo aluno
-            // $table->foreignId('relative_id')->nullable()->constrained('relatives');
         });
     }
 

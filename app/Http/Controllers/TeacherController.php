@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PersonRequest;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
-use App\Http\Requests\TeacherRequest;
+use Illuminate\Support\Facades\Auth;
 
 class TeacherController extends Controller
 {
@@ -27,8 +28,13 @@ class TeacherController extends Controller
         }
 
 
+
+        //
         return view('dashboard.teacher.index', compact('teachers', 'search'));
     }
+
+
+
 
 
     /**
@@ -36,25 +42,42 @@ class TeacherController extends Controller
      */
     public function create(Teacher $teacher)
     {
-        $lastTeacher = Teacher::isActive()->latest()->first();
+        $lastTeacher = Teacher::isActive()->max('id');
 
-        return view('dashboard/teacher/create', compact('lastTeacher'));
+        //
+        return view('dashboard.teacher.create', compact('lastTeacher'));
     }
+
+
+
 
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(TeacherRequest $request)
+    public function store(PersonRequest $request)
     {
+        // Variável
         $validated = $request->validated();
 
-        Teacher::create($validated);
+        // Criar o cadastro do aluno
+        $teacher = Teacher::create($validated);
 
-        return redirect()
-            ->route('teacher.create')
-            ->with('msg', 'Professor cadastrado com sucesso!');
+        // Adicionar id da escola no cadastro do professor
+        $teacher->school_id = Auth::user()->school_id;
+        $teacher->save();
+
+        // Adicionar endereço ao cadastro do professor
+        $teacher->address()->create($validated['address']);
+
+
+
+        //
+        return back()->with('msg', 'Cadastro do professor realizado com sucesso!');
     }
+
+
+
 
 
     /**
@@ -62,8 +85,12 @@ class TeacherController extends Controller
      */
     public function show(Teacher $teacher)
     {
+        //
         return view('dashboard.teacher.show', compact('teacher'));
     }
+
+
+
 
 
     /**
@@ -75,26 +102,39 @@ class TeacherController extends Controller
     }
 
 
+
+
+
     /**
      * Update the specified resource in storage.
      */
-    public function update(TeacherRequest $request, Teacher $teacher)
+    public function update(PersonRequest $request, Teacher $teacher)
     {
+        // Variável
         $validated = $request->validated();
 
+        // Atualizar cadastro do professor
         $teacher->update($validated);
 
-        return redirect()
-            ->route('teacher.show', $teacher)
-            ->with('msg', 'Professor atualizado com sucesso!');
+        // Atualizar endereço do professor
+        $teacher->address()->update($validated['address']);
+
+
+
+        //
+        return to_route('teacher.show', $teacher)
+            ->with('msg', 'Cadastro do professor atualizado com sucesso!');
     }
+
+
+
 
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Teacher $teacher)
-    {
-        //
-    }
+    // public function destroy(Teacher $teacher)
+    // {
+    //     //
+    // }
 }

@@ -1,3 +1,4 @@
+@props(['person'])
 @php($readonly = request()->routeIs('*.show'))
 
 <section class="relative-data mt-5">
@@ -32,16 +33,16 @@
 
         <div class="form-group col-sm">
 
-            <label for="kinship">Parentesco:</label>
-            <select class="form-control" id="kinship" name="kinship" @disabled($readonly)>
+            <label for="relative[kinship]">Parentesco:</label>
+            <select class="form-control" id="relative[kinship]" name="relative[kinship]" @disabled($readonly)>
                 <option>----------</option>
-                <option value="1" @selected($person->relative->kinship === '1')>mãe</option>
-                <option value="2" @selected($person->relative->kinship === '2')>pai</option>
-                <option value="3" @selected($person->relative->kinship === '3')>tia</option>
-                <option value="4" @selected($person->relative->kinship === '4')>tio</option>
-                <option value="5" @selected($person->relative->kinship === '5')>avó</option>
-                <option value="6" @selected($person->relative->kinship === '6')>avô</option>
-                <option value="0" @selected($person->relative->kinship === '0')>avô</option>
+                <option value="1" {{-- @selected($person->relative->kinship === '1') --}}>mãe</option>
+                <option value="2" {{-- @selected($person->relative->kinship === '2') --}}>pai</option>
+                <option value="3" {{-- @selected($person->relative->kinship === '3') --}}>tia</option>
+                <option value="4" {{-- @selected($person->relative->kinship === '4') --}}>tio</option>
+                <option value="5" {{-- @selected($person->relative->kinship === '5') --}}>avó</option>
+                <option value="6" {{-- @selected($person->relative->kinship === '6') --}}>avô</option>
+                <option value="0" {{-- @selected($person->relative->kinship === '0') --}}>outro</option>
             </select>
 
         </div>

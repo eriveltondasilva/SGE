@@ -14,9 +14,19 @@
 
             <div class="card-body">
 
-                {{-- TODO: consertar os alerts --}}
                 {{-- Componente para retornar mensage: "cadastro com sucesso!" --}}
-                {{-- <x-alert.msg-store name="student" :person="$lastStudent" /> --}}
+                <x-alert.saved-person name="student" text="aluno" :person="$lastStudent" />
+
+
+                @if (count($errors))
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
 
 
                 {{-- Dados pessoais --}}

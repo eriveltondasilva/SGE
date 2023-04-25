@@ -72,7 +72,8 @@
 
             <label for="birth_date">Data de Nasc.:</label>
             <input class="form-control" id="birth_date" name="birth_date" type="date"
-                   value="{{ old('birth_date', $person ?? '') }}" @readonly($readonly)>
+                   value="{{ isset($person->birth_date) ? $person->birth_date->format('Y-m-d') : '' }}"
+                   @readonly($readonly)>
 
         </div>
     </div>

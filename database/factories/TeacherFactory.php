@@ -25,7 +25,7 @@ class TeacherFactory extends Factory
             'email'       => $this->faker->unique()->safeEmail(),
             'telephone'   => $this->faker->cellphoneNumber(),
             'nationality' => $this->faker->country(),
-            'birth_date'  => $this->faker->date('Y_m_d'),
+            // 'birth_date'  => $this->faker->date('Y_m_d'),
             'gender'      => $this->faker->randomElement(['F', 'M']),
             'school_id'   => $this->faker->randomElement(['2', '3']),
         ];

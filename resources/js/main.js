@@ -5,7 +5,7 @@
 $(".js-date").mask("00/00/0000", { placeholder: "__/__/____" });
 $(".js-hour").mask("00:00:00", { placeholder: "00:00:00" });
 $(".js-cep").mask("00000-000", { placeholder: "00000-000" });
-$(".js-fone").mask("(00) 0 0000-0000", { placeholder: "(00) 0 0000-0000" });
+$(".js-fone").mask("(00) 0 0000-0000", { placeholder: "(82) 0 0000-0000" });
 $(".js-rg").mask("0000000-0", { placeholder: "0000000-0" });
 $(".js-cpf").mask("000.000.000-00", { placeholder: "000.000.000-00" });
 $(".js-money").mask("#.##0,00", { reverse: true, placeholder: "#.##0,00" });

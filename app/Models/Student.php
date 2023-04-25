@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Student extends Model
@@ -18,18 +17,24 @@ class Student extends Model
 
     protected $fillable = [
         'name',
-        'email',
         'rg',
         'cpf',
+        'email',
         'telephone',
-        'nationality',
         'birth_date',
+        'nationality',
         'gender',
         'photo_path',
+
         'birth_place',
         'gov_benefits',
         'health_problems',
         'note',
+    ];
+
+
+    protected $casts = [
+        'birth_date' => 'date',
     ];
 
 

@@ -12,6 +12,7 @@
             @csrf
             @method('PUT')
 
+
             <div class="card-body">
 
                 <x-form.header-btn name="teacher" :person="$teacher" />
@@ -22,7 +23,7 @@
 
 
                 {{-- Dados do endereço --}}
-                <x-form.address />
+                <x-form.address :person="$teacher" />
 
 
                 {{-- Botões: cancelar e cadastrar/atualizar --}}

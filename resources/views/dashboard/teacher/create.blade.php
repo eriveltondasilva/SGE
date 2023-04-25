@@ -1,10 +1,10 @@
 <x-dashboard-layout>
 
-    <!-- browser page title -->
+    {{-- browser page title --}}
     <x-slot name="head_title">Cadastrar Professor</x-slot>
 
 
-    <!-- col do form -->
+    {{-- col do form --}}
     <div class="col-sm-8 mx-auto">
 
         <form action="{{ route('teacher.store') }}" method="POST">
@@ -14,10 +14,8 @@
 
             <div class="card-body">
 
-
-                {{-- TODO: consertar os alerts --}}
                 {{-- Componente para retornar mensage: "cadastro com sucesso!" --}}
-                {{-- <x-alert.msg name="teacher" text="Professor" :person="$lastTeacher" /> --}}
+                <x-alert.saved-person name="teacher" text="professor" :person="$lastTeacher" />
 
 
                 {{-- Dados pessoais --}}
@@ -32,12 +30,12 @@
                 <x-form.footer />
 
             </div>
-            <!-- /.card-body -->
+            {{-- /.card-body --}}
 
         </form>
 
     </div>
-    <!-- /.col do form -->
+    {{-- /.col do form --}}
 
 
     <br>
