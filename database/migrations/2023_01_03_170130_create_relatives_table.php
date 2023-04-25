@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class () extends Migration {
     /**
      * Run the migrations.
      */
@@ -13,8 +12,8 @@ return new class extends Migration
     {
         Schema::create('relatives', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email', 100)->unique()->nullable();
+            $table->string('name')->nullable();
+            $table->string('email', 100)->nullable();
             $table->string('telephone')->nullable();
             $table->string('kinship')->nullable();
             $table->timestamps();

@@ -10,19 +10,21 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        // !Criar tabelas pivot
+        //
         Schema::create('school_classes_students', function (Blueprint $table) {
             $table->foreignId('school_class_id')->constrained('school_classes');
             $table->foreignId('student_id')->constrained('students');
             $table->timestamps();
         });
 
+        //
         Schema::create('school_classes_teachers', function (Blueprint $table) {
             $table->foreignId('school_class_id')->constrained('school_classes');
             $table->foreignId('teacher_id')->constrained('teachers');
             $table->timestamps();
         });
 
+        //
         Schema::create('subjects_teachers', function (Blueprint $table) {
             $table->foreignId('subject_id')->constrained('subjects');
             $table->foreignId('teacher_id')->constrained('teachers');
@@ -33,7 +35,6 @@ return new class () extends Migration {
 
 
 
-        // !Adicionar colunas de chaves estrangeiras
         //
         Schema::table('users', function (Blueprint $table) {
             $table->foreignId('school_id')->constrained('schools');
@@ -71,6 +72,7 @@ return new class () extends Migration {
      */
     public function down(): void
     {
+        //
         Schema::dropIfExists('school_classes_students');
         Schema::dropIfExists('school_classes_teachers');
         Schema::dropIfExists('subjects_teachers');
