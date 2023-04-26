@@ -33,20 +33,17 @@ class PersonRequest extends FormRequest
             'nationality'     => 'string|nullable',
             'gender'          => 'string|nullable|max:1',
 
-
             // dados específicos do aluno
             'birth_place'     => 'sometimes|string|nullable',
             'gov_benefits'    => 'sometimes|string|nullable',
             'health_problems' => 'sometimes|string|nullable',
             'note'            => 'sometimes|string|nullable',
 
-
             // dados do responsável pelo aluno
             'relative.name'      => 'string|nullable|max:100',
             'relative.email'     => 'string|nullable|max:100',
             'relative.telephone' => 'string|nullable|size:16',
             'relative.kinship'   => 'string|nullable',
-
 
             // dados do endereço do aluno e do professor
             'address.street'       => 'string|nullable|max:255',

@@ -41,10 +41,15 @@ class StudentController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Student $student)
     {
+        // Variável
+        $lastStudent = Student::isActive()->max('id');
+
+
+
         //
-        return view('dashboard.student.create');
+        return view('dashboard.student.create', compact('lastStudent'));
     }
 
 
@@ -72,14 +77,10 @@ class StudentController extends Controller
         // Adicionar endereço ao cadastro do aluno
         $student->address()->create($validated['address']);
 
-        // Captura id do último aluno cadastrado para apresentar no 'alert.saved-person'
-        $lastStudent = $student->id;
-
 
 
         //
-        return to_route('student.create', compact('lastStudent'))
-            ->with('msg', 'Cadastro do aluno realizado com sucesso!');
+        return back()->with('msg', 'Cadastro do aluno realizado com sucesso!');
     }
 
 

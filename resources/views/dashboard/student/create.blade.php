@@ -15,7 +15,7 @@
             <div class="card-body">
 
                 {{-- cadastro com sucesso! --}}
-                <x-alert.saved-person name="student" text="aluno" :person="$lastStudent ?? ''" />
+                <x-alert.saved-person name="student" text="aluno" :person="$lastStudent" />
 
 
                 {{-- Alerta de erros do formulário --}}
