@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Enums\GenderEnum;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PersonRequest extends FormRequest
@@ -24,14 +23,14 @@ class PersonRequest extends FormRequest
     {
         return [
             // dados pessoais do aluno e do professor
-            'name'            => 'required|string|max:100',
-            'rg'              => 'string|nullable|size:9',
-            'cpf'             => 'string|nullable|size:14',
-            'email'           => 'email|nullable|max:100',
-            'telephone'       => 'string|nullable|size:16',
-            'birth_date'      => 'date|nullable',
-            'nationality'     => 'string|nullable',
-            'gender'          => 'string|nullable|max:1',
+            'name'        => 'bail|required|string|between:4,100',
+            'rg'          => 'string|nullable|size:9',
+            'cpf'         => 'string|nullable|size:14',
+            'email'       => 'email|nullable|max:100',
+            'telephone'   => 'string|nullable|size:16',
+            'birth_date'  => 'date|nullable',
+            'nationality' => 'string|nullable',
+            'gender'      => 'string|nullable|max:1',
 
             // dados específicos do aluno
             'birth_place'     => 'sometimes|string|nullable',
@@ -40,8 +39,8 @@ class PersonRequest extends FormRequest
             'note'            => 'sometimes|string|nullable',
 
             // dados do responsável pelo aluno
-            'relative.name'      => 'string|nullable|max:100',
-            'relative.email'     => 'string|nullable|max:100',
+            'relative.name'      => 'string|nullable|between:4,100',
+            'relative.email'     => 'email|nullable|max:100',
             'relative.telephone' => 'string|nullable|size:16',
             'relative.kinship'   => 'string|nullable',
 
