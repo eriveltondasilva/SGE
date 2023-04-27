@@ -14,10 +14,10 @@
                 @csrf
 
 
-                @if (session('msg'))
+                {{-- @if (session('msg'))
                     <div class="alert alert-info alert-dismissible fade show" role="alert">
                         {{ session('msg') }}
-                        <a href="{{-- {{ route('teacher.show', $last_teacher) } --}}}" class="alert-link">
+                        <a href="{{ route('teacher.show', $last_teacher) }" class="alert-link">
                             Clique aqui
                         </a>
                         para ver a última turma cadastrada.
@@ -27,11 +27,10 @@
                             </span>
                         </button>
                     </div>
-                @endif
+                @endif --}}
 
 
-                {{-- ! --}}
-                <x-alert-error></x-alert-error>
+                <x-alert.error />
 
 
                 <div class="form-row">
@@ -73,13 +72,13 @@
                 <div class="form-row">
                     <div class="form-group col-md">
                         <label for="room">Sala:</label>
-                        <input type="text" class="form-control" id="room" name="room"
+                        <input class="form-control" id="room" name="room" type="text"
                                placeholder="Insira a sala...">
                     </div>
 
                     <div class="form-group col-md">
                         <label for="school_years_year">Ano Letivo:</label>
-                        <input type="text" class="form-control" id="school_years_year" name="school_years_year"
+                        <input class="form-control" id="school_years_year" name="school_years_year" type="text"
                                value="{{-- {{ $last_school_year }} --}}" disabled>
                     </div>
                 </div>
@@ -87,14 +86,14 @@
                 <!-- botões cancelar e cadastrar -->
                 <div class="form-row">
                     <div class="col-sm-6 mb-2">
-                        <button type="reset" class="btn btn-danger btn-block">
+                        <button class="btn btn-danger btn-block" type="reset">
                             <i class="fa-solid fa-trash-can mr-2"></i>
                             Limpar
                         </button>
                     </div>
 
                     <div class="col-sm-6 mb-2">
-                        <button type="submit" class="btn btn-primary btn-block">
+                        <button class="btn btn-primary btn-block" type="submit">
                             <i class="fa-solid fa-floppy-disk mr-2"></i>
                             Cadastrar
                         </button>
@@ -149,8 +148,9 @@
                                     </td>
 
                                     <td>
-                                        <a href="{{ route('school_class.show', $school_class) }}"
-                                           class="btn btn-sm btn-block btn-primary" title="Visualizar professor">
+                                        <a class="btn btn-sm btn-block btn-primary"
+                                           href="{{ route('school_class.show', $school_class) }}"
+                                           title="Visualizar professor">
                                             <i class="fa-regular fa-pen-to-square mr-1"></i>
                                             Editar
                                         </a>
