@@ -31,7 +31,7 @@ class StudentFactory extends Factory
             'gov_benefits'    => $this->faker->sentence(10),
             'health_problems' => $this->faker->sentence(10),
             'note'            => $this->faker->sentence(50),
-            // 'birth_date'      => $this->faker->date('Y_m_d'),
+            'birth_date'      => $this->faker->date('Y-m-d'),
             'gender'          => $this->faker->randomElement(['F', 'M']),
             'school_id'       => $this->faker->numberBetween(2, 3),
         ];

@@ -76,7 +76,7 @@ class TeacherController extends Controller
 
 
         //
-        return to_route('teacher.create', compact('lastTeacher'))
+        return to_route('teacher.create')
             ->with('msg', 'Cadastro do professor realizado com sucesso!');
     }
 

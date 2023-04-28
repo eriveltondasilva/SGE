@@ -1,5 +1,5 @@
-@props(['person'])
 @php($readonly = request()->routeIs('*.show'))
+@props(['person'])
 
 
 <section class="personal-data mt-5">
@@ -72,8 +72,8 @@
 
             <label for="birth_date">Data de Nasc.:</label>
             <input class="form-control" id="birth_date" name="birth_date" type="date"
-                   value="{{ isset($person->birth_date) ? $person->birth_date->format('Y-m-d') : '' }}"
-                   @readonly($readonly)>
+                   value="{{ old('birth_date', isset($person->birth_date) ? $person->birth_date->format('Y-m-d') : '') }}"
+                   {{-- value="{{ isset($person->birth_date) ? $person->birth_date->format('Y-m-d') : '' }}" --}} @readonly($readonly)>
 
         </div>
     </div>
