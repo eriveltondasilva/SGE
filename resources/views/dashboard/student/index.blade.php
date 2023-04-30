@@ -40,67 +40,65 @@
         </nav>
         --}}
 
+        @if (count($students))
 
-        <!-- table  -->
-        <div class="table-responsive-xl">
+            <!-- table  -->
+            <div class="table-responsive-xl">
 
-            <table class="table-hover table-sm table">
-                <thead class="thead-light">
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Matr.</th>
-                        <th scope="col">Endereço</th>
-                        <th scope="col">Cidade</th>
-                        <th scope="col justify-content-end"></th>
-                    </tr>
-                </thead>
-
-
-                <tbody>
-
-                    @foreach ($students as $student)
+                <table class="table-hover table-sm table">
+                    <thead class="thead-light">
                         <tr>
-                            <th scope="row">
-                                {{ $loop->iteration }}
-                            </th>
-                            <td>
-                                {{ $student->name }}
-                            </td>
-                            <td>
-                                {{ Str::padLeft($student->id, 3, '0') }}
-                            </td>
-                            <td>
-                                {{ $student->address->street ?? '' }}
-                            </td>
-                            <td>
-                                {{ $student->address->city ?? '' }}
-                            </td>
-
-                            <td class="text-right">
-                                <a class="btn btn-sm btn-primary" href="{{ route('student.show', $student) }}"
-                                   title="Visualizar aluno">
-                                    <i class="fa-regular fa-eye mr-1"></i>
-                                    Visualizar
-                                </a>
-                            </td>
+                            <th scope="col">#</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Matr.</th>
+                            <th scope="col">Endereço</th>
+                            <th scope="col">Cidade</th>
+                            <th scope="col justify-content-end"></th>
                         </tr>
+                    </thead>
+
+
+                    <tbody>
+
+                        @foreach ($students as $student)
+                            <tr>
+                                <th scope="row">
+                                    {{ $loop->iteration }}
+                                </th>
+                                <td>
+                                    {{ $student->name }}
+                                </td>
+                                <td>
+                                    {{ Str::padLeft($student->id, 3, '0') }}
+                                </td>
+                                <td title="{{ $student->address->street ?? '' }}">
+                                    {{ Str::words($student->address->street ?? '', 3, '...') }}
+                                </td>
+                                <td title="{{ $student->address->city ?? '' }}">
+                                    {{ Str::words($student->address->city ?? '', 3, '...') }}
+                                </td>
+
+                                <td class="text-right">
+                                    <a class="btn btn-sm btn-primary" href="{{ route('student.show', $student) }}"
+                                       title="Visualizar aluno">
+                                        <i class="fa-regular fa-eye mr-1"></i>
+                                        Visualizar
+                                    </a>
+                                </td>
+                            </tr>
                         @endforeach
 
-                </tbody>
+                    </tbody>
 
-            </table>
+                </table>
 
-        </div>
-        <!-- ./table  -->
+            </div>
+            <!-- ./table  -->
+        @else
+            {{-- alerta para quando a pesquisar não for encontrada --}}
+            <x-alert.not-found />
 
-
-        {{--
-        <div class="alert alert-danger pt-3" role="alert">
-            <h5>Pesquisa não encontrada! Por favor, tente novamente.
-            </h5>
-        </div>
-        --}}
+        @endif
 
     </div>
     <!-- /.col do form -->

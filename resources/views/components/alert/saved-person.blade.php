@@ -2,7 +2,7 @@
 
 
 @if (session('msg'))
-    <div {{ $attributes->merge(['class' => 'alert alert-info']) }}>
+    <div {{ $attributes->merge(['class' => 'alert alert-info', 'role' => 'alert']) }}>
         {{ session('msg') }}
         <br>
         <a class="alert-link" href="{{ route($show, $person) }}">Clique aqui</a>

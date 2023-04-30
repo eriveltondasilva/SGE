@@ -60,7 +60,7 @@ class GradeController extends Controller
         //
     }
 
-    
+
     /**
      * Remove the specified resource from storage.
      */

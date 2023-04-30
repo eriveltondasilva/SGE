@@ -16,9 +16,6 @@ class User extends Authenticatable
     use Notifiable;
 
 
-
-
-
     protected $table = 'users';
 
 

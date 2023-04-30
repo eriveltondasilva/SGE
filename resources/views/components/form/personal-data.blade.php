@@ -10,7 +10,7 @@
     {{-- Campo para o nome completo --}}
     <div class="form-group">
 
-        <label for="name">Nome Completo<span class="text-red">*</span>:</label>
+        <label for="name">Nome Completo<span class="h4 text-red">*</span>:</label>
         <input class="form-control @error('name') is-invalid @enderror" id="name" name="name" type="text"
                value="{{ old('name', $person ?? '') }}" autofocus maxlength="100" placeholder="Insira o nome..."
                @readonly($readonly)>
@@ -72,8 +72,7 @@
 
             <label for="birth_date">Data de Nasc.:</label>
             <input class="form-control" id="birth_date" name="birth_date" type="date"
-                   value="{{ old('birth_date', isset($person->birth_date) ? $person->birth_date->format('Y-m-d') : '') }}"
-                   {{-- value="{{ isset($person->birth_date) ? $person->birth_date->format('Y-m-d') : '' }}" --}} @readonly($readonly)>
+                   value="{{ old('birth_date', $person ?? '') }}" @readonly($readonly)>
 
         </div>
     </div>
@@ -113,7 +112,7 @@
         <div class="form-check form-check-inline">
 
             <input class="form-check-input" id="gender_female" name="gender" type="radio" value="F"
-                   @checked(isset($person) ? $person->gender === 'F' : 'checked') @disabled($readonly ? $person->gender !== 'F' : '')>
+                   @checked(empty($person) ? 'checked' : $person->gender === 'F') @disabled($readonly ? $person->gender !== 'F' : '')>
             <label class="form-check-label" for="gender_female">Feminino</label>
 
         </div>
@@ -122,7 +121,7 @@
         <div class="form-check form-check-inline">
 
             <input class="form-check-input" id="gender_male" name="gender" type="radio" value="M"
-                   @checked(isset($person) ? $person->gender === 'M' : '') @disabled($readonly ? $person->gender !== 'M' : '')>
+                   @checked(empty($person) ? '' : $person->gender === 'M') @disabled($readonly ? $person->gender !== 'M' : '')>
             <label class="form-check-label" for="gender_male">Masculino</label>
 
         </div>

@@ -14,7 +14,7 @@ class SchoolController extends Controller
     {
         //
     }
-    
+
 
     /**
      * Show the form for creating a new resource.
@@ -60,7 +60,7 @@ class SchoolController extends Controller
         //
     }
 
-    
+
     /**
      * Remove the specified resource from storage.
      */

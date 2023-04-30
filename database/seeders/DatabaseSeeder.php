@@ -4,6 +4,10 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Address;
+use App\Models\Relative;
+use App\Models\Student;
+use App\Models\Teacher;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -14,13 +18,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        // Insere no Banco os anos: 2020, 2021, 2022, 2023
         DB::table('school_years')->insert([
-           'year' => '2023',
+           ['year' => '2020'],
+           ['year' => '2021'],
+           ['year' => '2022'],
+           ['year' => '2023'],
         ]);
 
 
-        // Inserir itens na tabela roles
+        // Inserir no Banco os 4 bimestres
         DB::table('bimesters')->insert([
             [
                 'name' => '1º bimestre',
@@ -41,7 +48,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        // Inserir itens na tabela roles
+        // Inserir no Banco todos os roles: admin, manager, coordinator, teacher, student
         DB::table('roles')->insert([
             [
                 'name'        => 'admin',
@@ -65,7 +72,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        //
+        // Insere no Banco 3 escolas: Escola Teste, Escola Viver, Escola Livramento
         DB::table('schools')->insert([
             [
                 'name' => 'Escola de Educação Básica Teste',
@@ -82,7 +89,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        //
+        // Insere no Banco 4 usuários
         DB::table('users')->insert([
             [
                 'name'      => 'Erivelton da Silva',
@@ -115,7 +122,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        //
+        // Insere no Banco todas as matérias escolares junto com suas abreviações
         DB::table('subjects')->insert([
             [
                 'name' => 'Artes',
@@ -153,16 +160,16 @@ class DatabaseSeeder extends Seeder
 
 
         //
-        DB::table('relatives')->insert([
-            'name' => 'Maria José',
-        ]);
+        Teacher::factory()
+            ->count(20)
+            ->has(Address::factory(), 'address')
+            ->create();
 
-
-        //
-        \App\Models\Student::factory(200)->create();
-        \App\Models\Teacher::factory(20)->create();
-        \App\Models\Address::factory(200)->create();
-
+        Student::factory()
+            ->count(200)
+            ->has(Relative::factory(), 'relative')
+            ->has(Address::factory(), 'address')
+            ->create();
 
 
         // \App\Models\User::factory(10)->create();

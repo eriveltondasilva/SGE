@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Database\Query\Builder;
+use Illuminate\Validation\Rule;
 
 class SchoolClassRequest extends FormRequest
 {
@@ -22,7 +24,12 @@ class SchoolClassRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'class_name'        => 'required|integer|between:6,9',
+            'name' => [
+                'bail', 'required', 'integer', 'between:6,9',
+            ],
+            'shift'     => ['required', 'string'],
+            'schooling' => ['required', 'string'],
+            'room'      => ['string'],
         ];
     }
 }

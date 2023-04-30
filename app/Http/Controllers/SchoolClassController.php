@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SchoolClassRequest;
 use App\Models\SchoolClass;
 use App\Models\SchoolYear;
 use Illuminate\Http\Request;
-use App\Http\Requests\SchoolClassRequest;
 
 class SchoolClassController extends Controller
 {
@@ -21,12 +21,13 @@ class SchoolClassController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(SchoolClass $request)
     {
-        // $school_classes   = SchoolClass::get();
-        // $last_school_year = SchoolYear::max('year');
+        $limiter_school_years = SchoolYear::orderBy('year', 'desc')->take(3)->get();
+        $last_school_year = SchoolYear::max('year');
+        $school_classes = SchoolClass::where('school_year', $last_school_year)->get();
 
-        return view('dashboard.school_class.create', /* compact('school_classes', 'last_school_year') */);
+        return view('dashboard.school_class.create', compact('school_classes', 'limiter_school_years', 'last_school_year'));
     }
 
 
@@ -35,13 +36,16 @@ class SchoolClassController extends Controller
      */
     public function store(SchoolClassRequest $request)
     {
-        // $validated = $request->validated();
+        $validated = $request->validated();
 
-        // SchoolClass::create($validated);
+        $school_class = SchoolClass::create($validated);
 
-        // return redirect()
-        // ->route('school_class.create')
-        // ->with('msg', 'Turma cadastrada com sucesso!');
+        $school_class->school_year = SchoolYear::max('year');
+        $school_class->save();
+
+
+        return back()
+            ->with('msg', 'Turma cadastrada com sucesso!');
     }
 
 

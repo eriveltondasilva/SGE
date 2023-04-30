@@ -21,10 +21,10 @@ class TeacherController extends Controller
             if (is_numeric($search)) {
                 $teachers = $teachers->where('id', $search)->get();
             } else {
-                $teachers = $teachers->where('name', 'like', $search . '%')->get();
+                $teachers = $teachers->where('name', 'like', '%' . $search . '%')->paginate(25);
             }
         } else {
-            $teachers = $teachers->orderBy('name')->get();
+            $teachers = $teachers->orderBy('name')->paginate(25);
         }
 
 
@@ -76,8 +76,7 @@ class TeacherController extends Controller
 
 
         //
-        return to_route('teacher.create')
-            ->with('msg', 'Cadastro do professor realizado com sucesso!');
+        return back()->with('msg', 'Cadastro do professor realizado com sucesso!');
     }
 
 

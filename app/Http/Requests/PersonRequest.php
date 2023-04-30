@@ -3,8 +3,8 @@
 namespace App\Http\Requests;
 
 use App\Models\Student;
-// use App\Models\Relative;
 use App\Models\Teacher;
+// use App\Models\Relative;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -38,6 +38,7 @@ class PersonRequest extends FormRequest
                 Rule::when(request()->routeIs('student.*'), [
                     Rule::unique(Student::class)->ignore($this->student->id ?? '')
                 ]),
+
                 Rule::when(request()->routeIs('teacher.*'), [
                     Rule::unique(Teacher::class)->ignore($this->teacher->id ?? '')
                 ]),

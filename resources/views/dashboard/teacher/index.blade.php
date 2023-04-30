@@ -6,7 +6,7 @@
 
 
     <!-- col do form -->
-    <div class="col-sm-10 mx-auto">
+    <div class="col-sm-10 mx-auto mt-5">
 
         <form action="{{ route('teacher.index') }}" method="GET">
             <div class="input-group mb-4">
@@ -24,8 +24,6 @@
 
 
         @if (count($teachers))
-
-
             <!-- table  -->
             <div class="table-responsive-xl">
 
@@ -54,15 +52,15 @@
                                 </td>
 
                                 <td>
-                                    {{ str_pad($teacher->id, 3, '0', STR_PAD_LEFT) }}
+                                    {{ Str::padLeft($teacher->id, 3, '0') }}
                                 </td>
 
-                                <td>
-                                    {{ $teacher->address_street }}
+                                <td title="{{ $teacher->address->street ?? '' }}">
+                                    {{ Str::words($teacher->address->street ?? '', 3, '...') }}
                                 </td>
 
-                                <td>
-                                    {{ $teacher->address_city }}
+                                <td title="{{ $teacher->address->city ?? '' }}">
+                                    {{ Str::words($teacher->address->city ?? '', 3, '...') }}
                                 </td>
 
                                 <td class="text-right">
@@ -82,10 +80,8 @@
             </div>
             <!-- ./table  -->
         @else
-            <div class="alert alert-danger pt-3" role="alert">
-                <h5>Pesquisa não encontrada! Por favor, tente novamene.
-                </h5>
-            </div>
+            {{-- alerta para quando a pesquisar não for encontrada --}}
+            <x-alert.not-found />
         @endif
 
     </div>

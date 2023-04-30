@@ -25,20 +25,11 @@ class Student extends Model
         'nationality',
         'gender',
         'photo_path',
-
         'birth_place',
         'gov_benefits',
         'health_problems',
         'note',
     ];
-
-
-    protected $casts = [
-        'birth_date' => 'date',
-    ];
-
-
-
 
 
     // * Relacionamentos:

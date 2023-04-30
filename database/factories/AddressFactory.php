@@ -21,13 +21,12 @@ class AddressFactory extends Factory
     public function definition(): array
     {
         return [
-            'street'       => $this->faker->streetName(),
+            'street'       => $this->faker->streetAddress(),
             'complement'   => $this->faker->sentence(),
-            'neighborhood' => $this->faker->word(),
+            'neighborhood' => $this->faker->sentence(3),
             'city'         => $this->faker->city(),
             'cep'          => $this->faker->randomNumber(8, true),
             'state'        => $this->faker->state(),
-            'student_id'   => $this->faker->unique()->numberBetween(1, 200),
         ];
     }
 }

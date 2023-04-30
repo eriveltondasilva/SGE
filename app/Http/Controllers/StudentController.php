@@ -22,7 +22,7 @@ class StudentController extends Controller
             if (is_numeric($search)) {
                 $students = $students->where('id', $search)->get();
             } else {
-                $students = $students->where('name', 'like', $search . '%')->paginate(25);
+                $students = $students->where('name', 'like', '%' . $search . '%')->paginate(25);
             }
         } else {
             $students = $students->orderBy('name')->paginate(25);

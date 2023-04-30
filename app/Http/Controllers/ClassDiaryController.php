@@ -51,7 +51,7 @@ class ClassDiaryController extends Controller
         //
     }
 
-    
+
     /**
      * Update the specified resource in storage.
      */
@@ -60,7 +60,7 @@ class ClassDiaryController extends Controller
         //
     }
 
-    
+
     /**
      * Remove the specified resource from storage.
      */

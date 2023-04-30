@@ -30,7 +30,7 @@ class StudentFactory extends Factory
             'birth_place'     => $this->faker->city(),
             'gov_benefits'    => $this->faker->sentence(10),
             'health_problems' => $this->faker->sentence(10),
-            'note'            => $this->faker->sentence(50),
+            'note'            => $this->faker->text(),
             'birth_date'      => $this->faker->date('Y-m-d'),
             'gender'          => $this->faker->randomElement(['F', 'M']),
             'school_id'       => $this->faker->numberBetween(2, 3),
