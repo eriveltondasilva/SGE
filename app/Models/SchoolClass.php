@@ -15,6 +15,7 @@ class SchoolClass extends Model
         'shift',
         'schooling',
         'room',
+        'school_year',
     ];
 
     public function school_year(): BelongsTo

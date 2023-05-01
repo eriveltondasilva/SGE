@@ -4,30 +4,31 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PersonRequest;
 use App\Models\Student;
+use App\Services\SearchService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class StudentController extends Controller
 {
+    public function __construct(protected SearchService $searchService)
+    {
+        //
+    }
+
+
     /**
      * Display a listing of the resource.
      */
     public function index(Request $request)
     {
         // Variáveis
-        $search   = $request->search;
-        $students = Student::isActive();
+        $query = Student::isActive();
+        $search   = request()->search;
 
-        if ($search) {
-            if (is_numeric($search)) {
-                $students = $students->where('id', $search)->get();
-            } else {
-                $students = $students->where('name', 'like', '%' . $search . '%')->paginate(25);
-            }
-        } else {
-            $students = $students->orderBy('name')->paginate(25);
-        }
+        // Classe de serviço para fazer pesquisar no model e filtrar os resultados
+        $query = $this->searchService->SearchPerson($query, $search);
 
+        $students = $query->get();
 
 
         //

@@ -24,13 +24,17 @@ class SchoolClassController extends Controller
     public function create(SchoolClass $request)
     {
         $limiter_school_years = SchoolYear::orderBy('year', 'desc')->take(5)->get();
-        $last_school_year = SchoolYear::max('year');
-        $school_classes = SchoolClass::where('school_year', $last_school_year)->get();
+        // $last_school_year = SchoolYear::max('year');
+
+        $search = request()->search;
+
+        $school_classes = SchoolClass::where('school_year', $search)->get();
+
 
 
         return view(
             'dashboard.school_class.create',
-            compact('school_classes', 'limiter_school_years', 'last_school_year')
+            compact('school_classes', 'limiter_school_years', 'search')
         );
     }
 
@@ -41,10 +45,11 @@ class SchoolClassController extends Controller
     public function store(SchoolClassRequest $request)
     {
         $validated = $request->validated();
+        $school_year = $request->school_year;
 
         $school_class = SchoolClass::create($validated);
 
-        $school_class->school_year = SchoolYear::max('year');
+        $school_class->school_year = $school_year;
         $school_class->save();
 
 

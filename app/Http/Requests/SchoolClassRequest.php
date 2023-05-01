@@ -22,10 +22,11 @@ class SchoolClassRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'      => ['required', 'integer', 'between:6,9'],
-            'shift'     => ['required', 'string'],
-            'schooling' => ['required', 'string'],
-            'room'      => ['required', 'string'],
+            'name'        => ['required', 'integer', 'between:6,9'],
+            'shift'       => ['required', 'string'],
+            'schooling'   => ['required', 'string'],
+            'room'        => ['required', 'string'],
+            'school_year' => ['string', 'exists:school_years,year'],
         ];
     }
 }

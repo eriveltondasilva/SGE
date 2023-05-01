@@ -1,5 +1,7 @@
 <div class="form-row">
 
+    <input type="hidden" name="school_year" value="{{ request()->search }}">
+
     <div class="form-group col-sm">
 
         <label for="name">Turma:</label>

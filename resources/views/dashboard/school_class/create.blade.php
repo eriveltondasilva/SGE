@@ -5,9 +5,43 @@
 
 
     <!-- col do form -->
-    <div class="col-sm-6 mx-auto">
+    <div class="col-sm-6 mx-auto mt-5">
 
-        <div class="card-body">
+        <section>
+
+            <form action="{{ route('school_class.create') }}" method="GET">
+
+                <div class="form-row form-group col-sm">
+
+                    <label class="col-form-label mr-2" for="search">Ano Letivo:</label>
+                    <div class="mr-2">
+
+                        <select class="form-control" id="search" name="search">
+                            <option></option>
+                            @foreach ($limiter_school_years as $item)
+                                <option value="{{ $item->year }}" @selected($item->year == $search)>
+                                    {{ $item->year }}
+                                </option>
+                            @endforeach
+                        </select>
+
+                    </div>
+
+                    <div>
+
+                        <button class="btn btn-primary" type="submit">
+                            Selecionar
+                        </button>
+
+                    </div>
+
+            </form>
+
+        </section>
+
+        <br>
+
+        <section>
 
             <form action="{{ route('school_class.store') }}" method="POST">
 
@@ -23,12 +57,14 @@
 
             </form>
 
+        </section>
 
-            <br>
-            <br>
+        <br>
+        <br>
 
+        @if (count($school_classes))
+            <section>
 
-            @if (count($school_classes))
                 <!-- table  -->
                 <div class="table-responsive-xl">
 
@@ -91,12 +127,11 @@
                 <!-- /.table  -->
             @else
                 <div class="alert alert-danger">
-                    Não há turmas cadastradas para o ano letivo de {{ $last_school_year }}.
+                    Não há turmas cadastradas para o ano letivo de {{ $search }}.
                 </div>
-            @endif
+        @endif
 
-        </div>
-        <!-- /.card-body -->
+        </section>
 
     </div>
     <!-- col do form -->

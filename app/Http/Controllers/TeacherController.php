@@ -4,28 +4,30 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PersonRequest;
 use App\Models\Teacher;
+use App\Services\SearchService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class TeacherController extends Controller
 {
+    public function __construct(protected SearchService $searchService)
+    {
+        //
+    }
+
+
     /**
      * Display a listing of the resource.
      */
     public function index(Request $request)
     {
-        $search   = $request->search;
-        $teachers = Teacher::isActive();
+        $query  = Teacher::isActive();
+        $search = request()->search;
 
-        if ($search) {
-            if (is_numeric($search)) {
-                $teachers = $teachers->where('id', $search)->get();
-            } else {
-                $teachers = $teachers->where('name', 'like', '%' . $search . '%')->paginate(25);
-            }
-        } else {
-            $teachers = $teachers->orderBy('name')->paginate(25);
-        }
+        // Classe de serviço para fazer pesquisar no model e filtrar os resultados
+        $query = $this->searchService->SearchPerson($query, $search);
+
+        $teachers = $query->get();
 
 
 
