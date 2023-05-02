@@ -12,9 +12,17 @@ $(".js-money").mask("#.##0,00", { reverse: true, placeholder: "#.##0,00" });
 $(".js-percentage").mask("##0,00%", { reverse: true, placeholder: "%" });
 
 // ----------------
-// #DARK MODE
+// #UTILITÁRIOS
 
+// *Pesquisar o ano letivo sem precisar clicar em botão selecionar
+$(".js-select_school_year").on('change', function () {
+    $(".js-form_school_year").trigger('submit');
+});
+
+
+// *Fechar automaticamente os alertes
 $(".js-close_alert").delay(8000).slideUp("slow");
+
 
 // ----------------
 // #DARK MODE
@@ -81,3 +89,4 @@ function saveMode() {
         changeMode();
     }
 })();
+

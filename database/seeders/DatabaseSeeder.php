@@ -26,6 +26,38 @@ class DatabaseSeeder extends Seeder
            ['year' => '2023'],
         ]);
 
+        // Turmas 6º ano, 7º ano, 8º ano e 9º ano do ano de 2023
+        DB::table('school_classes')->insert([
+           [
+            'name' => '6',
+            'shift' => 'matutino',
+            'schooling'=> 'Fundamental I',
+            'room' => '1',
+            'school_year' => '2023',
+            ],
+           [
+            'name' => '7',
+            'shift' => 'matutino',
+            'schooling'=> 'Fundamental I',
+            'room' => '1',
+            'school_year' => '2023',
+            ],
+           [
+            'name' => '8',
+            'shift' => 'matutino',
+            'schooling'=> 'Fundamental I',
+            'room' => '1',
+            'school_year' => '2023',
+            ],
+           [
+            'name' => '9',
+            'shift' => 'matutino',
+            'schooling'=> 'Fundamental I',
+            'room' => '1',
+            'school_year' => '2023',
+            ],
+        ]);
+
 
         // Inserir no Banco os 4 bimestres
         DB::table('bimesters')->insert([

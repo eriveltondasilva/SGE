@@ -17,7 +17,9 @@
 
 
         @error('name')
-            <div class="alert alert-danger js-close_alert mt-1">Por favor, selecione uma turma.</div>
+            <div class="alert alert-danger js-close_alert mt-1">
+                {{ $message }}
+            </div>
         @enderror
 
     </div>
